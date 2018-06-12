@@ -10,8 +10,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Stage1 extends Scene implements ActionListener {
-
-	public static Timer timer;
+	
 	private double gravity = 0.01;
 	private Disturbance bigfan, spring;
 
@@ -22,11 +21,8 @@ public class Stage1 extends Scene implements ActionListener {
 		// Timer
 		timer = new Timer(10, this);
 
-		// 宣告Scene中的element
-		Person person = new Person(0, 0, 0, 0, 0, 0);
-		pvx = 1;
-		pvy = 1;
-		pay = gravity;
+		// declare elements in scene
+		Person person = new Person(0, 0, 1, 1, 0, gravity);
 		person.lb.setVisible(false);
 		persons.add(person);
 		imagePanel.add(persons.get(0).lb);
@@ -56,12 +52,17 @@ public class Stage1 extends Scene implements ActionListener {
 		// imagePanel.setFocusable(true);
 		// this.imagePanel.addKeyListener(keyAdapter);
 
-		// 設定window參數
+		// set background
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
-		setWindow(1, bgImagePath);
+		setWindow(bgImagePath);
 
 		// start timer
 		timer.start();
+	}
+	
+	@Override
+	public Scene getCurrentStage() {
+		return new Stage1();
 	}
 
 	@Override
@@ -70,7 +71,7 @@ public class Stage1 extends Scene implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent event) {
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
 		}
@@ -84,8 +85,7 @@ public class Stage1 extends Scene implements ActionListener {
 			disturbances.get(i).effect(persons);
 		}
 		for (int i = 0; i < destinations.size(); ++i) {
-			destinations.get(i).effect(persons);
-
+			destinations.get(i).effect(persons, this);
 		}
 	}
 

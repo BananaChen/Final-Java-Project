@@ -52,5 +52,5 @@ public abstract class Destination extends Items {
 		}
 	}
 
-	public abstract void effect(ArrayList<Person> persons);
+	public abstract void effect(ArrayList<Person> persons, Scene curStage);
 }

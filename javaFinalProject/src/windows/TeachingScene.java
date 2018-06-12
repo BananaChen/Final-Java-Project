@@ -7,22 +7,16 @@ import destination.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-//import java.awt.event.KeyListener;
 public class TeachingScene extends Scene implements ActionListener {
-
-	public static Timer timer;
 
 	public TeachingScene() {
 
 		super();
 
-		// Timer
 		timer = new Timer(10, this);
 
-		// 宣告Scene中的element
-		Person person = new Person(0, 0, 0, 0, 0, 0);
-		pvx = 1;
-		pvy = 1;
+		// declare elements in scene
+		Person person = new Person(0, 0, 1, 1, 0, 0);
 		person.lb.setVisible(false);
 		persons.add(person);
 		imagePanel.add(persons.get(0).lb);
@@ -31,7 +25,7 @@ public class TeachingScene extends Scene implements ActionListener {
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		Destination destination = new TeachingIsland(500, 500, 1, 1, 1, 1);
+		Destination destination = new Island(500, 500, 1, 1, 1, 1);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -40,31 +34,37 @@ public class TeachingScene extends Scene implements ActionListener {
 		destinations.get(0).lbFail.setVisible(false);
 		imagePanel.add(destinations.get(0).lb);
 
-		// imagePanel.addKeyListener(keyAdapter);
-
-		// 設定window參數
+		//set window
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
-		setWindow(0, bgImagePath);
+		setWindow(bgImagePath);
 
 		// start timer
 		timer.start();
 	}
 
 	@Override
+	public Scene getCurrentStage() {
+		return new TeachingScene();
+	}
+	
+	@Override
 	public Scene getNextStage() {
 		return new Stage1();
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent event) {
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
 		}
 		for (int i = 0; i < aircrafts.size(); ++i) {
 			aircrafts.get(i).move();
+			if (aircrafts.get(i).getPositionX() > bgWidth) {
+				aircrafts.get(i).setPositionX(-aircrafts.get(i).imageWidth);
+			}
 		}
 		for (int i = 0; i < destinations.size(); ++i) {
-			destinations.get(i).effect(persons);
+			destinations.get(i).effect(persons, this);
 		}
 	}
 

@@ -21,8 +21,6 @@ public class Spring extends Disturbance {
 					&& (person.getPositionY() + person.imageHeight) >= this.positionY
 					&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight) {
 				person.setVelocityX(person.getVelocityX() - 1.5);
-				
-				
 			}
 		}
 

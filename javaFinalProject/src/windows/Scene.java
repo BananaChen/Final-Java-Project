@@ -16,21 +16,15 @@ public abstract class Scene {
 	protected static int bgWidth = 1920;
 	protected static int bgHeight = 1000;
 
-	// protected
 	public static boolean isPassed = false;
 	protected static boolean isPaused = false;
 	public Timer timer;
 	protected double gravity;
-	// clean these shit every time
+
 	public ArrayList<Person> persons = new ArrayList<Person>();
 	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
 	public ArrayList<Destination> destinations = new ArrayList<Destination>();
 	public ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
-
-	public double pvx = 0;
-	public double pvy = 0;
-	public double pax = 0;
-	public double pay = 0;
 
 	public Scene() {
 		imagePanel = new JPanel();
@@ -39,7 +33,7 @@ public abstract class Scene {
 		imagePanel.setLayout(null);
 	}
 
-	public void setWindow(int stageNum, String bgImagePath) {
+	public void setWindow(String bgImagePath) {
 		try {
 			ImageIcon icon = new ImageIcon(new URL(bgImagePath));
 			JLabel lb = new JLabel(icon);
@@ -59,16 +53,11 @@ public abstract class Scene {
 				case KeyEvent.VK_DOWN:
 					for (int i = 0; i < persons.size(); ++i) {
 						Person person = persons.get(i);
-						System.out.println(person.getClass());
 						if (person.isDropped == false) {
-							System.out.println(1231231212);
 							person.lb.setVisible(true);
-							person.positionX = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
-							person.positionY = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
-							person.setVelocityX(pvx);
-							person.setVelocityY(pvy);
-							person.setAccelerationX(pax);
-							person.setAccelerationX(pay);
+							person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
+							person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
+							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy, person.personInitVy, person.personInitAx, person.personInitAy);
 							person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 							person.isDropped = true;
 						}
@@ -81,20 +70,10 @@ public abstract class Scene {
 					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						/*
-						 if(WindowController.stageStatus[0] == true) { 
-						 	WindowController.setStage(new TeachingScene()); 
-						 }*/
-						 if (WindowController.stageStatus[1] == true) {
-							WindowController.setStage(new Stage1());
-						} else if (WindowController.stageStatus[2] == true) {
-							WindowController.setStage(new Stage2());
-						} else if (WindowController.stageStatus[3] == true) {
-							// WindowController.setStage(new Stage3());
-						} else if (WindowController.stageStatus[4] == true) {
-							// WindowController.setStage(new Stage4());
-						} else if (WindowController.stageStatus[1] == true) {
-							// WindowController.setStage(new Stage5());
+						for (int i = 1; i < WindowController.NumOfStage; ++i) {// not startfrom 0
+							if (WindowController.stageStatus[i] == true) {
+								WindowController.setStage(getCurrentStage());
+							}
 						}
 						System.out.println("go to next stage");
 						isPassed = false;
@@ -102,34 +81,23 @@ public abstract class Scene {
 					}
 					break;
 				case KeyEvent.VK_R:
-			          if (isPassed == false) {
-			            imagePanel.removeAll();
-			            if(WindowController.stageStatus[0] == true) {
-			              WindowController.setStage(new TeachingScene());
-			            }
-			            else if(WindowController.stageStatus[1] == true) {
-			              WindowController.setStage(new Stage1());
-			            }
-			            else if(WindowController.stageStatus[2] == true) {
-			              WindowController.setStage(new Stage2());
-			            }
-			            else if(WindowController.stageStatus[3] == true) {
-			              //WindowController.setStage(new Stage3());
-			            }
-			            else if(WindowController.stageStatus[4] == true) {
-			              //WindowController.setStage(new Stage4());
-			            }
-			            else if(WindowController.stageStatus[1] == true) {
-			              //WindowController.setStage(new Stage5());
-			            }
-			            System.out.println("replay");
-			            imagePanel.setFocusable(false);
-			          }
-			          break;
+					if (isPassed == false) {
+						imagePanel.removeAll();
+						for (int i = 0; i < WindowController.NumOfStage; ++i) {
+							if (WindowController.stageStatus[i] == true) {
+								WindowController.setStage(getCurrentStage());
+							}
+						}
+						System.out.println("replay");
+						imagePanel.setFocusable(false);
+					}
+					break;
 				}
 			}
 		});
 	}
+
+	public abstract Scene getCurrentStage();
 
 	public abstract Scene getNextStage();
 }

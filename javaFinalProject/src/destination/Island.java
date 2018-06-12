@@ -14,7 +14,7 @@ public class Island extends Destination {
 		setImage(x, y, 250, 170, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Person> persons, Scene curStage) {
 
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
@@ -25,13 +25,13 @@ public class Island extends Destination {
 				person.lb.setVisible(false);
 				Scene.isPassed = true;
 
-				Stage1.timer.stop();
+				curStage.timer.stop();
 				setNextStageStatus();
 
 			}
 			// if not
 			else if (this.positionY - (person.getPositionY()) < 0) {
-				Stage1.timer.stop();
+				curStage.timer.stop();
 				lbFail.setVisible(true);
 				person.lb.setVisible(false);
 			}

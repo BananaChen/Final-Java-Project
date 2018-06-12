@@ -21,14 +21,13 @@ public abstract class Items extends JPanel {
 	public double velocityY = 0;
 	public double accelerationX = 0;
 	public double accelerationY = 0;
+	
+	public Items() {
+		
+	}
 
 	public Items(double x, double y, double vx, double vy, double ax, double ay) {
-		setPositionX(x);
-		setPositionY(y);
-		setVelocityX(vx);
-		setVelocityY(vy);
-		setAccelerationX(ax);
-		setAccelerationY(ay);
+		setMoveData(x, y, vx, vy, ax, ay);
 	}
 	
 	public void setImage(double x, double y, int wide, int length, String imagePath) {
@@ -43,6 +42,15 @@ public abstract class Items extends JPanel {
 		}
 		imageWidth = wide;
 		imageHeight = length;
+	}
+	
+	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {
+		setPositionX(x);
+		setPositionY(y);
+		setVelocityX(vx);
+		setVelocityY(vy);
+		setAccelerationX(ax);
+		setAccelerationY(ay);
 	}
 
 	public void setPositionX(double x) {

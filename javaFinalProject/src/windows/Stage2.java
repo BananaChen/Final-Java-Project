@@ -15,8 +15,6 @@ public class Stage2 extends Scene implements ActionListener {
 
 	private static final long serialVersionUID = -4016908006671905398L;
 
-	public static Timer timer;
-
 	Container c;
 	double bloodX;
 	double bloodY;
@@ -31,7 +29,7 @@ public class Stage2 extends Scene implements ActionListener {
 		// Timer
 		timer = new Timer(10, this);
 
-		// 宣告Scene中的element
+		// declare elements in scene
 		Destination honeycomb = new Honeycomb(600, 700, 1, 1, 1, 1, "https://i.imgur.com/kYP2ZRC.png");
 		destinations.add(honeycomb);
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -48,10 +46,8 @@ public class Stage2 extends Scene implements ActionListener {
 			imagePanel.add(arrows.get(i).lb);
 		}
 
-		Person person = new Nigga(50, 50, 0, 0, 0, 0);
-		pvx = 0.5;
-		pvy = 1;
-		// person.setImage(x, y, wide, length, imagePath);
+		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
+
 		person.lb.setVisible(false);
 		person.lbThugLife.setVisible(false);
 		persons.add(person);
@@ -62,39 +58,9 @@ public class Stage2 extends Scene implements ActionListener {
 		aircrafts.add(bee);
 		imagePanel.add(aircrafts.get(0).lb);
 
-		/*
-		 * imagePanel.setFocusable(true); //key event imagePanel.addKeyListener(new
-		 * KeyAdapter() { public void keyPressed(KeyEvent e) {
-		 * 
-		 * switch (e.getKeyCode()) { case KeyEvent.VK_DOWN:
-		 * System.out.println(1231231212); for (int i = 0; i < persons.size(); ++i) {
-		 * Person person = persons.get(i); if (person.isDropped == false) {
-		 * person.lb.setVisible(true); //
-		 * person.setPositionX(aircrafts.get(0).getPositionX()); //
-		 * person.setPositionY(aircrafts.get(0).getPositionY()); person.positionX =
-		 * aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
-		 * person.positionY = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight
-		 * / 2; person.setVelocityX(pvx); person.setVelocityY(pvy); //
-		 * person.setAccelerationY(gravity); person.lb.setLocation((int)
-		 * person.getPositionX(), (int) person.getPositionY()); person.isDropped = true;
-		 * } } break; case KeyEvent.VK_N: if (isPassed == true) { WindowController.s2 =
-		 * true; WindowController.setStage(new Stage2());
-		 * System.out.println("go to next stage"); } break; } } });
-		 */
-		/*
-		 * 
-		 * imagePanel.setFocusable(true); this.imagePanel.addKeyListener(new
-		 * KeyAdapter() { public void keyPressed(KeyEvent e) { if (isdropped == false){
-		 * switch(e.getKeyCode()) { case KeyEvent.VK_SPACE: //press SPACE to release
-		 * person persons.get(0).lb.setVisible(true); persons.get(0).velocityX = 0.5;
-		 * persons.get(0).velocityY = 1; persons.get(0).positionX =
-		 * aircrafts.get(0).positionX; persons.get(0).positionY =
-		 * aircrafts.get(0).positionY;
-		 * persons.get(0).lb.setLocation((int)persons.get(0).getPositionX(),
-		 * (int)persons.get(0).getPositionY()); isdropped = true; break; } } } });
-		 */
-		// 設定window參數
-		setWindow(2, "https://i.imgur.com/uJ3EP7b.jpg");
+		// set background
+		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		setWindow(bgImagePath);
 
 		// start timer
 		timer.start();
@@ -109,6 +75,11 @@ public class Stage2 extends Scene implements ActionListener {
 			g.fillRect((int) bloodX, (int) bloodY, persons.get(0).blood * 30, 5);
 	}
 	// */
+	
+	@Override
+	public Scene getCurrentStage() {
+		return new Stage2();
+	}
 
 	@Override
 	public Scene getNextStage() {
@@ -116,7 +87,7 @@ public class Stage2 extends Scene implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent event) {
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
 			// stick the blood to person
@@ -131,7 +102,7 @@ public class Stage2 extends Scene implements ActionListener {
 			}
 		}
 		for (int i = 0; i < destinations.size(); ++i) {
-			destinations.get(i).effect(persons);
+			destinations.get(i).effect(persons, this);
 		}
 		for (int i = 0; i < arrows.size(); ++i) {
 			// arrows.get(i).collideEvent();

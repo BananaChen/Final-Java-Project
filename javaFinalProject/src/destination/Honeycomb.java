@@ -39,30 +39,34 @@ public class Honeycomb extends Destination implements ActionListener {
 	public void collideEvent() {
 	}
 
-	public void effect(ArrayList<Person> persons) {
-		// if successfully landing
-		if (Math.acos(persons.get(0).getPositionY() + 100 - this.positionY) < 5
-				&& (persons.get(0).getPositionX() + 50 < this.positionX + imageWidth
-						&& persons.get(0).getPositionX() + 50 > this.positionX)) {
-			lbSuccess.setVisible(true);
-			// Scene2.persons.get(0).lb.setVisible(false);
-			this.timer.stop();
-			persons.get(0).gx = persons.get(0).positionX;
-			persons.get(0).lbThugLife.setLocation((int) persons.get(0).positionX, screenHeight);
-			persons.get(0).lbThugLife.setVisible(true);
-			persons.get(0).timer.start();
-			Scene.isPassed = true;
+	public void effect(ArrayList<Person> persons, Scene curStage) {
 
-			Stage2.timer.stop();
-			setNextStageStatus();
-		}
-		// if not
-		else if (this.positionY - (persons.get(0).getPositionY()) < 0 || persons.get(0).getPositionX() > screenWidth
-				|| persons.get(0).blood == 0) {
-			lbFail.setVisible(true);
-			persons.get(0).lb.setVisible(false);
-			persons.get(0).blood = 0;
-			Stage2.timer.stop();
+		for (int i = 0; i < persons.size(); ++i) {
+			Person person = persons.get(i);
+			// if successfully landing
+			if (Math.acos(person.getPositionY() + 100 - this.positionY) < 5
+					&& (person.getPositionX() + 50 < this.positionX + imageWidth
+							&& person.getPositionX() + 50 > this.positionX)) {
+				lbSuccess.setVisible(true);
+				// Scene2.person.lb.setVisible(false);
+				this.timer.stop();
+				person.gx = person.positionX;
+				person.lbThugLife.setLocation((int) person.positionX, screenHeight);
+				person.lbThugLife.setVisible(true);
+				person.timer.start();
+				Scene.isPassed = true;
+
+				curStage.timer.stop();
+				setNextStageStatus();
+			}
+			// if not
+			else if (this.positionY - (person.getPositionY()) < 0 || person.getPositionX() > screenWidth
+					|| person.blood == 0) {
+				lbFail.setVisible(true);
+				person.lb.setVisible(false);
+				person.blood = 0;
+				curStage.timer.stop();
+			}
 		}
 	}
 
