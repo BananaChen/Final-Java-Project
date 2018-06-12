@@ -77,16 +77,8 @@ public abstract class Scene{
 					}
 					break;
 				case KeyEvent.VK_N:
-					for(int i = 0 ; i < WindowController.NumOfStage ; ++i) {
-						System.out.print(WindowController.stageStatus[i] + " ");
-					}
-					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						/*if(WindowController.stageStatus[0] == true) {
-							WindowController.setStage(new TeachingScene());
-						}*/
-						
 						if(WindowController.stageStatus[1] == true) {
 							WindowController.setStage(new Stage1());
 						}
@@ -104,6 +96,40 @@ public abstract class Scene{
 						}
 						System.out.println("go to next stage");
 						isPassed = false;
+						imagePanel.setFocusable(false);
+					}
+					break;
+				case KeyEvent.VK_R:
+					/*
+					for(int i = 0 ; i < WindowController.NumOfStage ; ++i) {
+						System.out.print(WindowController.stageStatus[i] + " ");
+					}
+					System.out.println(" ");
+					*/
+					if (isPassed == false) {
+						imagePanel.removeAll();
+						/*if(WindowController.stageStatus[0] == true) {
+							WindowController.setStage(new TeachingScene());
+						}*/
+						if(WindowController.stageStatus[0] == true) {
+							WindowController.setStage(new TeachingScene());
+						}
+						else if(WindowController.stageStatus[1] == true) {
+							WindowController.setStage(new Stage1());
+						}
+						else if(WindowController.stageStatus[2] == true) {
+							WindowController.setStage(new Stage2());
+						}
+						else if(WindowController.stageStatus[3] == true) {
+							//WindowController.setStage(new Stage3());
+						}
+						else if(WindowController.stageStatus[4] == true) {
+							//WindowController.setStage(new Stage4());
+						}
+						else if(WindowController.stageStatus[1] == true) {
+							//WindowController.setStage(new Stage5());
+						}
+						System.out.println("replay");
 						imagePanel.setFocusable(false);
 					}
 					break;
