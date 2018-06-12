@@ -82,11 +82,10 @@ public abstract class Scene {
 					if (isPassed == true) {
 						imagePanel.removeAll();
 						/*
-						 * if(WindowController.stageStatus[0] == true) { WindowController.setStage(new
-						 * TeachingScene()); }
-						 */
-
-						if (WindowController.stageStatus[1] == true) {
+						 if(WindowController.stageStatus[0] == true) { 
+						 	WindowController.setStage(new TeachingScene()); 
+						 }*/
+						 if (WindowController.stageStatus[1] == true) {
 							WindowController.setStage(new Stage1());
 						} else if (WindowController.stageStatus[2] == true) {
 							WindowController.setStage(new Stage2());
@@ -102,6 +101,31 @@ public abstract class Scene {
 						imagePanel.setFocusable(false);
 					}
 					break;
+				case KeyEvent.VK_R:
+			          if (isPassed == false) {
+			            imagePanel.removeAll();
+			            if(WindowController.stageStatus[0] == true) {
+			              WindowController.setStage(new TeachingScene());
+			            }
+			            else if(WindowController.stageStatus[1] == true) {
+			              WindowController.setStage(new Stage1());
+			            }
+			            else if(WindowController.stageStatus[2] == true) {
+			              WindowController.setStage(new Stage2());
+			            }
+			            else if(WindowController.stageStatus[3] == true) {
+			              //WindowController.setStage(new Stage3());
+			            }
+			            else if(WindowController.stageStatus[4] == true) {
+			              //WindowController.setStage(new Stage4());
+			            }
+			            else if(WindowController.stageStatus[1] == true) {
+			              //WindowController.setStage(new Stage5());
+			            }
+			            System.out.println("replay");
+			            imagePanel.setFocusable(false);
+			          }
+			          break;
 				}
 			}
 		});
