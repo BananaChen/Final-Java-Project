@@ -14,7 +14,9 @@ import javax.swing.Timer;
 import items.Aircraft;
 import items.Destination;
 import items.Person;
+import windows.Scene;
 import windows.Stage2;
+import windows.WindowController;
 
 public class Honeycomb extends Destination implements ActionListener{
 	
@@ -39,36 +41,6 @@ public class Honeycomb extends Destination implements ActionListener{
 		timer = new Timer(10, this);
 		
 		setImage(x, y, imageWidth, imageHeight, imagePath);
-		/*
-		try {
-			ImageIcon icon = new ImageIcon(new URL(a));
-			icon.setImage(icon.getImage().getScaledInstance(width,height,Image.SCALE_DEFAULT));
-			lb = new JLabel(icon);
-			lb.setSize(width,height);
-			lb.setLocation((int)x,(int)y);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		*/
-		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/yI2gGVx.jpg"));
-			icon.setImage(icon.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT));
-			lbSuccess = new JLabel(icon);
-			lbSuccess.setSize(100,100);
-			lbSuccess.setLocation(0,0);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/0Iha59i.png"));
-			icon.setImage(icon.getImage().getScaledInstance(screenWidth,screenHeight,Image.SCALE_DEFAULT));
-			lbFail = new JLabel(icon);
-			lbFail.setSize(screenWidth,screenHeight);
-			lbFail.setLocation(0,0);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
 		
 		//start timer
 		timer.start();
@@ -88,6 +60,17 @@ public class Honeycomb extends Destination implements ActionListener{
 			persons.get(0).lbThugLife.setLocation((int)persons.get(0).positionX, screenHeight);
 			persons.get(0).lbThugLife.setVisible(true);
 			persons.get(0).timer.start();
+			Scene.isPassed = true;
+			if (Scene.isPassed) {
+				for (int j = 0; j < WindowController.NumOfStage; ++j) {
+					if (WindowController.stageStatus[j] == true) {
+						WindowController.stageStatus[j] = false;
+						WindowController.stageStatus[j + 1] = true;
+						break;
+					}
+
+				}
+			}
 		}
 		//if not
 		else if (this.positionY - (persons.get(0).getPositionY()) < 0 || persons.get(0).getPositionX() > screenWidth || persons.get(0).blood==0) {

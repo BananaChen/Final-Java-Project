@@ -9,27 +9,32 @@ import javax.swing.JPanel;
 
 
 public class WindowController extends JFrame{
+
+	public final static int NumOfStage = 6;
+	public static boolean[] stageStatus = new boolean[NumOfStage];
 	
-	public static boolean s1, s2;
 
 	private static WindowController wc;
 	public static Scene stage;
-//	protected JPanel imagePanel = new JPanel();
-//	protected String bgImagePath;
-	protected int bgWide = 1920;
-	protected int bgLength = 1000;
+	protected int bgWidth = Scene.bgWidth;
+	protected int bgHeight = Scene.bgHeight;
 
 	public WindowController() {
-		setSize(bgWide, bgLength);
+		setSize(bgWidth, bgHeight);
 		setTitle("Java Final Project");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 	}
 
 	public static void main(String[] args) {
-
+		
+		for(int i = 0 ; i < NumOfStage ; ++i) {
+			stageStatus[i] = false;
+		}
+		
 		wc = new WindowController();
 		stage = new TeachingScene();
+		stageStatus[0] = true;
 //		setStage(new TeachingScene());
 		wc.add(stage.imagePanel);
 		

@@ -2,6 +2,8 @@ package windows;
 
 import items.*;
 import aircraft.*;
+import destination.Island;
+import destination.TeachingIsland;
 
 import java.util.ArrayList;
 import javax.swing.*;
@@ -11,18 +13,15 @@ import java.awt.event.KeyEvent;
 //import java.awt.event.KeyListener;
 public class TeachingScene extends Scene implements ActionListener {
 
+	public static Timer timer;
 	public TeachingScene() {
 		
-		imagePanel = new JPanel();
-		imagePanel.setSize(bgWide, bgLength);
-		imagePanel.setLocation(0, 0);
-		imagePanel.setLayout(null);
+		super();
 		
 		// Timer
-		Timer timer = new Timer(10, this);
+		timer = new Timer(10, this);
 
 		// «Å§iScene¤¤ªºelement
-		//persons = new ArrayList<Person>();
 		Person person = new Person(0, 0, 0, 0, 0, 0);
 		pvx = 1;
 		pvy = 1;
@@ -30,13 +29,11 @@ public class TeachingScene extends Scene implements ActionListener {
 		persons.add(person);
 		imagePanel.add(persons.get(0).lb);
 
-		//aircrafts = new ArrayList<Aircraft>();
 		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		//destinations = new ArrayList<Destination>();
-		Destination destination = new Destination(500, 500, 1, 1, 1, 1);
+		Destination destination = new TeachingIsland(500, 500, 1, 1, 1, 1);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);

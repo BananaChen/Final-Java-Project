@@ -15,7 +15,6 @@ public class Person extends Items {
 	public int blood = 3;
 	public Timer timer;
 	
-	
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 100, 100, imagePath);
