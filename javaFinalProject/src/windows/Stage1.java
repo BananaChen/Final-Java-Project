@@ -1,26 +1,24 @@
 package windows;
 
 import items.*;
-import person.Nigga;
 import aircraft.*;
-import destination.Island;
+import destination.*;
 import disturbance.*;
 import disturbance.Spring;
 
-import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Stage1 extends Scene implements ActionListener {
 
 	public static Timer timer;
-	private double gravity = 0.5;
+	private double gravity = 0.01;
 	private Disturbance bigfan, spring;
 
 	public Stage1() {
-		
+
 		super();
-		
+
 		// Timer
 		timer = new Timer(10, this);
 
@@ -28,6 +26,7 @@ public class Stage1 extends Scene implements ActionListener {
 		Person person = new Person(0, 0, 0, 0, 0, 0);
 		pvx = 1;
 		pvy = 1;
+		pay = gravity;
 		person.lb.setVisible(false);
 		persons.add(person);
 		imagePanel.add(persons.get(0).lb);
@@ -54,8 +53,8 @@ public class Stage1 extends Scene implements ActionListener {
 		disturbances.add(spring);
 
 		// key event
-		//imagePanel.setFocusable(true);
-		//this.imagePanel.addKeyListener(keyAdapter);
+		// imagePanel.setFocusable(true);
+		// this.imagePanel.addKeyListener(keyAdapter);
 
 		// 設定window參數
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";

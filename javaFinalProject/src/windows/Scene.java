@@ -1,17 +1,15 @@
 package windows;
 
-import java.util.ArrayList;
 import items.*;
 
+import java.util.ArrayList;
 import javax.swing.*;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public abstract class Scene{
+public abstract class Scene {
 
 	protected JPanel imagePanel;
 	protected String bgImagePath;
@@ -23,7 +21,7 @@ public abstract class Scene{
 	protected static boolean isPaused = false;
 	public Timer timer;
 	protected double gravity;
-	//clean these shit every time
+	// clean these shit every time
 	public ArrayList<Person> persons = new ArrayList<Person>();
 	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
 	public ArrayList<Destination> destinations = new ArrayList<Destination>();
@@ -51,7 +49,7 @@ public abstract class Scene{
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		
+
 		imagePanel.setFocusable(true);
 		// key event
 		imagePanel.addKeyListener(new KeyAdapter() {
@@ -77,30 +75,27 @@ public abstract class Scene{
 					}
 					break;
 				case KeyEvent.VK_N:
-					for(int i = 0 ; i < WindowController.NumOfStage ; ++i) {
+					for (int i = 0; i < WindowController.NumOfStage; ++i) {
 						System.out.print(WindowController.stageStatus[i] + " ");
 					}
 					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						/*if(WindowController.stageStatus[0] == true) {
-							WindowController.setStage(new TeachingScene());
-						}*/
-						
-						if(WindowController.stageStatus[1] == true) {
+						/*
+						 * if(WindowController.stageStatus[0] == true) { WindowController.setStage(new
+						 * TeachingScene()); }
+						 */
+
+						if (WindowController.stageStatus[1] == true) {
 							WindowController.setStage(new Stage1());
-						}
-						else if(WindowController.stageStatus[2] == true) {
+						} else if (WindowController.stageStatus[2] == true) {
 							WindowController.setStage(new Stage2());
-						}
-						else if(WindowController.stageStatus[3] == true) {
-							//WindowController.setStage(new Stage3());
-						}
-						else if(WindowController.stageStatus[4] == true) {
-							//WindowController.setStage(new Stage4());
-						}
-						else if(WindowController.stageStatus[1] == true) {
-							//WindowController.setStage(new Stage5());
+						} else if (WindowController.stageStatus[3] == true) {
+							// WindowController.setStage(new Stage3());
+						} else if (WindowController.stageStatus[4] == true) {
+							// WindowController.setStage(new Stage4());
+						} else if (WindowController.stageStatus[1] == true) {
+							// WindowController.setStage(new Stage5());
 						}
 						System.out.println("go to next stage");
 						isPassed = false;

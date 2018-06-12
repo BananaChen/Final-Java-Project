@@ -1,7 +1,5 @@
 package items;
 
-import javax.swing.JLabel;
-
 public abstract class Aircraft extends Items {
 
 	public Aircraft(double x, double y) {

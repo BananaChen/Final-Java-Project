@@ -2,22 +2,20 @@ package windows;
 
 import items.*;
 import aircraft.*;
-import destination.Island;
-import destination.TeachingIsland;
+import destination.*;
 
-import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.event.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+
 //import java.awt.event.KeyListener;
 public class TeachingScene extends Scene implements ActionListener {
 
 	public static Timer timer;
+
 	public TeachingScene() {
-		
+
 		super();
-		
+
 		// Timer
 		timer = new Timer(10, this);
 
@@ -41,10 +39,8 @@ public class TeachingScene extends Scene implements ActionListener {
 		destinations.get(0).lbSuccess.setVisible(false);
 		destinations.get(0).lbFail.setVisible(false);
 		imagePanel.add(destinations.get(0).lb);
-		
-		
-		
-		//imagePanel.addKeyListener(keyAdapter);
+
+		// imagePanel.addKeyListener(keyAdapter);
 
 		// 設定window參數
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
@@ -53,7 +49,7 @@ public class TeachingScene extends Scene implements ActionListener {
 		// start timer
 		timer.start();
 	}
-	
+
 	@Override
 	public Scene getNextStage() {
 		return new Stage1();

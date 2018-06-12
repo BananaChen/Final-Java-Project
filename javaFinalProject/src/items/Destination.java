@@ -1,21 +1,14 @@
 package items;
 
 import windows.*;
-//import items.*;
 
-import java.beans.PersistenceDelegate;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-//import com.sun.prism.Image;
-
-//import com.sun.webkit.event.WCChangeEvent;
 
 public abstract class Destination extends Items {
 
@@ -26,7 +19,7 @@ public abstract class Destination extends Items {
 
 	public Destination(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
-//		setImage(x, y, 250, 170, imagePath);
+		setImage(x, y, 250, 170, imagePath);
 
 		try {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/AcaNJHQ.png"));
@@ -47,6 +40,17 @@ public abstract class Destination extends Items {
 		}
 	}
 
+	public void setNextStageStatus() {
+		if (Scene.isPassed) {
+			for (int j = 0; j < WindowController.NumOfStage; ++j) {
+				if (WindowController.stageStatus[j] == true) {
+					WindowController.stageStatus[j] = false;
+					WindowController.stageStatus[j + 1] = true;
+					break;
+				}
+			}
+		}
+	}
 
 	public abstract void effect(ArrayList<Person> persons);
 }

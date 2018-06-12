@@ -1,18 +1,11 @@
 package windows;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-
-public class WindowController extends JFrame{
+public class WindowController extends JFrame {
 
 	public final static int NumOfStage = 6;
 	public static boolean[] stageStatus = new boolean[NumOfStage];
-	
 
 	private static WindowController wc;
 	public static Scene stage;
@@ -27,36 +20,35 @@ public class WindowController extends JFrame{
 	}
 
 	public static void main(String[] args) {
-		
-		for(int i = 0 ; i < NumOfStage ; ++i) {
+
+		for (int i = 0; i < NumOfStage; ++i) {
 			stageStatus[i] = false;
 		}
-		
+
 		wc = new WindowController();
 		stage = new TeachingScene();
 		stageStatus[0] = true;
-//		setStage(new TeachingScene());
+		// setStage(new TeachingScene());
 		wc.add(stage.imagePanel);
-		
+
 		wc.setVisible(true);
-		//stage.imagePanel.addKeyListener(wcKeyAdapter);
-		//stage.imagePanel.setFocusable(true);
+		// stage.imagePanel.addKeyListener(wcKeyAdapter);
+		// stage.imagePanel.setFocusable(true);
 	}
 
 	public static void setStage(Scene nextStage) {
 		stage = null;
-		//stage = nextStage;
-		//wc.getContentPane().removeAll();
+		// stage = nextStage;
+		// wc.getContentPane().removeAll();
 		Scene newStage = nextStage;
 		wc.add(newStage.imagePanel);
-		
-		//stage = stage.getNextStage();
+
+		// stage = stage.getNextStage();
 		wc.repaint();
 		System.out.println(newStage.getClass());
-		
-		//stage.imagePanel.setFocusable(true);
+
+		// stage.imagePanel.setFocusable(true);
 		Scene.isPassed = false;
 	}
-	
-};
 
+};

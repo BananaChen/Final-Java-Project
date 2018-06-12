@@ -11,7 +11,5 @@ public abstract class Disturbance extends Items {
 	public abstract void effect(ArrayList<Person> persons);
 
 	public void effect() {
-		// TODO Auto-generated method stub
-		
 	}
 }
