@@ -33,25 +33,18 @@ public class WindowController extends JFrame {
 		wc = new WindowController();
 		stage = new TeachingScene();
 		stageStatus[0] = true;
-		// setStage(new TeachingScene());
+		
 		wc.add(stage.imagePanel);
-
 		wc.setVisible(true);
 	}
 
 	public static void setStage(Scene nextStage) {
 		stage = null;
-		// stage = nextStage;
 		// wc.getContentPane().removeAll();
-		Scene newStage = nextStage;
-		wc.add(newStage.imagePanel);
-
-		// stage = stage.getNextStage();
+		stage = nextStage;
+		wc.add(stage.imagePanel);
 		wc.repaint();
-		System.out.println(newStage.getClass());
-
-		// stage.imagePanel.setFocusable(true);
-		Scene.isPassed = false;
+		//System.out.println(stage.getClass());
 	}
 
 
