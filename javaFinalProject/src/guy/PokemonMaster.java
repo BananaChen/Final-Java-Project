@@ -26,7 +26,7 @@ public class PokemonMaster extends Person implements ActionListener{
 	public PokemonMaster(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		timer = new Timer(10, this);
-	    //setImage(x, y, width, height, "https://image.flaticon.com/icons/png/512/72/72924.png");
+	    setImage(x, y, 200, 200, "https://i.imgur.com/L2odCO1.png");
 	    
 	    try {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/uSpGrlw.png"));

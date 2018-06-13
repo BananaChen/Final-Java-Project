@@ -8,8 +8,10 @@ public abstract class Disturbance extends Items {
 		super(x, y, vx, vy, ax, ay);
 	}
 
-	public abstract void effect(ArrayList<Person> persons);
-
-	public void effect() {
+	public void collideEvent() {
 	}
+
+	public abstract void effect(ArrayList<Person> persons);
+	public abstract void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts);
+	public void effect() {}
 }

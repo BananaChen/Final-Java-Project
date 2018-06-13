@@ -18,16 +18,17 @@ public abstract class Items extends JPanel {
 	public double positionX = 0;
 	public double positionY = 0;
 	public double velocityX = 0;
-	public double velocityY = 0;
-	public double accelerationX = 0;
-	public double accelerationY = 0;
-	
-	public Items() {
-		
-	}
+	protected double velocityY = 0;
+	protected double accelerationX = 0;
+	protected double accelerationY = 0;
 
 	public Items(double x, double y, double vx, double vy, double ax, double ay) {
-		setMoveData(x, y, vx, vy, ax, ay);
+		setPositionX(x);
+		setPositionY(y);
+		setVelocityX(vx);
+		setVelocityY(vy);
+		setAccelerationX(ax);
+		setAccelerationY(ay);
 	}
 	
 	public void setImage(double x, double y, int wide, int length, String imagePath) {
@@ -42,15 +43,6 @@ public abstract class Items extends JPanel {
 		}
 		imageWidth = wide;
 		imageHeight = length;
-	}
-	
-	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {
-		setPositionX(x);
-		setPositionY(y);
-		setVelocityX(vx);
-		setVelocityY(vy);
-		setAccelerationX(ax);
-		setAccelerationY(ay);
 	}
 
 	public void setPositionX(double x) {
@@ -111,8 +103,8 @@ public abstract class Items extends JPanel {
 		setAccelerationY(getAccelerationX() + ay);
 	}
 
-	//public abstract void collideEvent(); // object ¸I¼²®Éªº¨Æ¥ó
+	public abstract void collideEvent(); // object ï¿½Iï¿½ï¿½ï¿½Éªï¿½ï¿½Æ¥ï¿½
 
-	// public abstract void effect(ArrayList<Person> persons); // disturbance ªº¼vÅT
+	// public abstract void effect(ArrayList<Person> persons); // disturbance ï¿½ï¿½ï¿½vï¿½T
 
 }

@@ -5,13 +5,13 @@ import windows.*;
 
 import java.util.ArrayList;
 
-public class Island extends Destination {
+public class Home extends Destination {
 
-	private String imagePath = "https://i.imgur.com/rKpizPG.png";
+	private String imagePath = "https://i.imgur.com/6ne721m.png";
 
-	public Island(double x, double y, double vx, double vy, double ax, double ay) {
+	public Home(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
-		setImage(x, y, 300, 200, imagePath);
+		setImage(x, y, 400, 300, imagePath);
 	}
 
 	public void effect(ArrayList<Person> persons, Scene curStage) {
@@ -44,3 +44,4 @@ public class Island extends Destination {
 		
 	}
 }
+

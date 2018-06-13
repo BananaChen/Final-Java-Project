@@ -3,6 +3,9 @@ package disturbance;
 import java.util.ArrayList;
 import items.*;
 
+import java.util.ArrayList;
+import items.*;
+
 public class BigFan extends Disturbance {
 	private String imagePath = "https://i.imgur.com/E5Lc8S2.gif";
 
@@ -21,6 +24,12 @@ public class BigFan extends Disturbance {
 			}
 		}
 
+	}
+
+	@Override
+	public void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

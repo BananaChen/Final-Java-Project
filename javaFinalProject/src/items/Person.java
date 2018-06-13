@@ -24,7 +24,7 @@ public class Person extends Items {
 	
 
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
-		super();
+		super(x, y, vx, vy, ax, ay);
 		setInitMoveData(x, y, vx, vy, ax, ay);
 		//super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 100, 100, imagePath);
@@ -35,6 +35,15 @@ public class Person extends Items {
 		personInitVy = vy;
 		personInitAx = ax;
 		personInitAy = ay;
+	}
+	
+	public void setMoveData(double x, double y, double vx, double vy) {
+		this.positionX = x;
+		this.positionY = y;
+		this.velocityX = vx;
+		this.velocityY = vy;
+		this.accelerationX = 0;
+		this.accelerationY = 0.01;
 	}
 	
 	@Override
@@ -48,6 +57,12 @@ public class Person extends Items {
 
 	public void effect() {
 
+	}
+
+	@Override
+	public void collideEvent() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

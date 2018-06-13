@@ -57,7 +57,7 @@ public abstract class Scene {
 							person.lb.setVisible(true);
 							person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
 							person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
-							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy, person.personInitVy, person.personInitAx, person.personInitAy);
+							person.setMoveData(person.personInitPx, person.personInitPy, aircrafts.get(0).getVelocityX() * 2, aircrafts.get(0).getVelocityY() * 2);
 							person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 							person.isDropped = true;
 						}
@@ -70,11 +70,8 @@ public abstract class Scene {
 					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						for (int i = 1; i < WindowController.NumOfStage; ++i) {// not startfrom 0
-							if (WindowController.stageStatus[i] == true) {
-								WindowController.setStage(getCurrentStage());
-							}
-						}
+						//go to next stage
+						WindowController.setStage(getNextStage());
 						System.out.println("go to next stage");
 						isPassed = false;
 						imagePanel.setFocusable(false);
@@ -83,12 +80,10 @@ public abstract class Scene {
 				case KeyEvent.VK_R:
 					if (isPassed == false) {
 						imagePanel.removeAll();
-						for (int i = 0; i < WindowController.NumOfStage; ++i) {
-							if (WindowController.stageStatus[i] == true) {
-								WindowController.setStage(getCurrentStage());
-							}
-						}
+						//restart current stage
+						WindowController.setStage(getCurrentStage());
 						System.out.println("replay");
+						isPassed = false;
 						imagePanel.setFocusable(false);
 					}
 					break;
