@@ -11,14 +11,13 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+
 public class Stage2 extends Scene implements ActionListener {
 
-	private static final long serialVersionUID = -4016908006671905398L;
-
-	Container c;
-	double bloodX;
-	double bloodY;
-
+	//Container c;
+	public double bloodX;
+	public double bloodY;
+	
 	public ArrayList<Disturbance> arrows;
 
 	public Stage2() {
@@ -46,8 +45,8 @@ public class Stage2 extends Scene implements ActionListener {
 			imagePanel.add(arrows.get(i).lb);
 		}
 
+		
 		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
-
 		person.lb.setVisible(false);
 		person.lbThugLife.setVisible(false);
 		persons.add(person);
@@ -69,7 +68,7 @@ public class Stage2 extends Scene implements ActionListener {
 	/// *
 	// paint the blood
 	public void paint(Graphics g) {
-		// super.paint(g);
+		//super.paint(g);
 		g.setColor(Color.red);
 		if (persons.get(0).isDropped)
 			g.fillRect((int) bloodX, (int) bloodY, persons.get(0).blood * 30, 5);
@@ -108,6 +107,5 @@ public class Stage2 extends Scene implements ActionListener {
 			// arrows.get(i).collideEvent();
 			arrows.get(i).effect(persons);
 		}
-
 	}
 }

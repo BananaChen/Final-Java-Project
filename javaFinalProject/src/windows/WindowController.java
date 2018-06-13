@@ -1,6 +1,11 @@
 package windows;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
+
+import items.Person;
 
 public class WindowController extends JFrame {
 
@@ -32,8 +37,6 @@ public class WindowController extends JFrame {
 		wc.add(stage.imagePanel);
 
 		wc.setVisible(true);
-		// stage.imagePanel.addKeyListener(wcKeyAdapter);
-		// stage.imagePanel.setFocusable(true);
 	}
 
 	public static void setStage(Scene nextStage) {
@@ -50,5 +53,6 @@ public class WindowController extends JFrame {
 		// stage.imagePanel.setFocusable(true);
 		Scene.isPassed = false;
 	}
+
 
 };

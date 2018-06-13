@@ -72,7 +72,7 @@ public abstract class Scene {
 						imagePanel.removeAll();
 						for (int i = 1; i < WindowController.NumOfStage; ++i) {// not startfrom 0
 							if (WindowController.stageStatus[i] == true) {
-								WindowController.setStage(getCurrentStage());
+								WindowController.setStage(getNextStage());
 							}
 						}
 						System.out.println("go to next stage");
@@ -89,6 +89,7 @@ public abstract class Scene {
 							}
 						}
 						System.out.println("replay");
+						isPassed = false;
 						imagePanel.setFocusable(false);
 					}
 					break;
