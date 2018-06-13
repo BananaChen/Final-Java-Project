@@ -9,11 +9,6 @@ public abstract class Disturbance extends Items {
 	}
 
 	public abstract void effect(ArrayList<Person> persons);
-	
-	public void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts) {
-		
-	}
-	
 
 	public void effect() {
 	}

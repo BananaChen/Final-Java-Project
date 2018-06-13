@@ -1,13 +1,18 @@
 package items;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-public class Person extends Items {
-
+public  class Person extends Items {
+	
 	private String imagePath = "https://image.flaticon.com/icons/png/512/72/72924.png";
 	public boolean isDropped = false;
-
+	
 	public double personInitPx = 0;
 	public double personInitPy = 0;
 	public double personInitVx = 0;
@@ -21,7 +26,6 @@ public class Person extends Items {
 	public double gy = 1000;
 	public int blood = 3;
 	public Timer timer;
-	
 
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
@@ -29,25 +33,24 @@ public class Person extends Items {
 		//super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 100, 100, imagePath);
 	}
-
+	
 	public void setInitMoveData(double x, double y, double vx, double vy, double ax, double ay) {
 		personInitVx = vx;
 		personInitVy = vy;
 		personInitAx = ax;
 		personInitAy = ay;
 	}
-	
-	@Override
-	public void move() {
-		this.velocityX += this.accelerationX;
-		this.velocityY += this.accelerationY;
-		this.positionX += this.velocityX;
-		this.positionY += this.velocityY;
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
-	}
 
-	public void effect() {
+    @Override
+    public void move() {
+        this.velocityX += this.accelerationX;
+        this.velocityY += this.accelerationY;
+        this.positionX += this.velocityX;
+        this.positionY += this.velocityY;
+        this.lb.setLocation((int)this.positionX, (int)this.positionY);
+    }
+    public void effect() {
 
-	}
-
+    }
 }
+

@@ -53,4 +53,9 @@ public abstract class Destination extends Items {
 	}
 
 	public abstract void effect(ArrayList<Person> persons, Scene curStage);
+
+	public void collideEvent() {
+		// TODO Auto-generated method stub
+		
+	}
 }

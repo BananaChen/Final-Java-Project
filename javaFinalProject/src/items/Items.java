@@ -8,42 +8,50 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public abstract class Items extends JPanel {
 
 	public JLabel lb;
 	public int imageWidth;
 	public int imageHeight;
-
+	public int labelWide;
+	public int labelLength;
+	
 	public double positionX = 0;
 	public double positionY = 0;
 	public double velocityX = 0;
 	public double velocityY = 0;
 	public double accelerationX = 0;
 	public double accelerationY = 0;
-	
+
 	public Items() {
-		
+
 	}
 
 	public Items(double x, double y, double vx, double vy, double ax, double ay) {
 		setMoveData(x, y, vx, vy, ax, ay);
 	}
 	
-	public void setImage(double x, double y, int wide, int length, String imagePath) {
+	public void setImage(double x,double y,int width, int height, String imagePath) {
 		try {
-			ImageIcon icon = new ImageIcon(new URL(imagePath));
-			icon.setImage(icon.getImage().getScaledInstance(wide, length, Image.SCALE_DEFAULT));
-			lb = new JLabel(icon);
-			lb.setLocation((int) x, (int) y);
-			lb.setSize(wide, length);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		imageWidth = wide;
-		imageHeight = length;
+            ImageIcon icon = new ImageIcon(new URL(imagePath));
+            icon.setImage(icon.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT));
+            lb = new JLabel(icon);
+            lb.setLocation((int)x, (int)y);
+            lb.setSize(width, height);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+		imageWidth = width;
+		imageHeight = height;
 	}
-	
 	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {
 		setPositionX(x);
 		setPositionY(y);
@@ -51,6 +59,22 @@ public abstract class Items extends JPanel {
 		setVelocityY(vy);
 		setAccelerationX(ax);
 		setAccelerationY(ay);
+	}
+	
+	
+	public void setImage(int width, int height, String imagePath) {
+		try {
+            ImageIcon icon = new ImageIcon(new URL(imagePath));
+            icon.setImage(icon.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT));
+            lb = new JLabel(icon);
+            lb.setSize(width, height);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+		imageWidth = width;
+		imageHeight = height;
+		labelWide = width;
+		labelLength = height;
 	}
 
 	public void setPositionX(double x) {
@@ -104,15 +128,15 @@ public abstract class Items extends JPanel {
 	public void move() {
 		setPositionX(getPositionX() + getVelocityX());
 		setPositionY(getPositionY() + getVelocityY());
-	}
-
+	}	
+	
 	public void acceleration(int ax, int ay) {
 		setAccelerationX(getAccelerationX() + ax);
 		setAccelerationY(getAccelerationX() + ay);
 	}
 
-	//public abstract void collideEvent(); // object 碰撞時的事件
+	
 
-	// public abstract void effect(ArrayList<Person> persons); // disturbance 的影響
+	//public abstract void effect(ArrayList<Person> persons); // disturbance 的影響
 
 }
