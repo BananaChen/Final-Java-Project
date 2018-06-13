@@ -25,8 +25,8 @@ public class Honeycomb extends Destination implements ActionListener {
 	public Honeycomb(double x, double y, double vx, double vy, double ax, double ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);
 
-		imageWidth = 250;
-		imageHeight = 200;
+		imageWidth = 400;
+		imageHeight = 300;
 
 		timer = new Timer(10, this);
 
@@ -44,9 +44,10 @@ public class Honeycomb extends Destination implements ActionListener {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
 			// if successfully landing
-			if (Math.acos(person.getPositionY() + 100 - this.positionY) < 5
-					&& (person.getPositionX() + 50 < this.positionX + imageWidth
-							&& person.getPositionX() + 50 > this.positionX)) {
+			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX+45
+					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-45
+					&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.5
+					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
 				lbSuccess.setVisible(true);
 				// Scene2.person.lb.setVisible(false);
 				this.timer.stop();
@@ -54,14 +55,14 @@ public class Honeycomb extends Destination implements ActionListener {
 				person.lbThugLife.setLocation((int) person.positionX, screenHeight);
 				person.lbThugLife.setVisible(true);
 				person.timer.start();
-				
+
 				curStage.isPassed = true;
 				curStage.timer.stop();
 				setNextStageStatus(curStage);
 			}
 			// if not
-			else if (this.positionY - (person.getPositionY()) < 0 || person.getPositionX() > screenWidth
-					|| person.blood == 0) {
+			else if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
+					|| person.blood == 0)) {
 				lbFail.setVisible(true);
 				person.lb.setVisible(false);
 				person.blood = 0;
@@ -80,11 +81,11 @@ public class Honeycomb extends Destination implements ActionListener {
 			this.positionX += 2;
 
 		// boundary
-		if (moveLeft && this.positionX <= 300) {
+		if (moveLeft && this.positionX <= 400) {
 			moveLeft = false;
 			moveRight = true;
 		}
-		if (moveRight && this.positionX + imageWidth >= 900) {
+		if (moveRight && this.positionX + imageWidth >= 1200) {
 			moveLeft = true;
 			moveRight = false;
 		}

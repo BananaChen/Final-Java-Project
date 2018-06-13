@@ -15,7 +15,7 @@ public class BigFan extends Disturbance {
 
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
-			if (person.getPositionY() + person.imageHeight  > this.getPositionY() + this.imageHeight/5
+			if (person.getPositionY() + person.imageHeight > this.getPositionY() + this.imageHeight / 5
 					&& person.getPositionY() + person.imageHeight < (this.getPositionY() + this.imageHeight)) {
 				person.setVelocityX(person.getVelocityX() + 0.05);
 			}

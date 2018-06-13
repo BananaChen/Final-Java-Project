@@ -11,7 +11,7 @@ public class Spring extends Disturbance {
 		super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 200, 200, imagePath);
 	}
-	
+
 	public void effect(ArrayList<Person> persons) {
 
 		for (int i = 0; i < persons.size(); ++i) {

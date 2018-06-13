@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Stage1 extends Scene implements ActionListener {
-	
+
 	private double gravity = 0.005;
 	private Disturbance bigfan, spring;
 
@@ -31,7 +31,7 @@ public class Stage1 extends Scene implements ActionListener {
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		Destination destination = new Island(650, 650, 0, 0, 0, 0);
+		Destination destination = new Island(700, 550, 0, 0, 0, 0);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -44,7 +44,7 @@ public class Stage1 extends Scene implements ActionListener {
 		imagePanel.add(bigfan.lb);
 		disturbances.add(bigfan);
 
-		spring = new Spring(1700, 500, 0, 0, 0, 0);
+		spring = new Spring(1700, 600, 0, 0, 0, 0);
 		imagePanel.add(spring.lb);
 		disturbances.add(spring);
 
@@ -53,13 +53,13 @@ public class Stage1 extends Scene implements ActionListener {
 		// this.imagePanel.addKeyListener(keyAdapter);
 
 		// set background
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
 		setWindow(bgImagePath);
 
 		// start timer
 		timer.start();
 	}
-	
+
 	@Override
 	public Scene getCurrentStage() {
 		return new Stage1();

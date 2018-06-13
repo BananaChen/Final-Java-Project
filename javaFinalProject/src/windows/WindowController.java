@@ -1,16 +1,21 @@
 package windows;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
+
+import items.Person;
 
 public class WindowController extends JFrame {
 
 	public final static int NumOfStage = 6;
 	public static boolean[] stageStatus = new boolean[NumOfStage];
 
-	public static Scene stage;
 	private static WindowController wc;
-	private int bgWidth = Scene.bgWidth;
-	private int bgHeight = Scene.bgHeight;
+	public static Scene stage;
+	protected int bgWidth = Scene.bgWidth;
+	protected int bgHeight = Scene.bgHeight;
 
 	public WindowController() {
 		setSize(bgWidth, bgHeight);
@@ -25,10 +30,17 @@ public class WindowController extends JFrame {
 			stageStatus[i] = false;
 		}
 
-		wc = new WindowController();
-		stage = new TeachingScene();
-		stageStatus[0] = true;
 		
+		wc = new WindowController();
+		/*
+		stage = new TeachingScene();
+		*/
+		
+		stage = new Stage1();
+		
+		
+		stageStatus[0] = true;
+
 		wc.add(stage.imagePanel);
 		wc.setVisible(true);
 	}
@@ -40,7 +52,6 @@ public class WindowController extends JFrame {
 		wc.add(stage.imagePanel);
 		wc.repaint();
 		System.out.println(stage.getClass());
-		}
-
+	}
 
 };

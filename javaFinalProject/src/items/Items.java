@@ -21,15 +21,15 @@ public abstract class Items extends JPanel {
 	public double velocityY = 0;
 	public double accelerationX = 0;
 	public double accelerationY = 0;
-	
+
 	public Items() {
-		
+
 	}
 
 	public Items(double x, double y, double vx, double vy, double ax, double ay) {
 		setMoveData(x, y, vx, vy, ax, ay);
 	}
-	
+
 	public void setImage(double x, double y, int wide, int length, String imagePath) {
 		try {
 			ImageIcon icon = new ImageIcon(new URL(imagePath));
@@ -43,7 +43,7 @@ public abstract class Items extends JPanel {
 		imageWidth = wide;
 		imageHeight = length;
 	}
-	
+
 	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {
 		setPositionX(x);
 		setPositionY(y);
@@ -111,8 +111,8 @@ public abstract class Items extends JPanel {
 		setAccelerationY(getAccelerationX() + ay);
 	}
 
-	//public abstract void collideEvent(); // object ¸I¼²®Éªº¨Æ¥ó
+	// public abstract void collideEvent(); // object Â¸IÂ¼Â²Â®Ã‰ÂªÂºÂ¨Ã†Â¥Ã³
 
-	// public abstract void effect(ArrayList<Person> persons); // disturbance ªº¼vÅT
+	// public abstract void effect(ArrayList<Person> persons); // disturbance ÂªÂºÂ¼vÃ…T
 
 }

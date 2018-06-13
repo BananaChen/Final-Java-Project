@@ -25,7 +25,7 @@ public class TeachingScene extends Scene implements ActionListener {
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		Destination destination = new Island(500, 500, 1, 1, 1, 1);
+		Destination destination = new Island(1000, 500, 1, 1, 1, 1);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -34,8 +34,8 @@ public class TeachingScene extends Scene implements ActionListener {
 		destinations.get(0).lbFail.setVisible(false);
 		imagePanel.add(destinations.get(0).lb);
 
-		//set window
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		// set window
+		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
 		setWindow(bgImagePath);
 
 		// start timer
@@ -46,7 +46,7 @@ public class TeachingScene extends Scene implements ActionListener {
 	public Scene getCurrentStage() {
 		return new TeachingScene();
 	}
-	
+
 	@Override
 	public Scene getNextStage() {
 		return new Stage1();

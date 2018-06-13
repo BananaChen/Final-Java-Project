@@ -11,13 +11,12 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-
 public class Stage2 extends Scene implements ActionListener {
 
-	//Container c;
+	// Container c;
 	public double bloodX;
 	public double bloodY;
-	
+
 	public ArrayList<Disturbance> arrows;
 
 	public Stage2() {
@@ -29,7 +28,14 @@ public class Stage2 extends Scene implements ActionListener {
 		timer = new Timer(10, this);
 
 		// declare elements in scene
-		Destination honeycomb = new Honeycomb(600, 700, 1, 1, 1, 1, "https://i.imgur.com/kYP2ZRC.png");
+		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
+		person.lb.setVisible(false);
+		person.lbThugLife.setVisible(false);
+		persons.add(person);
+		imagePanel.add(persons.get(0).lbThugLife);
+		imagePanel.add(persons.get(0).lb);
+		
+		Destination honeycomb = new Honeycomb(800, 650, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
 		destinations.add(honeycomb);
 		imagePanel.add(destinations.get(0).lbSuccess);
 		imagePanel.add(destinations.get(0).lbFail);
@@ -45,20 +51,12 @@ public class Stage2 extends Scene implements ActionListener {
 			imagePanel.add(arrows.get(i).lb);
 		}
 
-		
-		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
-		person.lb.setVisible(false);
-		person.lbThugLife.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lbThugLife);
-		imagePanel.add(persons.get(0).lb);
-
 		Aircraft bee = new Bee(0, 50, 0, 0, 0.1, 0.1, "https://i.imgur.com/kE4cmKB.png");
 		aircrafts.add(bee);
 		imagePanel.add(aircrafts.get(0).lb);
 
 		// set background
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		bgImagePath = "https://i.imgur.com/dbcQwI3.jpg";
 		setWindow(bgImagePath);
 
 		// start timer
@@ -68,13 +66,13 @@ public class Stage2 extends Scene implements ActionListener {
 	/// *
 	// paint the blood
 	public void paint(Graphics g) {
-		//super.paint(g);
+		// super.paint(g);
 		g.setColor(Color.red);
 		if (persons.get(0).isDropped)
 			g.fillRect((int) bloodX, (int) bloodY, persons.get(0).blood * 30, 5);
 	}
 	// */
-	
+
 	@Override
 	public Scene getCurrentStage() {
 		return new Stage2();
@@ -82,7 +80,7 @@ public class Stage2 extends Scene implements ActionListener {
 
 	@Override
 	public Scene getNextStage() {
-		return new Stage5();
+		return new Stage4();
 	}
 
 	@Override
