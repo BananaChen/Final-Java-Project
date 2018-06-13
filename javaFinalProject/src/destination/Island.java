@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Island extends Destination {
 
-	private String imagePath = "https://i.imgur.com/rKpizPG.png";
+	private String imagePath = "https://i.imgur.com/serQGrZ.png";
 
 	public Island(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
-		setImage(x, y, 250, 170, imagePath);
+		setImage(x, y, 250, 250, imagePath);
 	}
 
 	public void effect(ArrayList<Person> persons, Scene curStage) {

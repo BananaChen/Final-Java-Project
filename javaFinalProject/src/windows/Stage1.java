@@ -31,7 +31,7 @@ public class Stage1 extends Scene implements ActionListener {
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		Destination destination = new Island(500, 750, 0, 0, 0, 0);
+		Destination destination = new Island(650, 650, 0, 0, 0, 0);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -44,7 +44,7 @@ public class Stage1 extends Scene implements ActionListener {
 		imagePanel.add(bigfan.lb);
 		disturbances.add(bigfan);
 
-		spring = new Spring(1700, 600, 0, 0, 0, 0);
+		spring = new Spring(1700, 500, 0, 0, 0, 0);
 		imagePanel.add(spring.lb);
 		disturbances.add(spring);
 

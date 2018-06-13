@@ -1,21 +1,16 @@
 package windows;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
 import javax.swing.JFrame;
-
-import items.Person;
 
 public class WindowController extends JFrame {
 
 	public final static int NumOfStage = 6;
 	public static boolean[] stageStatus = new boolean[NumOfStage];
 
-	private static WindowController wc;
 	public static Scene stage;
-	protected int bgWidth = Scene.bgWidth;
-	protected int bgHeight = Scene.bgHeight;
+	private static WindowController wc;
+	private int bgWidth = Scene.bgWidth;
+	private int bgHeight = Scene.bgHeight;
 
 	public WindowController() {
 		setSize(bgWidth, bgHeight);
