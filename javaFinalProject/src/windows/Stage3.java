@@ -27,15 +27,12 @@ public class Stage3 extends Scene implements ActionListener {
 		super();
 		// Timer
 		timer = new Timer(10, this);
-
 		
 		//create Persons
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
 		person.lb.setVisible(false);
 		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-
-		
+		imagePanel.add(persons.get(0).lb);		
 
 		//create Destinations
 		Destination destination = new Flower(1250, 550, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
@@ -87,7 +84,6 @@ public class Stage3 extends Scene implements ActionListener {
 		Aircraft aircraft = new Mario(50, 300, 10, 0, 0, 0);
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
-		
 
 		//set window
 		bgImagePath = "https://i.imgur.com/DS1b4VH.jpg";

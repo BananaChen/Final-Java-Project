@@ -15,14 +15,10 @@ import items.*;
 public class Nigga extends Person implements ActionListener {
 
 	private static final long serialVersionUID = -1233480500986673884L;
-	// public String address;
-	// public JLabel lb;
 
 	public Nigga(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		timer = new Timer(10, this);
-		// setImage(x, y, width, height,
-		// "https://image.flaticon.com/icons/png/512/72/72924.png");
 
 		try {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/uSpGrlw.png"));
@@ -32,7 +28,6 @@ public class Nigga extends Person implements ActionListener {
 			lbThugLife.setSize(100, 100);
 			lbThugLife.setLayout(null);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -3,8 +3,6 @@ package items;
 import java.awt.Image;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -112,9 +110,4 @@ public abstract class Items extends JPanel {
 		setAccelerationX(getAccelerationX() + ax);
 		setAccelerationY(getAccelerationX() + ay);
 	}
-
-	// public abstract void collideEvent(); // object ¸I¼²®Éªº¨Æ¥ó
-
-	// public abstract void effect(ArrayList<Person> persons); // disturbance ªº¼vÅT
-
 }

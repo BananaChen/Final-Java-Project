@@ -1,11 +1,6 @@
 package aircraft;
 
 import items.*;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class AirPlane extends Aircraft {
 

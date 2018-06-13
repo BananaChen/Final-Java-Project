@@ -66,12 +66,4 @@ public class UFO extends Aircraft {
 		}
 		
 	}
-	/*
-	public void collideEvent() {
-
-	}
-
-	public void effect() {
-
-	}*/
 }

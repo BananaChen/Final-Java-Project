@@ -29,9 +29,6 @@ public class Mario extends Aircraft {
 		if(this.positionX > 220) {
 			this.positionX = -500;
 		}
-		/*
-		 * vx += ax; vy += ay; x += vx; y += vy;
-		 */
 	}
 
 }

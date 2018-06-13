@@ -15,11 +15,7 @@ import items.*;
 public class PokemonMaster extends Person implements ActionListener{
 
 	private static final long serialVersionUID = -1233480500986673884L;
-	//public String address;
-	//public JLabel lb;
-	
-	
-	
+
 	public PokemonMaster(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		timer = new Timer(10, this);
@@ -33,15 +29,10 @@ public class PokemonMaster extends Person implements ActionListener{
 			lbThugLife.setSize(100,100);
 			lbThugLife.setLayout(null);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	
-
-
-
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// put on sunglasses

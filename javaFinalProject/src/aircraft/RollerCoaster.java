@@ -38,8 +38,5 @@ public class RollerCoaster extends Aircraft {
 			firstX = 1400;
 			this.positionX = 1400;
 		}
-		/*
-		 * vx += ax; vy += ay; x += vx; y += vy;
-		 */
 	}
 }

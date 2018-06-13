@@ -25,7 +25,6 @@ public class Person extends Items {
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
 		setInitMoveData(x, y, vx, vy, ax, ay);
-		// super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 100, 100, imagePath);
 	}
 
@@ -43,10 +42,6 @@ public class Person extends Items {
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
-	}
-
-	public void effect() {
-
 	}
 
 }
