@@ -20,8 +20,8 @@ public class Nigga extends Person implements ActionListener {
 	public Nigga(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		
-		imageWidth = 150;
-		imageHeight = 150;
+		imageWidth = 100;
+		imageHeight = 100;
 		
 		timer = new Timer(10, this);
 		setImage(x, y, imageWidth, imageHeight, "https://image.flaticon.com/icons/png/512/72/72924.png");
@@ -69,6 +69,29 @@ public class Nigga extends Person implements ActionListener {
 		}
 	}
 	public void move() {
+		switch (blood) {
+		case 3:
+			heart1.setVisible(true);
+			heart2.setVisible(true);
+			heart3.setVisible(true);
+			break;
+		case 2:
+			heart1.setVisible(true);
+			heart2.setVisible(true);
+			heart3.setVisible(false);
+			break;
+		case 1:
+			heart1.setVisible(true);
+			heart2.setVisible(false);
+			heart3.setVisible(false);
+			break;
+		case 0:
+			heart1.setVisible(false);
+			heart2.setVisible(false);
+			heart3.setVisible(false);
+			break;
+		}
+		
 		this.velocityX += this.accelerationX;
 		this.velocityY += this.accelerationY;
 		this.positionX += this.velocityX;
@@ -82,7 +105,7 @@ public class Nigga extends Person implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// put on sunglasses
-		if (gy > this.positionY + 15) {
+		if (gy > this.positionY + 10) {
 			this.gy -= 2;
 			lbThugLife.setLocation((int) this.gx, (int) this.gy);
 		} else

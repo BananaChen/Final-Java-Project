@@ -60,7 +60,7 @@ public class Stage2 extends Scene implements ActionListener {
 		arrows = new ArrayList<Disturbance>();
 		// Disturbance arrow = new Arrow(0, 700, 0, 0, 0, 0,
 		// "https://i.imgur.com/Gm12azv.jpg");
-		for (int i = 0; i < 2; ++i) {
+		for (int i = 0; i < 20; ++i) {
 			arrows.add(new Arrow(0, 700, 0, 0, 0, 0, "https://i.imgur.com/rhhmCwP.png"));
 			imagePanel.add(arrows.get(i).lb);
 		}
