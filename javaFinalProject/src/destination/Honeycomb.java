@@ -54,10 +54,10 @@ public class Honeycomb extends Destination implements ActionListener {
 				person.lbThugLife.setLocation((int) person.positionX, screenHeight);
 				person.lbThugLife.setVisible(true);
 				person.timer.start();
-				Scene.isPassed = true;
-
+				
+				curStage.isPassed = true;
 				curStage.timer.stop();
-				setNextStageStatus();
+				setNextStageStatus(curStage);
 			}
 			// if not
 			else if (this.positionY - (person.getPositionY()) < 0 || person.getPositionX() > screenWidth

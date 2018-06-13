@@ -11,7 +11,7 @@ import java.awt.event.*;
 
 public class Stage1 extends Scene implements ActionListener {
 	
-	private double gravity = 0.01;
+	private double gravity = 0.005;
 	private Disturbance bigfan, spring;
 
 	public Stage1() {
@@ -44,7 +44,7 @@ public class Stage1 extends Scene implements ActionListener {
 		imagePanel.add(bigfan.lb);
 		disturbances.add(bigfan);
 
-		spring = new Spring(1700, 300, 0, 0, 0, 0);
+		spring = new Spring(1700, 600, 0, 0, 0, 0);
 		imagePanel.add(spring.lb);
 		disturbances.add(spring);
 

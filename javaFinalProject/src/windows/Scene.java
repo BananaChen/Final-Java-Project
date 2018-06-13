@@ -16,7 +16,7 @@ public abstract class Scene {
 	protected static int bgWidth = 1920;
 	protected static int bgHeight = 1000;
 
-	public static boolean isPassed = false;
+	public boolean isPassed = false;
 	protected static boolean isPaused = false;
 	public Timer timer;
 	protected double gravity;

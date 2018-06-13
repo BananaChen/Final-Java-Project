@@ -40,8 +40,8 @@ public abstract class Destination extends Items {
 		}
 	}
 
-	public void setNextStageStatus() {
-		if (Scene.isPassed) {
+	public void setNextStageStatus(Scene curStage) {
+		if (curStage.isPassed) {
 			for (int j = 0; j < WindowController.NumOfStage; ++j) {
 				if (WindowController.stageStatus[j] == true) {
 					WindowController.stageStatus[j] = false;

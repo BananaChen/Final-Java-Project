@@ -51,7 +51,7 @@ public class WindowController extends JFrame {
 		System.out.println(newStage.getClass());
 
 		// stage.imagePanel.setFocusable(true);
-		Scene.isPassed = false;
+		//Scene.isPassed = false;
 	}
 
 

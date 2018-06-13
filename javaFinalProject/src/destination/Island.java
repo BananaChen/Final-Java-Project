@@ -23,10 +23,10 @@ public class Island extends Destination {
 					&& (person.getPositionX() - this.positionX < 600 && person.getPositionX() - this.positionX > 0)) {
 				lbSuccess.setVisible(true);
 				person.lb.setVisible(false);
-				Scene.isPassed = true;
-
+				
+				curStage.isPassed = true;
 				curStage.timer.stop();
-				setNextStageStatus();
+				setNextStageStatus(curStage);
 
 			}
 			// if not
