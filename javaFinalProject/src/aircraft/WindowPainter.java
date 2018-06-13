@@ -8,11 +8,11 @@ public class WindowPainter extends Items{
 		super(x, y, vx, vy, ax, ay);
 		imageWidth = 150;
 		imageHeight = Scene.bgHeight;
-		setImage(x, y, imageWidth, imageHeight, "https://i.imgur.com/9HrrZCt.png");
+		setImage(x, y, imageWidth, imageHeight, "https://i.imgur.com/jTfazs0.png");
 	}
 	
 	public void brush() {
-		if (positionX < Scene.bgWidth) {
+		if (positionX < Scene.bgWidth*2) {
 			positionX += 700;
 			lb.setLocation((int)positionX, (int)positionY);
 		}
