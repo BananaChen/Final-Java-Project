@@ -58,7 +58,7 @@ public class Stage2 extends Scene implements ActionListener {
 		imagePanel.add(aircrafts.get(0).lb);
 
 		// set background
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		bgImagePath = "https://i.imgur.com/dbcQwI3.jpg";
 		setWindow(bgImagePath);
 
 		// start timer

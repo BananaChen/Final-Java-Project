@@ -14,19 +14,18 @@ public class Person extends Items {
 	public double personInitVy = 0;
 	public double personInitAx = 0;
 	public double personInitAy = 0;
-	
+
 	// for Jared only
 	public JLabel lbThugLife;
 	public double gx;
 	public double gy = 1000;
 	public int blood = 3;
 	public Timer timer;
-	
 
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
 		setInitMoveData(x, y, vx, vy, ax, ay);
-		//super(x, y, vx, vy, ax, ay);
+		// super(x, y, vx, vy, ax, ay);
 		setImage(x, y, 100, 100, imagePath);
 	}
 
@@ -36,7 +35,7 @@ public class Person extends Items {
 		personInitAx = ax;
 		personInitAy = ay;
 	}
-	
+
 	@Override
 	public void move() {
 		this.velocityX += this.accelerationX;

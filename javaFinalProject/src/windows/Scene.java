@@ -13,8 +13,8 @@ public abstract class Scene {
 
 	protected JPanel imagePanel;
 	protected String bgImagePath;
-	protected static int bgWidth = 1920;
-	protected static int bgHeight = 1000;
+	public static int bgWidth = 1920;
+	public static int bgHeight = 1000;
 
 	public boolean isPassed = false;
 	protected static boolean isPaused = false;
@@ -57,7 +57,8 @@ public abstract class Scene {
 							person.lb.setVisible(true);
 							person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
 							person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
-							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy, person.personInitVy, person.personInitAx, person.personInitAy);
+							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy,
+									person.personInitVy, person.personInitAx, person.personInitAy);
 							person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 							person.isDropped = true;
 						}
@@ -70,7 +71,7 @@ public abstract class Scene {
 					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						//go to next stage
+						// go to next stage
 						WindowController.setStage(getNextStage());
 						System.out.println("go to next stage");
 						isPassed = false;
@@ -80,7 +81,7 @@ public abstract class Scene {
 				case KeyEvent.VK_R:
 					if (isPassed == false) {
 						imagePanel.removeAll();
-						//restart current stage
+						// restart current stage
 						WindowController.setStage(getCurrentStage());
 						System.out.println("replay");
 						isPassed = false;

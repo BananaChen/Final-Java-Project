@@ -53,7 +53,7 @@ public class Stage1 extends Scene implements ActionListener {
 		// this.imagePanel.addKeyListener(keyAdapter);
 
 		// set window
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
 		setWindow(bgImagePath);
 
 		// start timer

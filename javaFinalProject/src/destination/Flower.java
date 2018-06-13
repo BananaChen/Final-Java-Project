@@ -1,18 +1,9 @@
 package destination;
 
+import items.*;
 import windows.*;
 
-import java.awt.Image;
-import java.beans.PersistenceDelegate;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-import items.*;
 
 public class Flower extends Destination {
 
@@ -20,28 +11,7 @@ public class Flower extends Destination {
 	
 	public Flower(double x, double y, double vx, double vy, double ax, double ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);
-
 		setImage(x, y, 200, 300, imagePath);
-
-		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/AcaNJHQ.png"));
-			icon.setImage(icon.getImage().getScaledInstance(600,400,Image.SCALE_DEFAULT));
-			lbSuccess = new JLabel(icon);
-			lbSuccess.setSize(600, 400);
-			lbSuccess.setLocation(300, 200);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/v5S2iYS.png"));
-			icon.setImage(icon.getImage().getScaledInstance(600,400,Image.SCALE_DEFAULT));
-			lbFail = new JLabel(icon);
-			lbFail.setSize(600, 400);
-			lbFail.setLocation(0, 500);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
 	}
 
 	
@@ -56,6 +26,7 @@ public class Flower extends Destination {
 			isShooted = true;
 			lbSuccess.setVisible(true);
 			
+			curStage.isPassed = true;
 			curStage.timer.stop();
 			setNextStageStatus(curStage);
 			
@@ -63,7 +34,8 @@ public class Flower extends Destination {
 			lbFail.setVisible(true);
 			person.setVelocityY(0);
 			person.setAccelerationY(0);
-			// person.lb.setVisible(false);
+			
+			curStage.timer.stop();
 		}
 	}
 }

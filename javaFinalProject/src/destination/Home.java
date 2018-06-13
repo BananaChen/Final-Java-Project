@@ -31,9 +31,9 @@ public class Home extends Destination {
 			}
 			// if not
 			else if (this.positionY - (person.getPositionY()) < 0) {
-				curStage.timer.stop();
 				lbFail.setVisible(true);
 				person.lb.setVisible(false);
+				curStage.timer.stop();
 			}
 		}
 	}
