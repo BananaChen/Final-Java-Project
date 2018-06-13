@@ -16,6 +16,9 @@ public class Person extends Items {
 	public double personInitAy = 0;
 
 	// for Jared only
+	public JLabel heart1;
+	public JLabel heart2;
+	public JLabel heart3;
 	public JLabel lbThugLife;
 	public double gx;
 	public double gy = 1000;
@@ -37,6 +40,7 @@ public class Person extends Items {
 
 	@Override
 	public void move() {
+		//System.out.print("m");
 		this.velocityX += this.accelerationX;
 		this.velocityY += this.accelerationY;
 		this.positionX += this.velocityX;

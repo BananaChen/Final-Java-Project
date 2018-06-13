@@ -43,8 +43,8 @@ public class Honeycomb extends Destination implements ActionListener {
 			// if successfully landing
 			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX+45
 					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-45
-					&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.02
-					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.2) {
+					&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
+					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9) {
 				lbSuccess.setVisible(true);
 				// Scene2.person.lb.setVisible(false);
 				this.timer.stop();

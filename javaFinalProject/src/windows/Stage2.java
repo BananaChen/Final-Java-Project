@@ -37,9 +37,16 @@ public class Stage2 extends Scene implements ActionListener {
 		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
 		person.lb.setVisible(false);
 		person.lbThugLife.setVisible(false);
+		person.heart1.setVisible(false);
+		person.heart2.setVisible(false);
+		person.heart3.setVisible(false);
 		persons.add(person);
 		imagePanel.add(persons.get(0).lbThugLife);
+		imagePanel.add(persons.get(0).heart1);
+		imagePanel.add(persons.get(0).heart2);
+		imagePanel.add(persons.get(0).heart3);
 		imagePanel.add(persons.get(0).lb);
+		
 		
 		Destination honeycomb = new Honeycomb(700, 700, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
 		destinations.add(honeycomb);

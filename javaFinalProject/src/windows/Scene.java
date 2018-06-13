@@ -62,6 +62,10 @@ public abstract class Scene {
 						Person person = persons.get(i);
 						if (person.isDropped == false) {
 							person.lb.setVisible(true);
+							//Jared only
+							person.heart1.setVisible(true);
+							person.heart2.setVisible(true);
+							person.heart3.setVisible(true);
 							person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
 							person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
 							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy,
