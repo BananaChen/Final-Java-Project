@@ -25,18 +25,32 @@ public class Stage2 extends Scene implements ActionListener {
 		super();
 		// contentPane
 		// c = getContentPane();
+		
+		
 		// Timer
 		timer = new Timer(10, this);
+		
+		
 
 		// declare elements in scene
-		Destination honeycomb = new Honeycomb(600, 700, 1, 1, 1, 1, "https://i.imgur.com/kYP2ZRC.png");
+		//person
+		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
+		person.lb.setVisible(false);
+		person.lbThugLife.setVisible(false);
+		persons.add(person);
+		imagePanel.add(persons.get(0).lbThugLife);
+		imagePanel.add(persons.get(0).lb);
+		
+		//destination
+		Destination honeycomb = new Honeycomb(700, 700, 1, 1, 1, 1, "https://i.imgur.com/kYP2ZRC.png");
 		destinations.add(honeycomb);
 		imagePanel.add(destinations.get(0).lbSuccess);
 		imagePanel.add(destinations.get(0).lbFail);
 		destinations.get(0).lbSuccess.setVisible(false);
 		destinations.get(0).lbFail.setVisible(false);
 		imagePanel.add(destinations.get(0).lb);
-
+		
+		//disturbance
 		arrows = new ArrayList<Disturbance>();
 		// Disturbance arrow = new Arrow(0, 700, 0, 0, 0, 0,
 		// "https://i.imgur.com/Gm12azv.jpg");
@@ -45,14 +59,7 @@ public class Stage2 extends Scene implements ActionListener {
 			imagePanel.add(arrows.get(i).lb);
 		}
 
-		
-		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
-		person.lb.setVisible(false);
-		person.lbThugLife.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lbThugLife);
-		imagePanel.add(persons.get(0).lb);
-
+		//aircraft
 		Aircraft bee = new Bee(0, 50, 0, 0, 0.1, 0.1, "https://i.imgur.com/kE4cmKB.png");
 		aircrafts.add(bee);
 		imagePanel.add(aircrafts.get(0).lb);
