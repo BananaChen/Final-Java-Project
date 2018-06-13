@@ -70,11 +70,8 @@ public abstract class Scene {
 					System.out.println(" ");
 					if (isPassed == true) {
 						imagePanel.removeAll();
-						for (int i = 1; i < WindowController.NumOfStage; ++i) {// not startfrom 0
-							if (WindowController.stageStatus[i] == true) {
-								WindowController.setStage(getNextStage());
-							}
-						}
+						//go to next stage
+						WindowController.setStage(getNextStage());
 						System.out.println("go to next stage");
 						isPassed = false;
 						imagePanel.setFocusable(false);
@@ -83,11 +80,8 @@ public abstract class Scene {
 				case KeyEvent.VK_R:
 					if (isPassed == false) {
 						imagePanel.removeAll();
-						for (int i = 0; i < WindowController.NumOfStage; ++i) {
-							if (WindowController.stageStatus[i] == true) {
-								WindowController.setStage(getCurrentStage());
-							}
-						}
+						//restart current stage
+						WindowController.setStage(getCurrentStage());
 						System.out.println("replay");
 						isPassed = false;
 						imagePanel.setFocusable(false);
