@@ -42,6 +42,4 @@ public class WindowController extends JFrame {
 		wc.repaint();
 		System.out.println(stage.getClass());
 		}
-
-
 };

@@ -33,7 +33,7 @@ public class Stage1 extends Scene implements ActionListener {
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
-		Destination destination = new Island(650, 650, 0, 0, 0, 0);
+		Destination destination = new Island(650, 500, 0, 0, 0, 0);
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);

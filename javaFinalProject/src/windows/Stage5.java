@@ -29,7 +29,7 @@ public class Stage5 extends Scene implements ActionListener {
 		timer = new Timer(10, this);
 
 		// declare elements in scene
-		Destination island = new Home(600, 700, 1, 1, 1, 1);
+		Destination island = new Home(600, 650, 1, 1, 1, 1);
 		destinations.add(island);
 		imagePanel.add(destinations.get(0).lbSuccess);
 		imagePanel.add(destinations.get(0).lbFail);
@@ -77,7 +77,7 @@ public class Stage5 extends Scene implements ActionListener {
 		}
 
 		// set window
-		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
+		bgImagePath = "https://i.imgur.com/ntB2uDf.png";
 		setWindow(bgImagePath);
 
 		// start timer

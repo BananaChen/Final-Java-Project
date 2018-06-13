@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Home extends Destination {
 
-	private String imagePath = "https://i.imgur.com/6ne721m.png";
+	private String imagePath = "https://i.imgur.com/N8Il1QP.png";
 
 	public Home(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
-		setImage(x, y, 400, 300, imagePath);
+		setImage(x, y, 350, 292, imagePath);
 	}
 
 	public void effect(ArrayList<Person> persons, Scene curStage) {
@@ -19,8 +19,10 @@ public class Home extends Destination {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
 			// if successfully landing
-			if (Math.acos(person.getPositionY() + 100 - this.positionY) < 50
-					&& (person.getPositionX() - this.positionX < 600 && person.getPositionX() - this.positionX > 0)) {
+			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX
+					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
+					&& person.getPositionY() + person.imageHeight >= this.positionY
+					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
 				lbSuccess.setVisible(true);
 				person.lb.setVisible(false);
 				

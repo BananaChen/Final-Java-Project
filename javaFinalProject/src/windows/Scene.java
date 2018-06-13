@@ -77,6 +77,7 @@ public abstract class Scene {
 					}
 					System.out.println(" ");*/
 					if (isPassed == true) {
+						timer.stop();
 						imagePanel.removeAll();
 						// go to next stage
 						WindowController.setStage(getNextStage());
@@ -87,6 +88,7 @@ public abstract class Scene {
 					break;
 				case KeyEvent.VK_R:
 					if (isPassed == false) {
+						timer.stop();
 						imagePanel.removeAll();
 						// restart current stage
 						WindowController.setStage(getCurrentStage());
@@ -94,6 +96,14 @@ public abstract class Scene {
 						isPassed = false;
 						imagePanel.setFocusable(false);
 					}
+					break;
+				case KeyEvent.VK_ENTER:
+					timer.stop();
+					imagePanel.removeAll();
+					WindowController.setStage(getNextStage());
+					System.out.println("Jump");
+					isPassed = false;
+					imagePanel.setFocusable(false);
 					break;
 				}
 			}
