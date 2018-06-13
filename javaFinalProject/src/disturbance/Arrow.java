@@ -14,7 +14,9 @@ public class Arrow extends Disturbance implements ActionListener {
 	boolean isStop = false;
 	int waitTime = 0;
 	Timer timer;
-
+	public int screenWidth = 1920;
+	public int screenHeight = 1000;
+	
 	public Arrow(double x, double y, double vx, double vy, double ax, double ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);
 		imageWidth = 100;
@@ -36,8 +38,8 @@ public class Arrow extends Disturbance implements ActionListener {
 						&& this.positionY < persons.get(0).getPositionY() + 100)) {
 			persons.get(0).positionX += 10;
 			// relocated
-			this.positionX = Math.random() * 1200 - 600;
-			this.positionY = Math.random() * 200 + 900;
+			this.positionX = Math.random() * screenWidth - screenWidth;
+			this.positionY = Math.random() * 200 + screenHeight;
 			this.lb.setLocation((int) this.positionX, (int) this.positionY);
 			isStop = true;
 			// set a random time to wait to restart
@@ -47,9 +49,9 @@ public class Arrow extends Disturbance implements ActionListener {
 		}
 
 		// if out of bounds, relocated
-		if (this.positionY + 100 < 0 || this.positionX > 1200) {
-			this.positionX = Math.random() * 1200 - 600;
-			this.positionY = Math.random() * 200 + 900;
+		if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
+			this.positionX = Math.random() * screenWidth - screenWidth;
+			this.positionY = Math.random() * 200 + screenHeight;
 			this.lb.setLocation((int) this.positionX, (int) this.positionY);
 			isStop = true;
 			// set a random time to wait to restart
@@ -63,11 +65,11 @@ public class Arrow extends Disturbance implements ActionListener {
 		if (isStop && waitTime > 0) {
 			waitTime--;
 			this.positionX = 0;
-			this.positionY = 900;
+			this.positionY = screenHeight;
 			if (waitTime <= 0) { // restart
 				isStop = false;
-				this.positionX = Math.random() * 1200 - 600;
-				this.positionY = Math.random() * 200 + 900;
+				this.positionX = Math.random() * screenWidth - screenWidth;
+				this.positionY = Math.random() * 200 + screenHeight;
 			}
 		} else {
 			this.positionX += 15;

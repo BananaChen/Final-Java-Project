@@ -13,8 +13,8 @@ public class Honeycomb extends Destination implements ActionListener {
 	private static final long serialVersionUID = -4756067190093780646L;
 
 	Timer timer;
-	int screenWidth = 1200;
-	int screenHeight = 900;
+	public int screenWidth = 1920;
+	public int screenHeight = 1000;
 
 	boolean moveRight = false;
 	boolean moveLeft = true;
