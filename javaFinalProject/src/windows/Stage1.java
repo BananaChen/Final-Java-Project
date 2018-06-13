@@ -20,8 +20,10 @@ public class Stage1 extends Scene implements ActionListener {
 
 		// Timer
 		timer = new Timer(10, this);
-
+		
 		// declare elements in scene
+		
+		
 		Person person = new Person(0, 0, 1, 1, 0, gravity);
 		person.lb.setVisible(false);
 		persons.add(person);
@@ -72,6 +74,7 @@ public class Stage1 extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
+		wp.brush();
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
 		}

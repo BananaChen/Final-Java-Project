@@ -78,6 +78,7 @@ public class Stage4 extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		wp.brush();
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
 			person.personInitVx = aircrafts.get(0).getVelocityX();

@@ -54,6 +54,7 @@ public class TeachingScene extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
+		wp.brush();
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
 		}

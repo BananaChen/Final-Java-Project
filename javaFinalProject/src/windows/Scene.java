@@ -4,6 +4,9 @@ import items.*;
 
 import java.util.ArrayList;
 import javax.swing.*;
+
+import aircraft.WindowPainter;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
@@ -19,7 +22,8 @@ public abstract class Scene {
 	public boolean isPassed = false;
 	protected static boolean isPaused = false;
 	public Timer timer;
-
+	
+	public WindowPainter wp;
 	public ArrayList<Person> persons = new ArrayList<Person>();
 	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
 	public ArrayList<Destination> destinations = new ArrayList<Destination>();
@@ -30,6 +34,10 @@ public abstract class Scene {
 		imagePanel.setSize(bgWidth, bgHeight);
 		imagePanel.setLocation(0, 0);
 		imagePanel.setLayout(null);
+		
+		wp = new WindowPainter(0, 0, 0, 0, 0, 0);
+		wp.lb.setVisible(true);
+		imagePanel.add(wp.lb);
 	}
 
 	public void setWindow(String bgImagePath) {
