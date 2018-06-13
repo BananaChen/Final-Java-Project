@@ -14,6 +14,8 @@ public abstract class Items extends JPanel {
 	public JLabel lb;
 	public int imageWidth;
 	public int imageHeight;
+	public int labelWide;
+	public int labelLength;
 
 	public double positionX = 0;
 	public double positionY = 0;
