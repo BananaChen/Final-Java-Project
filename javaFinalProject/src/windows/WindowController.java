@@ -20,13 +20,14 @@ public class WindowController extends JFrame {
 	}
 
 	public static void main(String[] args) {
-
+		
+		//init stage status
 		for (int i = 0; i < NumOfStage; ++i) {
 			stageStatus[i] = false;
 		}
 
 		wc = new WindowController();
-		stage = new Stage3();
+		stage = new TeachingScene();
 		stageStatus[0] = true;
 		
 		wc.add(stage.imagePanel);

@@ -19,7 +19,6 @@ public abstract class Scene {
 	public boolean isPassed = false;
 	protected static boolean isPaused = false;
 	public Timer timer;
-	protected double gravity;
 
 	public ArrayList<Person> persons = new ArrayList<Person>();
 	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
@@ -65,10 +64,10 @@ public abstract class Scene {
 					}
 					break;
 				case KeyEvent.VK_N:
-					for (int i = 0; i < WindowController.NumOfStage; ++i) {
+					/*for (int i = 0; i < WindowController.NumOfStage; ++i) {
 						System.out.print(WindowController.stageStatus[i] + " ");
 					}
-					System.out.println(" ");
+					System.out.println(" ");*/
 					if (isPassed == true) {
 						imagePanel.removeAll();
 						// go to next stage
