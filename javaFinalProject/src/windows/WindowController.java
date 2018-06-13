@@ -26,7 +26,7 @@ public class WindowController extends JFrame {
 		}
 
 		wc = new WindowController();
-		stage = new TeachingScene();
+		stage = new Stage3();
 		stageStatus[0] = true;
 		
 		wc.add(stage.imagePanel);

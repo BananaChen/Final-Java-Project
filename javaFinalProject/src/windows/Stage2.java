@@ -82,7 +82,7 @@ public class Stage2 extends Scene implements ActionListener {
 
 	@Override
 	public Scene getNextStage() {
-		return new Stage5();
+		return new Stage3();
 	}
 
 	@Override

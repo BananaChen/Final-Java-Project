@@ -76,7 +76,7 @@ public class Stage5 extends Scene implements ActionListener {
 			imagePanel.add(fireballs.get(i).lb);
 		}
 
-		// set background
+		// set window
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
 		setWindow(bgImagePath);
 

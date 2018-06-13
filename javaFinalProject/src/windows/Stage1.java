@@ -52,7 +52,7 @@ public class Stage1 extends Scene implements ActionListener {
 		// imagePanel.setFocusable(true);
 		// this.imagePanel.addKeyListener(keyAdapter);
 
-		// set background
+		// set window
 		bgImagePath = "https://i.imgur.com/uJ3EP7b.jpg";
 		setWindow(bgImagePath);
 
