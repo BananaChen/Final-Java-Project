@@ -1,7 +1,10 @@
 package windows;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.*;
 
-public class StartScene extends Scene{
+public class StartScene extends Scene implements ActionListener{
 
 	public StartScene() {
 
@@ -10,7 +13,8 @@ public class StartScene extends Scene{
 		// set window
 		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
 		setWindow(bgImagePath);
-		
+		timer = new Timer(10, this);
+		timer.start();
 	}
 	
 	
@@ -22,6 +26,13 @@ public class StartScene extends Scene{
 	@Override
 	public Scene getNextStage() {
 		return new TeachingScene();
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

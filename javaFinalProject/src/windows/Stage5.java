@@ -63,9 +63,7 @@ public class Stage5 extends Scene implements ActionListener {
 		
 		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
 		person.lb.setVisible(false);
-		person.lbSunGlasses.setVisible(false);
 		persons.add(person);
-		imagePanel.add(persons.get(0).lbSunGlasses);
 		imagePanel.add(persons.get(0).lb);
 
 		fireballs = new ArrayList<Disturbance>();
@@ -91,7 +89,7 @@ public class Stage5 extends Scene implements ActionListener {
 
 	@Override
 	public Scene getNextStage() {
-		return new Stage1();
+		return new EndScene();
 	}
 
 	@Override
