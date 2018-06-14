@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="items.Disturbance" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/items/Disturbance.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="123" width="351" x="9155" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="person.Nigga" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/person/Nigga.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="315" x="5482" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="windows.Stage1" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Stage1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="223" x="8385" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="windows.Stage2" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Stage2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="223" x="8648" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="aircraft.RollerCoaster" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/RollerCoaster.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="360" x="7260" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="items.Person" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/items/Person.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="412" width="400" x="6504" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="7" language="java" name="person" project="FinalJavaProject" file="/FinalJavaProject/src/person" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="4023" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="8" language="java" name="aircraft.AirPlane" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/AirPlane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="331" x="7660" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="person.Turtle" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/person/Turtle.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="352" x="5837" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="disturbance.BigLight" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/BigLight.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="200" x="7876" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="windows.StartScene" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/StartScene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="223" x="7454" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="destination.BlueMoon" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination/BlueMoon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="378" x="3525" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="disturbance.MarioSpring" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/MarioSpring.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="207" x="7026" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="disturbance.UpPipe" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/UpPipe.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="200" x="6786" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="windows.TeachingScene" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/TeachingScene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="223" x="7717" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="aircraft.WindowPainter" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/WindowPainter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="369" x="4675" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="windows.WindowController" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/WindowController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="157" x="8001" y="1957"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="18" language="java" name="items" project="FinalJavaProject" file="/FinalJavaProject/src/items" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="4684" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="19" language="java" name="disturbance.Road" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Road.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="206" x="6540" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="windows.Stage3" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Stage3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="223" x="6997" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="destination.Island" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination/Island.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="316" x="3943" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="disturbance.Magnetic1" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Magnetic1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="342" x="11299" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="windows.Stage4" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Stage4.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="223" x="10048" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="disturbance.Magnetic2" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Magnetic2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="342" x="10147" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="windows.Stage5" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Stage5.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="223" x="8911" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="disturbance.Magnetic3" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Magnetic3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="342" x="10529" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="27" language="java" name="disturbance" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="5346" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="28" language="java" name="aircraft.Bee" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/Bee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="343" x="8031" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="disturbance.DownPipe" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/DownPipe.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="200" x="8116" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="disturbance.BlackHole1" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/BlackHole1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="348" x="9759" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="person.PokemonMaster" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/person/PokemonMaster.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="377" x="6229" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="aircraft.UFO" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/UFO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="347" x="8414" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="disturbance.BlackHole2" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/BlackHole2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="348" x="10911" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="34" language="java" name="destination" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="6009" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="35" language="java" name="destination.Honeycomb" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination/Honeycomb.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="389" x="4299" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="destination.Home" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination/Home.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="316" x="4728" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="disturbance.FireBall" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/FireBall.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="364" x="8356" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="items.Items" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/items/Items.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="591" width="383" x="6826" y="2203"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="39" language="java" name="windows" project="FinalJavaProject" file="/FinalJavaProject/src/windows" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="6672" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="40" language="java" name="aircraft.Mario" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/aircraft/Mario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="314" x="8801" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="disturbance.Planet1" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Planet1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="326" x="9393" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="disturbance.SmallLight" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/SmallLight.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="200" x="7273" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="destination.Flower" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/destination/Flower.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="358" x="5084" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="items.Destination" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/items/Destination.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="195" width="347" x="5084" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="person.Alien" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/person/Alien.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="311" x="6646" y="3286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="windows.Scene" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/windows/Scene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="267" width="169" x="8001" y="2203"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="47" language="java" name="aircraft" project="FinalJavaProject" file="/FinalJavaProject/src/aircraft" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="122" x="7336" y="1957"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="48" language="java" name="items.Aircraft" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/items/Aircraft.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="87" width="323" x="8001" y="2834"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="disturbance.Arrow" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Arrow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="353" x="8760" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="disturbance.BigFan" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/BigFan.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="323" x="7513" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="disturbance.Spring" project="FinalJavaProject" 
+    file="/FinalJavaProject/src/disturbance/Spring.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="200" x="9153" y="3576"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="54">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="55" name="arrows"/>      
+      <multiplicity id="56" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="59">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="60" name="downPipe"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="63" name="bigLight"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="67">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="68" name="magnetic2"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="72">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="73" name="fireballs"/>      
+      <multiplicity id="74" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <generalization id="76">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="77">    
+    <bendpoint x="7970" y="2834"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="78">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="79" name="rightPipe"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="82">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <generalization id="85">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="86">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="87" name="wp"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="90">    
+    <bendpoint x="8354" y="2834"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="91">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="92" name="upPipe"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="94">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="95">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="99">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="100" name="stage"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="102">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="103" name="spring"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="106">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="107" name="blackhole2"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="110" name="persons"/>      
+      <multiplicity id="111" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="113" name="aircrafts"/>      
+      <multiplicity id="114" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="117">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="118" name="magnetic3"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <bendpoint x="9164" y="2834"/>    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="121" name="disturbances"/>      
+      <multiplicity id="122" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="124" name="spring"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="126">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="127" name="destinations"/>      
+      <multiplicity id="128" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="129">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="130">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <generalization id="131">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="132">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="133">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="134" name="road"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="137">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="138" name="bigfan"/>      
+      <multiplicity id="139" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="141" name="wc"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="143">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="144">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="145">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <association id="146">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="147" name="magnetic1"/>      
+      <multiplicity id="148" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="149">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="150">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="151">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="152" name="planet1"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="154">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="155" name="leftPipe"/>      
+      <multiplicity id="156" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="157">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="158" name="blackhole1"/>      
+      <multiplicity id="159" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="160">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="161">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="162" name="smallLight"/>      
+      <multiplicity id="163" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="164">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="48"/>  
+  </generalization>  
+  <generalization id="166">    
+    <bendpoint x="9185" y="2834"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="167">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="168">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="169" name="bigfan"/>      
+      <multiplicity id="170" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="171">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

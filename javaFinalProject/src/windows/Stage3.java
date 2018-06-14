@@ -35,7 +35,7 @@ public class Stage3 extends Scene implements ActionListener {
 		imagePanel.add(persons.get(0).lb);		
 
 		//create Destinations
-		Destination destination = new Flower(1250, 550, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
+		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
 		destinations.add(destination);
 
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -45,50 +45,50 @@ public class Stage3 extends Scene implements ActionListener {
 		imagePanel.add(destinations.get(0).lb);
 		
 		//create Disturbances
-		spring = new MarioSpring(100, 760, 0, 0, 0, 0);
+		spring = new MarioSpring(100, 660, 0, 0, 0, 0);
 		imagePanel.add(spring.lb);
 		disturbances.add(spring);
 		
-		smallLight = new SmallLight(450 , 500, 0, 0, 0, 0);
+		smallLight = new SmallLight(450 , 400, 0, 0, 0, 0);
 		imagePanel.add(smallLight.lb);
 		disturbances.add(smallLight);
 		
-		bigLight = new BigLight(900 , 500, 0, 0, 0, 0);
+		bigLight = new BigLight(900 , 400, 0, 0, 0, 0);
 		imagePanel.add(bigLight.lb);
 		disturbances.add(bigLight);
 		
-		upPipe = new UpPipe(600 ,0, 0, 0, 0, 0);
+		upPipe = new UpPipe(600 ,-100, 0, 0, 0, 0);
 		imagePanel.add(upPipe.lb);
 		disturbances.add(upPipe);
 		
 		downPipe = new DownPipe(600 ,600, 0, 0, 0, 0);
-		downPipe.setImage(600, 420, 200, 430, "https://i.imgur.com/SlaRZLw.png");
+		downPipe.setImage(600, 320, 200, 430, "https://i.imgur.com/SlaRZLw.png");
 		imagePanel.add(downPipe.lb);
 		disturbances.add(downPipe);
 		
-		road = new Road(0 , 400, 0, 0, 0, 0, "https://i.imgur.com/wz1WDDg.jpg");
+		road = new Road(0 , 300, 0, 0, 0, 0, "https://i.imgur.com/wz1WDDg.jpg");
 		imagePanel.add(road.lb);
 		disturbances.add(road);
 		
 		rightPipe = new Road(300, 400, 0, 0, 0, 0, "https://i.imgur.com/NaARvoD.png");
-		rightPipe.setImage(300, 280,  100, 130, "https://i.imgur.com/NaARvoD.png");
+		rightPipe.setImage(300, 180,  100, 130, "https://i.imgur.com/NaARvoD.png");
 		imagePanel.add(rightPipe.lb);
 		disturbances.add(rightPipe);
 		
 		leftPipe = new Road(0, 400, 0, 0, 0, 0, "https://i.imgur.com/1Y60ahd.png");
-		leftPipe.setImage(0, 280,  50, 130, "https://i.imgur.com/1Y60ahd.png");
+		leftPipe.setImage(0, 180,  50, 130, "https://i.imgur.com/1Y60ahd.png");
 		imagePanel.add(leftPipe.lb);
 		disturbances.add(leftPipe);
 		
 		//create Aircrafts
-		Aircraft aircraft = new Mario(50, 300, 10, 0, 0, 0);
+		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
 		aircrafts.add(aircraft);
 		imagePanel.add(aircraft.lb);
 
 		//set window
-		bgImagePath = "https://i.imgur.com/DS1b4VH.jpg";
+		bgImagePath = "https://i.imgur.com/pLHkh4G.jpg";
 		setWindow(bgImagePath);
-		imagePanel.setLocation(0,-100);
+		//imagePanel.setLocation(0,-100);
 		
 		// start timer
 		timer.start();

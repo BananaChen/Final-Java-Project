@@ -36,6 +36,7 @@ public class Person extends Items {
 		personInitVy = vy;
 		personInitAx = ax;
 		personInitAy = ay;
+	
 	}
 
 	@Override

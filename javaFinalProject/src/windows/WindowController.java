@@ -14,7 +14,7 @@ public class WindowController extends JFrame {
 
 	public WindowController() {
 		setSize(bgWidth, bgHeight);
-		setTitle("Java Final Project");
+		setTitle("Parachute Master");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 	}

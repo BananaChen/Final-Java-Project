@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Flower extends Destination {
 
 	public static boolean isShooted = false;
+	public int temp = 0;
 	
 	public Flower(double x, double y, double vx, double vy, double ax, double ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);
@@ -21,13 +22,17 @@ public class Flower extends Destination {
 				&& person.getPositionX() < (this.positionX + this.imageWidth)
 				&& (person.getPositionY() + person.labelHeight) > this.positionY
 				&& person.getPositionY() < this.positionY + this.imageHeight) {
-			person.setVelocityY(-10);
+			person.setVelocityY(-6);
 			this.lb.setVisible(false);
 			isShooted = true;
 			lbSuccess.setVisible(true);
-			
+
 			curStage.isPassed = true;
-			curStage.timer.stop();
+			temp++;
+			if(temp>=100){
+				curStage.timer.stop();
+			}
+			
 			setNextStageStatus(curStage);
 			
 		} else if (person.getPositionY() > 800 && isShooted == false) {

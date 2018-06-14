@@ -66,7 +66,7 @@ public abstract class Scene {
 							person.lb.setVisible(true);
 							person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
 							person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
-							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVy,
+							person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVx,
 									person.personInitVy, person.personInitAx, person.personInitAy);
 							person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 							person.isDropped = true;

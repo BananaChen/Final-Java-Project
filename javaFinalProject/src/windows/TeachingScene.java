@@ -35,7 +35,7 @@ public class TeachingScene extends Scene implements ActionListener {
 		imagePanel.add(destinations.get(0).lb);
 
 		// set window
-		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
+		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
 		setWindow(bgImagePath);
 
 		// start timer

@@ -11,7 +11,7 @@ public class EndScene extends Scene implements ActionListener {
 		super();
 		
 		// set window
-		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
+		bgImagePath = "https://i.imgur.com/S9eWdsK.jpg";
 		setWindow(bgImagePath);
 		
 		timer = new Timer(10, this);

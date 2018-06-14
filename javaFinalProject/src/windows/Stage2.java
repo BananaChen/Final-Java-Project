@@ -27,7 +27,7 @@ public class Stage2 extends Scene implements ActionListener {
 
 		// declare elements in scene
 		//person
-		Person person = new Thug(50, 50, 0.5, 1, 0, 0);
+		Person person = new Thug(50, 50, 1, 1, 0, 0);
 		person.lb.setVisible(false);
 		person.lbSunGlasses.setVisible(false);
 		person.heart1.setVisible(false);
