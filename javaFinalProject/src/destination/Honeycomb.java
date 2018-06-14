@@ -52,15 +52,15 @@ public class Honeycomb extends Destination{
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
 			// if successfully landing
-			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX+45
-				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-45
+			if (person.isDropped && person.getPositionX() >= this.positionX+50
+				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
 				&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
 				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9) {
 				lbSuccess.setVisible(true);
 				// Scene2.person.lb.setVisible(false);
 				person.gx = person.positionX;
-				person.lbThugLife.setLocation((int) person.positionX, screenHeight);
-				person.lbThugLife.setVisible(true);
+				person.lbSunGlasses.setLocation((int) person.positionX, screenHeight);
+				person.lbSunGlasses.setVisible(true);
 				person.timer.start();
 
 				curStage.isPassed = true;

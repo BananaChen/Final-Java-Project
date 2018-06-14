@@ -19,7 +19,7 @@ public class Person extends Items {
 	public JLabel heart1;
 	public JLabel heart2;
 	public JLabel heart3;
-	public JLabel lbThugLife;
+	public JLabel lbSunGlasses;
 	public double gx;
 	public double gy = 1000;
 	public int blood = 3;

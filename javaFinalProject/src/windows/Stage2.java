@@ -7,7 +7,6 @@ import destination.*;
 import disturbance.*;
 
 import java.util.ArrayList;
-import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -21,33 +20,27 @@ public class Stage2 extends Scene implements ActionListener {
 	public ArrayList<Disturbance> arrows;
 
 	public Stage2() {
-
 		super();
-		// contentPane
-		// c = getContentPane();
-		
 		
 		// Timer
 		timer = new Timer(10, this);
 
-		
-		
 		// declare elements in scene
 		//person
-		Person person = new Nigga(50, 50, 0.5, 1, 0, 0);
+		Person person = new Thug(50, 50, 0.5, 1, 0, 0);
 		person.lb.setVisible(false);
-		person.lbThugLife.setVisible(false);
+		person.lbSunGlasses.setVisible(false);
 		person.heart1.setVisible(false);
 		person.heart2.setVisible(false);
 		person.heart3.setVisible(false);
 		persons.add(person);
-		imagePanel.add(persons.get(0).lbThugLife);
+		imagePanel.add(persons.get(0).lbSunGlasses);
 		imagePanel.add(persons.get(0).heart1);
 		imagePanel.add(persons.get(0).heart2);
 		imagePanel.add(persons.get(0).heart3);
 		imagePanel.add(persons.get(0).lb);
 		
-		
+		//destination
 		Destination honeycomb = new Honeycomb(700, 500, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
 		destinations.add(honeycomb);
 		imagePanel.add(destinations.get(0).lbSuccess);
@@ -78,15 +71,6 @@ public class Stage2 extends Scene implements ActionListener {
 		timer.start();
 	}
 
-	/// *
-	// paint the blood
-	public void paint(Graphics g) {
-		//super.paint(g);
-		g.setColor(Color.red);
-		if (persons.get(0).isDropped)
-			g.fillRect((int) bloodX, (int) bloodY, persons.get(0).blood * 30, 5);
-	}
-	// */
 	
 	@Override
 	public Scene getCurrentStage() {
@@ -103,10 +87,6 @@ public class Stage2 extends Scene implements ActionListener {
 		wp.brush();
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
-			// stick the blood to person
-			bloodX = persons.get(i).positionX + 10;
-			bloodY = persons.get(i).positionY + 10;
-			// repaint();
 		}
 		for (int i = 0; i < aircrafts.size(); ++i) {
 			aircrafts.get(i).move();
@@ -118,7 +98,6 @@ public class Stage2 extends Scene implements ActionListener {
 			destinations.get(i).effect(persons, this);
 		}
 		for (int i = 0; i < arrows.size(); ++i) {
-			// arrows.get(i).collideEvent();
 			arrows.get(i).effect(persons);
 		}
 	}

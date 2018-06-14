@@ -8,7 +8,6 @@ import disturbance.*;
 
 
 import java.util.ArrayList;
-import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -23,8 +22,7 @@ public class Stage5 extends Scene implements ActionListener {
 	public Stage5() {
 
 		super();
-		// contentPane
-		// c = getContentPane();
+
 		// Timer
 		timer = new Timer(10, this);
 
@@ -65,9 +63,9 @@ public class Stage5 extends Scene implements ActionListener {
 		
 		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
 		person.lb.setVisible(false);
-		person.lbThugLife.setVisible(false);
+		person.lbSunGlasses.setVisible(false);
 		persons.add(person);
-		imagePanel.add(persons.get(0).lbThugLife);
+		imagePanel.add(persons.get(0).lbSunGlasses);
 		imagePanel.add(persons.get(0).lb);
 
 		fireballs = new ArrayList<Disturbance>();
@@ -84,15 +82,7 @@ public class Stage5 extends Scene implements ActionListener {
 		timer.start();
 	}
 
-	/// *
-	// paint the blood
-	public void paint(Graphics g) {
-		// super.paint(g);
-		g.setColor(Color.red);
-		if (persons.get(0).isDropped)
-			g.fillRect((int) bloodX, (int) bloodY, persons.get(0).blood * 30, 5);
-	}
-	// */
+
 
 	@Override
 	public Scene getCurrentStage() {
@@ -109,10 +99,6 @@ public class Stage5 extends Scene implements ActionListener {
 		wp.brush();
 		for (int i = 0; i < persons.size(); ++i) {
 			persons.get(i).move();
-			// stick the blood to person
-			bloodX = persons.get(i).positionX + 10;
-			bloodY = persons.get(i).positionY + 10;
-			// repaint();
 			persons.get(i).personInitVx = aircrafts.get(i).getVelocityX();
 			persons.get(i).personInitVy = aircrafts.get(i).getVelocityY();
 		}
@@ -126,7 +112,6 @@ public class Stage5 extends Scene implements ActionListener {
 			destinations.get(i).effect(persons, this);
 		}
 		for (int i = 0; i < fireballs.size(); ++i) {
-			// arrows.get(i).collideEvent();
 			fireballs.get(i).effect(persons, aircrafts);
 		}
 	}

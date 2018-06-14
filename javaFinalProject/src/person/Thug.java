@@ -12,12 +12,12 @@ import javax.swing.Timer;
 
 import items.*;
 
-public class Nigga extends Person implements ActionListener {
+public class Thug extends Person implements ActionListener {
 
 	private static final long serialVersionUID = -1233480500986673884L;
 	
 	
-	public Nigga(double x, double y, double vx, double vy, double ax, double ay) {
+	public Thug(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		
 		imageWidth = 100;
@@ -28,11 +28,11 @@ public class Nigga extends Person implements ActionListener {
 		
 		try {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/uSpGrlw.png"));
-			icon.setImage(icon.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
-			lbThugLife = new JLabel(icon);
-			lbThugLife.setLocation((int) 0, (int) 0);
-			lbThugLife.setSize(100, 100);
-			lbThugLife.setLayout(null);
+			icon.setImage(icon.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
+			lbSunGlasses = new JLabel(icon);
+			lbSunGlasses.setLocation((int) 0, (int) 0);
+			lbSunGlasses.setSize(imageWidth, imageHeight);
+			lbSunGlasses.setLayout(null);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -107,7 +107,7 @@ public class Nigga extends Person implements ActionListener {
 		// put on sunglasses
 		if (gy > this.positionY + 10) {
 			this.gy -= 2;
-			lbThugLife.setLocation((int) this.gx, (int) this.gy);
+			lbSunGlasses.setLocation((int) this.gx, (int) this.gy);
 		} else
 			timer.stop();
 	}
