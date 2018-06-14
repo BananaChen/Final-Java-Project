@@ -17,9 +17,9 @@ public class Flower extends Destination {
 	
 	public void effect(ArrayList<Person> persons, Scene curStage) {
 		Person person = persons.get(0);
-		if (person.getPositionX() + person.labelWide > this.positionX
+		if (person.getPositionX() + person.labelWidth > this.positionX
 				&& person.getPositionX() < (this.positionX + this.imageWidth)
-				&& (person.getPositionY() + person.labelLength) > this.positionY
+				&& (person.getPositionY() + person.labelHeight) > this.positionY
 				&& person.getPositionY() < this.positionY + this.imageHeight) {
 			person.setVelocityY(-10);
 			this.lb.setVisible(false);

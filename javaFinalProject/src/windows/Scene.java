@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import aircraft.WindowPainter;
 
+import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
@@ -43,6 +44,7 @@ public abstract class Scene {
 	public void setWindow(String bgImagePath) {
 		try {
 			ImageIcon icon = new ImageIcon(new URL(bgImagePath));
+			icon.setImage(icon.getImage().getScaledInstance(bgWidth, bgHeight, Image.SCALE_DEFAULT));
 			JLabel lb = new JLabel(icon);
 			imagePanel.add(lb);
 			lb.setSize(bgWidth, bgHeight);

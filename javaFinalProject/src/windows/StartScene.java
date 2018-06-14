@@ -1,23 +1,16 @@
 package windows;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.Timer;
-
-public class StartScene extends Scene implements ActionListener{
+public class StartScene extends Scene{
 
 	public StartScene() {
 
 		super();
 		
-		timer = new Timer(10, this);
-		
 		// set window
 		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
 		setWindow(bgImagePath);
 		
-		timer.start();
 	}
 	
 	
@@ -31,10 +24,6 @@ public class StartScene extends Scene implements ActionListener{
 		return new TeachingScene();
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

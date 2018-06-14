@@ -16,7 +16,7 @@ public class UpPipe extends Disturbance {
 	public void effect(ArrayList<Person> persons) {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
-			if (person.getPositionX() + person.labelWide > this.positionX
+			if (person.getPositionX() + person.labelWidth > this.positionX
 					&& person.getPositionY() < this.positionY + this.imageHeight
 					&& person.getPositionX() < this.positionX + this.imageWidth) {
 				person.setVelocityX(0);

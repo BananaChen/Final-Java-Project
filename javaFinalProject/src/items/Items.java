@@ -12,8 +12,8 @@ public abstract class Items extends JPanel {
 	public JLabel lb;
 	public int imageWidth;
 	public int imageHeight;
-	public int labelWide;
-	public int labelLength;
+	public int labelWidth;
+	public int labelHeight;
 
 	public double positionX = 0;
 	public double positionY = 0;
@@ -30,18 +30,18 @@ public abstract class Items extends JPanel {
 		setMoveData(x, y, vx, vy, ax, ay);
 	}
 
-	public void setImage(double x, double y, int wide, int length, String imagePath) {
+	public void setImage(double x, double y, int width, int height, String imagePath) {
 		try {
 			ImageIcon icon = new ImageIcon(new URL(imagePath));
-			icon.setImage(icon.getImage().getScaledInstance(wide, length, Image.SCALE_DEFAULT));
+			icon.setImage(icon.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 			lb = new JLabel(icon);
 			lb.setLocation((int) x, (int) y);
-			lb.setSize(wide, length);
+			lb.setSize(width, height);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		imageWidth = wide;
-		imageHeight = length;
+		imageWidth = width;
+		imageHeight = height;
 	}
 
 	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {

@@ -16,8 +16,8 @@ public class DownPipe extends Disturbance {
 	public void effect(ArrayList<Person> persons) {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
-			if (person.getPositionX() + person.labelWide > this.positionX
-					&& person.getPositionY() + person.labelLength > this.positionY
+			if (person.getPositionX() + person.labelWidth > this.positionX
+					&& person.getPositionY() + person.labelHeight > this.positionY
 					&& person.getPositionX() < this.positionX + this.imageWidth) {
 				person.setVelocityX(0);
 			}

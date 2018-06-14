@@ -16,7 +16,7 @@ public class MarioSpring extends Disturbance {
 	public void effect(ArrayList<Person> persons) {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = persons.get(i);
-			if (this.positionX - person.getPositionX() < person.labelWide
+			if (this.positionX - person.getPositionX() < person.labelWidth
 					&& (this.positionX + this.imageWidth) > person.getPositionX()
 					&& this.positionY - person.getPositionY() < person.imageHeight
 					&& (this.positionY + this.imageHeight) > person.getPositionY()) {
