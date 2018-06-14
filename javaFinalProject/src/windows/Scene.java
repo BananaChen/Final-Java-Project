@@ -16,8 +16,8 @@ public abstract class Scene {
 
 	protected JPanel imagePanel;
 	protected String bgImagePath;
-	public static int bgWidth = 1920;
-	public static int bgHeight = 1000;
+	public final static int bgWidth = 1920;
+	public final static int bgHeight = 1000;
 
 	public boolean isPassed = false;
 	protected static boolean isPaused = false;

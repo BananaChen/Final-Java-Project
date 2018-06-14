@@ -22,18 +22,19 @@ public abstract class Destination extends Items {
 		setImage(x, y, 250, 170, imagePath);
 
 		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/AcaNJHQ.png"));
+			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/kGYlNur.png"));
 			lbSuccess = new JLabel(icon);
-			lbSuccess.setSize(600, 400);
+			lbSuccess.setSize(800, 400);
 			lbSuccess.setLocation(300, 200);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
 		try {
-			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/0Iha59i.png"));
+			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/tLmAE6s.png"));
 			lbFail = new JLabel(icon);
-			lbFail.setSize(600, 400);
+			lbFail.setSize(800
+					, 400);
 			lbFail.setLocation(300, 200);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

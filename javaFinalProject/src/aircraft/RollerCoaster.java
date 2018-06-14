@@ -1,6 +1,7 @@
 package aircraft;
 
 import items.*;
+import windows.Scene;
 
 public class RollerCoaster extends Aircraft {
 
@@ -35,8 +36,8 @@ public class RollerCoaster extends Aircraft {
 			this.lb.setLocation((int) this.positionX, (int) this.positionY);
 		} else {
 			dif = 0;
-			firstX = 1400;
-			this.positionX = 1400;
+			firstX = Scene.bgWidth;
+			this.positionX = Scene.bgWidth;
 		}
 	}
 }
