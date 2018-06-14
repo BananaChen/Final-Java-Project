@@ -41,7 +41,7 @@ public class Stage2 extends Scene implements ActionListener {
 		imagePanel.add(persons.get(0).lb);
 		
 		//destination
-		Destination honeycomb = new Honeycomb(700, 500, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
+		Destination honeycomb = new Honeycomb(700, 700, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
 		destinations.add(honeycomb);
 		imagePanel.add(destinations.get(0).lbSuccess);
 		imagePanel.add(destinations.get(0).lbFail);
