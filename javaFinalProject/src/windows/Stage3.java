@@ -10,9 +10,9 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
-public class Stage3 extends Scene implements ActionListener {
+public class Stage3 extends Scene implements ActionListener, SceneFactory {
 
-	private BigFan bigfan;
+//	private BigFan bigfan;
 	private MarioSpring spring;
 	private SmallLight smallLight;
 	private BigLight bigLight;
@@ -25,15 +25,79 @@ public class Stage3 extends Scene implements ActionListener {
 	public Stage3() {
 		
 		super();
+		
 		// Timer
 		timer = new Timer(10, this);
 		
+		// declare elements in scene
+		createPerson();
+		createAircraft();
+		createDestination();
+		createDisturbance();
+		createBackground();
+		
+		// start timer
+		timer.start();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		wp.brush();
+		for (int i = 0; i < persons.size(); ++i) {
+			Person person = persons.get(i);
+			person.move();
+		}
+		for (int i = 0; i < aircrafts.size(); ++i) {
+			aircrafts.get(i).move();
+		}
+		for (int i = 0; i < disturbances.size(); ++i) {
+		    disturbances.get(i).effect(persons);
+		}
+		for (int i = 0; i < destinations.size(); ++i) {
+		    destinations.get(i).effect(persons, this);
+		}
+	}
+	
+	@Override
+	public Scene getCurrentStage() {
+		return new Stage3();
+	}
+
+	@Override
+	public Scene getNextStage() {
+		return new Stage4();
+	}
+
+	@Override
+	public void createBackground() {
+		//set window
+		bgImagePath = "https://i.imgur.com/pLHkh4G.jpg";
+		setWindow(bgImagePath);
+		//imagePanel.setLocation(0,-100);
+		
+	}
+
+	@Override
+	public void createPerson() {
 		//create Persons
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
 		person.lb.setVisible(false);
 		persons.add(person);
-		imagePanel.add(persons.get(0).lb);		
+		imagePanel.add(persons.get(0).lb);	
+		
+	}
 
+	@Override
+	public void createAircraft() {
+		//create Aircrafts
+		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
+		aircrafts.add(aircraft);
+		imagePanel.add(aircraft.lb);
+		
+	}
+
+	@Override
+	public void createDestination() {
 		//create Destinations
 		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
 		destinations.add(destination);
@@ -44,6 +108,10 @@ public class Stage3 extends Scene implements ActionListener {
 		destinations.get(0).lbFail.setVisible(false);
 		imagePanel.add(destinations.get(0).lb);
 		
+	}
+
+	@Override
+	public void createDisturbance() {
 		//create Disturbances
 		spring = new MarioSpring(100, 660, 0, 0, 0, 0);
 		imagePanel.add(spring.lb);
@@ -80,45 +148,5 @@ public class Stage3 extends Scene implements ActionListener {
 		imagePanel.add(leftPipe.lb);
 		disturbances.add(leftPipe);
 		
-		//create Aircrafts
-		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-
-		//set window
-		bgImagePath = "https://i.imgur.com/pLHkh4G.jpg";
-		setWindow(bgImagePath);
-		//imagePanel.setLocation(0,-100);
-		
-		// start timer
-		timer.start();
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		wp.brush();
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
-			person.move();
-		}
-		for (int i = 0; i < aircrafts.size(); ++i) {
-			aircrafts.get(i).move();
-		}
-		for (int i = 0; i < disturbances.size(); ++i) {
-		    disturbances.get(i).effect(persons);
-		}
-		for (int i = 0; i < destinations.size(); ++i) {
-		    destinations.get(i).effect(persons, this);
-		}
-	}
-	
-	@Override
-	public Scene getCurrentStage() {
-		return new Stage3();
-	}
-
-	@Override
-	public Scene getNextStage() {
-		return new Stage4();
 	}
 }

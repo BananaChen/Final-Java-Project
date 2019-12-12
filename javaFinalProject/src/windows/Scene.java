@@ -53,13 +53,14 @@ public abstract class Scene {
 			e.printStackTrace();
 		}
 
-		imagePanel.setFocusable(true);
 		// key event
+		imagePanel.setFocusable(true);
 		imagePanel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 
 				switch (e.getKeyCode()) {
 				case KeyEvent.VK_DOWN:
+					System.out.println("Down pressed");
 					for (int i = 0; i < persons.size(); ++i) {
 						Person person = persons.get(i);
 						if (person.isDropped == false) {
@@ -78,6 +79,7 @@ public abstract class Scene {
 						System.out.print(WindowController.stageStatus[i] + " ");
 					}
 					System.out.println(" ");*/
+					System.out.println("N pressed");
 					if (isPassed == true) {
 						timer.stop();
 						imagePanel.removeAll();
@@ -89,6 +91,7 @@ public abstract class Scene {
 					}
 					break;
 				case KeyEvent.VK_R:
+					System.out.println("R pressed");
 					if (isPassed == false) {
 						timer.stop();
 						imagePanel.removeAll();
@@ -100,6 +103,7 @@ public abstract class Scene {
 					}
 					break;
 				case KeyEvent.VK_ENTER:
+					System.out.println("Enter pressed");
 					timer.stop();
 					imagePanel.removeAll();
 					WindowController.setStage(getNextStage());

@@ -1,15 +1,6 @@
-/windows/
-/destination/
-<<<<<<< Updated upstream
-/AirPlane.class
-/Bee.class
-/Mario.class
-/RollerCoaster.class
-/UFO.class
-/WindowPainter.class
-/person/
-/disturbance/
-=======
->>>>>>> Stashed changes
 /aircraft/
+/destination/
+/disturbance/
 /items/
+/person/
+/windows/

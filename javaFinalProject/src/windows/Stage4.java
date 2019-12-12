@@ -9,7 +9,7 @@ import disturbance.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Stage4 extends Scene implements ActionListener {
+public class Stage4 extends Scene implements ActionListener, SceneFactory {
 
 	private BlackHole1 blackhole1;
 	private BlackHole2 blackhole2;
@@ -25,52 +25,11 @@ public class Stage4 extends Scene implements ActionListener {
 		timer = new Timer(10, this);
 
 		// declare elements in scene
-		Person person = new Alien(10, 10, 0, 0, 0, 0);
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-
-		Aircraft aircraft = new UFO(30, 20, 10, 0, 0, 0,"https://i.imgur.com/4G0ZiGK.gif");
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-
-		Destination destination = new BlueMoon(1200, 830, 1, 1, 1, 1, "https://i.imgur.com/91LhC53.png");
-		destinations.add(destination);
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-
-		//set disturbance
-
-		blackhole1 = new BlackHole1(850, 600, 0, 0, 0, 0);
-		imagePanel.add(blackhole1.lb);
-		disturbances.add(blackhole1);
-		
-		blackhole2 = new BlackHole2(1650, 300, 0, 0, 0, 0);
-		imagePanel.add(blackhole2.lb);
-		disturbances.add(blackhole2);
-		
-		magnetic1 = new Magnetic1(0, 300, 0, 0, 0, 0);
-		imagePanel.add(magnetic1.lb);
-		disturbances.add(magnetic1);
-		
-		magnetic2 = new Magnetic2(600, 800, 0, 0, 0, 0);
-		imagePanel.add(magnetic2.lb);
-		disturbances.add(magnetic2);
-		
-		magnetic3 = new Magnetic3(1720, 500, 0, 0, 0, 0);
-		imagePanel.add(magnetic3.lb);
-		disturbances.add(magnetic3);
-		
-		planet1 = new Planet1(1000, 150, 0, 0, 0, 0);
-		imagePanel.add(planet1.lb);
-		disturbances.add(planet1);
-		
-		// set background
-		bgImagePath = "https://i.imgur.com/jrWlbHA.jpg";
-		setWindow(bgImagePath);
+		createPerson();
+		createAircraft();
+		createDestination();
+		createDisturbance();
+		createBackground();
 		
 		// start timer
 		timer.start();
@@ -104,6 +63,73 @@ public class Stage4 extends Scene implements ActionListener {
 	@Override
 	public Scene getNextStage() {
 		return new Stage5();
+	}
+
+	@Override
+	public void createBackground() {
+		// set background
+		bgImagePath = "https://i.imgur.com/jrWlbHA.jpg";
+		setWindow(bgImagePath);
+		
+	}
+
+	@Override
+	public void createPerson() {
+		Person person = new Alien(10, 10, 0, 0, 0, 0);
+		person.lb.setVisible(false);
+		persons.add(person);
+		imagePanel.add(persons.get(0).lb);
+		
+	}
+
+	@Override
+	public void createAircraft() {
+		Aircraft aircraft = new UFO(30, 20, 10, 0, 0, 0,"https://i.imgur.com/4G0ZiGK.gif");
+		aircrafts.add(aircraft);
+		imagePanel.add(aircraft.lb);
+		
+	}
+
+	@Override
+	public void createDestination() {
+		Destination destination = new BlueMoon(1200, 830, 1, 1, 1, 1, "https://i.imgur.com/91LhC53.png");
+		destinations.add(destination);
+		imagePanel.add(destinations.get(0).lbSuccess);
+		imagePanel.add(destinations.get(0).lbFail);
+		destinations.get(0).lbSuccess.setVisible(false);
+		destinations.get(0).lbFail.setVisible(false);
+		imagePanel.add(destinations.get(0).lb);
+		
+	}
+
+	@Override
+	public void createDisturbance() {
+		
+		//set disturbance
+		blackhole1 = new BlackHole1(850, 600, 0, 0, 0, 0);
+		imagePanel.add(blackhole1.lb);
+		disturbances.add(blackhole1);
+		
+		blackhole2 = new BlackHole2(1650, 300, 0, 0, 0, 0);
+		imagePanel.add(blackhole2.lb);
+		disturbances.add(blackhole2);
+		
+		magnetic1 = new Magnetic1(0, 300, 0, 0, 0, 0);
+		imagePanel.add(magnetic1.lb);
+		disturbances.add(magnetic1);
+		
+		magnetic2 = new Magnetic2(600, 800, 0, 0, 0, 0);
+		imagePanel.add(magnetic2.lb);
+		disturbances.add(magnetic2);
+		
+		magnetic3 = new Magnetic3(1720, 500, 0, 0, 0, 0);
+		imagePanel.add(magnetic3.lb);
+		disturbances.add(magnetic3);
+		
+		planet1 = new Planet1(1000, 150, 0, 0, 0, 0);
+		imagePanel.add(planet1.lb);
+		disturbances.add(planet1);
+		
 	}
 
 }
