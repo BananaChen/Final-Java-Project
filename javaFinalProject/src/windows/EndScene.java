@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-public class EndScene extends Scene implements ActionListener, SceneFactory {
+public class EndScene extends Scene implements ActionListener {
 	public EndScene() {
 
 		super();
 		
-		// set window
-		createBackground();
+		bgImagePath = "https://i.imgur.com/S9eWdsK.jpg";
+//		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
+		setWindow(bgImagePath);
 		
 		timer = new Timer(10, this);
 		timer.start();
@@ -33,46 +34,8 @@ public class EndScene extends Scene implements ActionListener, SceneFactory {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		wp.brush();
 		
 	}
-
-
-	@Override
-	public void createBackground() {
-		bgImagePath = "https://i.imgur.com/S9eWdsK.jpg";
-//		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
-		setWindow(bgImagePath);
-		
-	}
-
-
-	@Override
-	public void createPerson() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createAircraft() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createDestination() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createDisturbance() {
-		// TODO Auto-generated method stub
-		
-	};
-	
 	
 }

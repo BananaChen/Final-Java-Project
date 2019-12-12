@@ -16,6 +16,13 @@ public class Thug extends Person implements ActionListener {
 
 	private static final long serialVersionUID = -1233480500986673884L;
 	
+	public JLabel heart1;
+	public JLabel heart2;
+	public JLabel heart3;
+	public JLabel lbSunGlasses;
+	public double gx;
+	public double gy = 1000;
+	public Timer timer;
 	
 	public Thug(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);

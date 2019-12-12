@@ -29,6 +29,8 @@ public abstract class Scene {
 	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
 	public ArrayList<Destination> destinations = new ArrayList<Destination>();
 	public ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
+	
+	public SceneFactory factory;
 
 	public Scene() {
 		imagePanel = new JPanel();

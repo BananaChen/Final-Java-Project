@@ -1,6 +1,7 @@
 package disturbance;
 
 import items.*;
+import person.Thug;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,11 +48,11 @@ public class Arrow extends Disturbance implements ActionListener {
 			if (persons.get(0).isDropped) {
 				persons.get(0).blood--;
 				if(persons.get(0).blood==2)
-					persons.get(0).heart3.setVisible(false);
+					((Thug)persons.get(0)).heart3.setVisible(false);
 				else if (persons.get(0).blood==1)
-					persons.get(0).heart2.setVisible(false);
+					((Thug)persons.get(0)).heart2.setVisible(false);
 				else
-					persons.get(0).heart1.setVisible(false);
+					((Thug)persons.get(0)).heart1.setVisible(false);
 			}
 		}
 

@@ -1,6 +1,7 @@
 package destination;
 
 import items.*;
+import person.*;
 import windows.*;
 
 import java.awt.event.ActionEvent;
@@ -58,10 +59,10 @@ public class Honeycomb extends Destination{
 				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9) {
 				lbSuccess.setVisible(true);
 				// Scene2.person.lb.setVisible(false);
-				person.gx = person.positionX;
-				person.lbSunGlasses.setLocation((int) person.positionX, screenHeight);
-				person.lbSunGlasses.setVisible(true);
-				person.timer.start();
+				((Thug)person).gx = person.positionX;
+				((Thug)person).lbSunGlasses.setLocation((int) person.positionX, screenHeight);
+				((Thug)person).lbSunGlasses.setVisible(true);
+				((Thug)person).timer.start();
 
 				curStage.isPassed = true;
 				curStage.timer.stop();

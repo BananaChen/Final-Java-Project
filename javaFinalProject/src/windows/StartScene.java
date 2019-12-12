@@ -4,14 +4,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class StartScene extends Scene implements ActionListener, SceneFactory {
+public class StartScene extends Scene implements ActionListener {
 
 	public StartScene() {
 
 		super();
 		
-		// set window
-		createBackground();
+		// set background
+		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
+		setWindow(bgImagePath);
+		
 		timer = new Timer(10, this);
 		timer.start();
 	}
@@ -33,43 +35,5 @@ public class StartScene extends Scene implements ActionListener, SceneFactory {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-	@Override
-	public void createBackground() {
-		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
-		setWindow(bgImagePath);
-		
-	}
-
-
-	@Override
-	public void createPerson() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createAircraft() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createDestination() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void createDisturbance() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
 
 }

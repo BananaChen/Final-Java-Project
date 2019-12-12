@@ -1,13 +1,14 @@
 package windows;
 
 import items.*;
+import person.Thug;
 import aircraft.*;
 import destination.*;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TeachingScene extends Scene implements ActionListener, SceneFactory {
+public class TeachingScene extends Scene implements ActionListener {
 
 	public TeachingScene() {
 
@@ -15,12 +16,46 @@ public class TeachingScene extends Scene implements ActionListener, SceneFactory
 
 		timer = new Timer(10, this);
 
-		// declare elements in scene
-		createPerson();
-		createAircraft();
-		createDestination();
-		createDisturbance();
-		createBackground();
+		// declare concrete factory
+		factory = new TeachingSceneFactory();
+		
+		// create person
+		persons = factory.createPerson();
+		for (int i = 0; i < persons.size(); ++i) {
+			if (persons.get(i) instanceof Thug) {
+				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
+				imagePanel.add(((Thug)persons.get(i)).heart1);
+				imagePanel.add(((Thug)persons.get(i)).heart2);
+				imagePanel.add(((Thug)persons.get(i)).heart3);
+			}
+			
+			imagePanel.add(persons.get(i).lb);
+		}
+		
+		// create aircraft
+		aircrafts = factory.createAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i)
+			imagePanel.add(aircrafts.get(i).lb);
+		
+		// create destination
+		destinations = factory.createDestination();
+		for (int i = 0; i < destinations.size(); ++i) {
+			imagePanel.add(destinations.get(i).lbSuccess);
+			imagePanel.add(destinations.get(i).lbFail);
+			destinations.get(i).lbSuccess.setVisible(false);
+			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(destinations.get(i).lb);
+		}
+		
+		
+		// create disturbance
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+
+		// set background
+		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
+		setWindow(bgImagePath);
 
 		// start timer
 		timer.start();
@@ -51,49 +86,6 @@ public class TeachingScene extends Scene implements ActionListener, SceneFactory
 		for (int i = 0; i < destinations.size(); ++i) {
 			destinations.get(i).effect(persons, this);
 		}
-	}
-
-	@Override
-	public void createBackground() {
-		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
-		setWindow(bgImagePath);
-		
-	}
-
-	@Override
-	public void createPerson() {
-		Person person = new Person(0, 0, 1, 1, 0, 0);
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-		
-	}
-
-	@Override
-	public void createAircraft() {
-		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-		
-	}
-
-	@Override
-	public void createDestination() {
-		Destination destination = new Island(1000, 500, 1, 1, 1, 1);
-		destinations.add(destination);
-
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-		
-	}
-
-	@Override
-	public void createDisturbance() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

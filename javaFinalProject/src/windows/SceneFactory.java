@@ -1,9 +1,15 @@
 package windows;
 
+import java.util.ArrayList;
+
+import items.Aircraft;
+import items.Destination;
+import items.Disturbance;
+import items.Person;
+
 public interface SceneFactory {
-	public void createBackground();
-	public void createPerson();
-	public void createAircraft();
-	public void createDestination();
-	public void createDisturbance();
+	public ArrayList<Person> createPerson();
+	public ArrayList<Aircraft> createAircraft();
+	public ArrayList<Destination> createDestination();
+	public ArrayList<Disturbance> createDisturbance();
 }

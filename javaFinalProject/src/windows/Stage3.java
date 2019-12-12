@@ -10,17 +10,7 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
-public class Stage3 extends Scene implements ActionListener, SceneFactory {
-
-//	private BigFan bigfan;
-	private MarioSpring spring;
-	private SmallLight smallLight;
-	private BigLight bigLight;
-	private UpPipe upPipe;
-	private DownPipe downPipe;
-	private Road road;
-	private Road rightPipe;
-	private Road leftPipe;
+public class Stage3 extends Scene implements ActionListener {
 	
 	public Stage3() {
 		
@@ -29,12 +19,38 @@ public class Stage3 extends Scene implements ActionListener, SceneFactory {
 		// Timer
 		timer = new Timer(10, this);
 		
-		// declare elements in scene
-		createPerson();
-		createAircraft();
-		createDestination();
-		createDisturbance();
-		createBackground();
+		// declare concrete factory
+		factory = new Stage3Factory();
+		
+		// create person
+		persons = factory.createPerson();
+		for (int i = 0; i < persons.size(); ++i)
+			imagePanel.add(persons.get(i).lb);
+		
+		// create aircraft
+		aircrafts = factory.createAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i)
+			imagePanel.add(aircrafts.get(i).lb);
+		
+		// create destination
+		destinations = factory.createDestination();
+		for (int i = 0; i < destinations.size(); ++i) {
+			imagePanel.add(destinations.get(i).lbSuccess);
+			imagePanel.add(destinations.get(i).lbFail);
+			destinations.get(i).lbSuccess.setVisible(false);
+			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(destinations.get(i).lb);
+		}
+		
+		// create disturbance
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+		
+		
+		// set background
+		bgImagePath = "https://i.imgur.com/pLHkh4G.jpg";
+		setWindow(bgImagePath);
 		
 		// start timer
 		timer.start();
@@ -68,85 +84,4 @@ public class Stage3 extends Scene implements ActionListener, SceneFactory {
 		return new Stage4();
 	}
 
-	@Override
-	public void createBackground() {
-		//set window
-		bgImagePath = "https://i.imgur.com/pLHkh4G.jpg";
-		setWindow(bgImagePath);
-		//imagePanel.setLocation(0,-100);
-		
-	}
-
-	@Override
-	public void createPerson() {
-		//create Persons
-		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);	
-		
-	}
-
-	@Override
-	public void createAircraft() {
-		//create Aircrafts
-		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-		
-	}
-
-	@Override
-	public void createDestination() {
-		//create Destinations
-		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
-		destinations.add(destination);
-
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-		
-	}
-
-	@Override
-	public void createDisturbance() {
-		//create Disturbances
-		spring = new MarioSpring(100, 660, 0, 0, 0, 0);
-		imagePanel.add(spring.lb);
-		disturbances.add(spring);
-		
-		smallLight = new SmallLight(450 , 400, 0, 0, 0, 0);
-		imagePanel.add(smallLight.lb);
-		disturbances.add(smallLight);
-		
-		bigLight = new BigLight(900 , 400, 0, 0, 0, 0);
-		imagePanel.add(bigLight.lb);
-		disturbances.add(bigLight);
-		
-		upPipe = new UpPipe(600 ,-100, 0, 0, 0, 0);
-		imagePanel.add(upPipe.lb);
-		disturbances.add(upPipe);
-		
-		downPipe = new DownPipe(600 ,600, 0, 0, 0, 0);
-		downPipe.setImage(600, 320, 200, 430, "https://i.imgur.com/SlaRZLw.png");
-		imagePanel.add(downPipe.lb);
-		disturbances.add(downPipe);
-		
-		road = new Road(0 , 300, 0, 0, 0, 0, "https://i.imgur.com/wz1WDDg.jpg");
-		imagePanel.add(road.lb);
-		disturbances.add(road);
-		
-		rightPipe = new Road(300, 400, 0, 0, 0, 0, "https://i.imgur.com/NaARvoD.png");
-		rightPipe.setImage(300, 180,  100, 130, "https://i.imgur.com/NaARvoD.png");
-		imagePanel.add(rightPipe.lb);
-		disturbances.add(rightPipe);
-		
-		leftPipe = new Road(0, 400, 0, 0, 0, 0, "https://i.imgur.com/1Y60ahd.png");
-		leftPipe.setImage(0, 180,  50, 130, "https://i.imgur.com/1Y60ahd.png");
-		imagePanel.add(leftPipe.lb);
-		disturbances.add(leftPipe);
-		
-	}
 }

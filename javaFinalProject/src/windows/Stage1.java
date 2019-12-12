@@ -9,11 +9,8 @@ import disturbance.Spring;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Stage1 extends Scene implements ActionListener, SceneFactory {
+public class Stage1 extends Scene implements ActionListener {
 	
-	private double gravity = 0.005;
-	private Disturbance bigfan, spring;
-
 	public Stage1() {
 
 		super();
@@ -21,13 +18,38 @@ public class Stage1 extends Scene implements ActionListener, SceneFactory {
 		// Timer
 		timer = new Timer(10, this);
 		
-		// declare elements in scene
-		createPerson();
-		createAircraft();
-		createDestination();
-		createDisturbance();
-		createBackground();
-
+		// declare concrete factory
+		factory = new Stage1Factory();
+		
+		// create person
+		persons = factory.createPerson();
+		for (int i = 0; i < persons.size(); ++i)
+			imagePanel.add(persons.get(i).lb);
+		
+		// create aircraft
+		aircrafts = factory.createAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i)
+			imagePanel.add(aircrafts.get(i).lb);
+		
+		// create destination
+		destinations = factory.createDestination();
+		for (int i = 0; i < destinations.size(); ++i) {
+			imagePanel.add(destinations.get(i).lbSuccess);
+			imagePanel.add(destinations.get(i).lbFail);
+			destinations.get(i).lbSuccess.setVisible(false);
+			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(destinations.get(i).lb);
+		}
+		
+		// create disturbance
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+			
+		// set background
+		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
+		setWindow(bgImagePath);
+		
 		// start timer
 		timer.start();
 	}
@@ -39,8 +61,8 @@ public class Stage1 extends Scene implements ActionListener, SceneFactory {
 
 	@Override
 	public Scene getNextStage() {
-//		return new Stage2();
-		return new EndScene();
+		return new Stage2();
+//		return new EndScene();
 	}
 
 	@Override
@@ -61,51 +83,6 @@ public class Stage1 extends Scene implements ActionListener, SceneFactory {
 		for (int i = 0; i < destinations.size(); ++i) {
 			destinations.get(i).effect(persons, this);
 		}
-	}
-
-	@Override
-	public void createPerson() {
-		Person person = new Person(0, 0, 1, 1, 0, gravity);
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-	}
-
-	@Override
-	public void createAircraft() {
-		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-	}
-
-	@Override
-	public void createDestination() {
-		Destination destination = new Island(650, 500, 0, 0, 0, 0);
-		destinations.add(destination);
-
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-	}
-
-	@Override
-	public void createDisturbance() {
-		bigfan = new BigFan(0, 200, 0, 0, 0, 0);
-		imagePanel.add(bigfan.lb);
-		disturbances.add(bigfan);
-
-		spring = new Spring(1700, 500, 0, 0, 0, 0);
-		imagePanel.add(spring.lb);
-		disturbances.add(spring);
-	}
-
-	@Override
-	public void createBackground() {
-		// set window
-		bgImagePath = "https://i.imgur.com/NEDwmd1.png";
-		setWindow(bgImagePath);
 	}
 
 }

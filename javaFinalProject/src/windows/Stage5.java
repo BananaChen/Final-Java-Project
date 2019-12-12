@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Stage5 extends Scene implements ActionListener, SceneFactory {
+public class Stage5 extends Scene implements ActionListener {
 
 	// Container c;
 	public double bloodX;
@@ -26,12 +26,46 @@ public class Stage5 extends Scene implements ActionListener, SceneFactory {
 		// Timer
 		timer = new Timer(10, this);
 
-		// declare elements in scene
-		createPerson();
-		createAircraft();
-		createDestination();
-		createDisturbance();
-		createBackground();
+		// declare concrete factory
+		factory = new Stage5Factory();
+		
+		// create person
+		persons = factory.createPerson();
+		for (int i = 0; i < persons.size(); ++i) {
+			if (persons.get(i) instanceof Thug) {
+				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
+				imagePanel.add(((Thug)persons.get(i)).heart1);
+				imagePanel.add(((Thug)persons.get(i)).heart2);
+				imagePanel.add(((Thug)persons.get(i)).heart3);
+			}
+			
+			imagePanel.add(persons.get(i).lb);
+		}
+		
+		// create aircraft
+		aircrafts = factory.createAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i)
+			imagePanel.add(aircrafts.get(i).lb);
+		
+		// create destination
+		destinations = factory.createDestination();
+		for (int i = 0; i < destinations.size(); ++i) {
+			imagePanel.add(destinations.get(i).lbSuccess);
+			imagePanel.add(destinations.get(i).lbFail);
+			destinations.get(i).lbSuccess.setVisible(false);
+			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(destinations.get(i).lb);
+		}
+		
+		
+		// create disturbance
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+
+		// set background
+		bgImagePath = "https://i.imgur.com/ntB2uDf.png";
+		setWindow(bgImagePath);
 		
 		// start timer
 		timer.start();
@@ -66,86 +100,9 @@ public class Stage5 extends Scene implements ActionListener, SceneFactory {
 		for (int i = 0; i < destinations.size(); ++i) {
 			destinations.get(i).effect(persons, this);
 		}
-		for (int i = 0; i < fireballs.size(); ++i) {
-			fireballs.get(i).effect(persons, aircrafts);
+		for (int i = 0; i < disturbances.size(); ++i) {
+			disturbances.get(i).effect(persons, aircrafts);
 		}
 	}
 
-
-
-	@Override
-	public void createBackground() {
-		bgImagePath = "https://i.imgur.com/ntB2uDf.png";
-		setWindow(bgImagePath);
-		
-	}
-
-
-
-	@Override
-	public void createPerson() {
-		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-		
-	}
-
-
-
-	@Override
-	public void createAircraft() {
-		aircrafts = new ArrayList<Aircraft>();
-		Aircraft roller1 = new RollerCoaster(900, 30, 0, 0, 247.5, 0);
-		roller1.setImage(1, 1, 150, 150, "https://i.imgur.com/ggI5oOx.png");
-		aircrafts.add(roller1);
-		imagePanel.add(roller1.lb);
-		Aircraft roller2 = new RollerCoaster(950, 100, 0, 0, 270, 0);
-		roller2.setImage(1, 1, 100, 100, "https://i.imgur.com/zkSxHWX.png");
-		aircrafts.add(roller2);
-		imagePanel.add(roller2.lb);
-		Aircraft roller3 = new RollerCoaster(1020, 100, 0, 0, 292.5, 0);
-		roller3.setImage(1, 1, 100, 100, "https://i.imgur.com/kMty2NS.png");
-		aircrafts.add(roller3);
-		imagePanel.add(roller3.lb);
-		Aircraft roller4 = new RollerCoaster(1090, 80, 0, 0, 315, 0);
-		roller4.setImage(1, 1, 50, 70, "https://i.imgur.com/WNpfnuS.png");
-		aircrafts.add(roller4);
-		imagePanel.add(roller4.lb);
-		Aircraft roller5 = new RollerCoaster(1130, 50, 0, 0, 337.5, 0);
-		roller5.setImage(1, 1, 100, 100, "https://i.imgur.com/5FXCIEX.png");
-		aircrafts.add(roller5);
-		imagePanel.add(roller5.lb);
-		Aircraft roller6 = new RollerCoaster(1180, 50, 0, 0, 360, 0);
-		roller6.setImage(1, 1, 100, 100, "https://i.imgur.com/GFtcyKx.png");
-		aircrafts.add(roller6);
-		imagePanel.add(roller6.lb);
-		
-	}
-
-
-
-	@Override
-	public void createDestination() {
-		Destination island = new Home(600, 650, 1, 1, 1, 1);
-		destinations.add(island);
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-		
-	}
-
-
-
-	@Override
-	public void createDisturbance() {
-		fireballs = new ArrayList<Disturbance>();
-		for (int i = 0; i < 4; ++i) {
-			fireballs.add(new FireBall(0, 700, 0, 0, 0, 0, "https://i.imgur.com/I9l1stq.png"));
-			imagePanel.add(fireballs.get(i).lb);
-		}
-		
-	}
 }
