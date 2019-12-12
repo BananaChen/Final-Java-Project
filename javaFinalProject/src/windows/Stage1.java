@@ -1,6 +1,7 @@
 package windows;
 
 import items.*;
+import person.Thug;
 import aircraft.*;
 import destination.*;
 import disturbance.*;
@@ -23,8 +24,16 @@ public class Stage1 extends Scene implements ActionListener {
 		
 		// create person
 		persons = factory.createPerson();
-		for (int i = 0; i < persons.size(); ++i)
+		for (int i = 0; i < persons.size(); ++i) {
+			if (persons.get(i) instanceof Thug) {
+				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
+				imagePanel.add(((Thug)persons.get(i)).heart1);
+				imagePanel.add(((Thug)persons.get(i)).heart2);
+				imagePanel.add(((Thug)persons.get(i)).heart3);
+			}
+			
 			imagePanel.add(persons.get(i).lb);
+		}
 		
 		// create aircraft
 		aircrafts = factory.createAircraft();
@@ -62,7 +71,6 @@ public class Stage1 extends Scene implements ActionListener {
 	@Override
 	public Scene getNextStage() {
 		return new Stage2();
-//		return new EndScene();
 	}
 
 	@Override

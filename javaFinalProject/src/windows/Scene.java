@@ -3,9 +3,12 @@ package windows;
 import items.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.swing.*;
 
 import aircraft.WindowPainter;
+import command.*;
 
 import java.awt.Image;
 import java.awt.event.KeyAdapter;
@@ -30,7 +33,11 @@ public abstract class Scene {
 	public ArrayList<Destination> destinations = new ArrayList<Destination>();
 	public ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
 	
+	// factory method instance
 	public SceneFactory factory;
+	
+	// command pattern instance
+	RemoteController remoteController = new RemoteController();
 
 	public Scene() {
 		imagePanel = new JPanel();
@@ -41,7 +48,18 @@ public abstract class Scene {
 		wp = new WindowPainter(0, 0, 0, 0, 0, 0);
 		wp.lb.setVisible(true);
 		imagePanel.add(wp.lb);
+		
+		remoteController.setRemoteController(KeyEvent.VK_DOWN, new JumpOffCommand());
+		remoteController.setRemoteController(KeyEvent.VK_N, new NextStageCommand());
+		remoteController.setRemoteController(KeyEvent.VK_R, new ReplayCommand());
+		remoteController.setRemoteController(KeyEvent.VK_ENTER, new SkipStageCommand());
 	}
+	
+	public Scene getInstance() {
+		return Scene.this;
+	}
+	
+	
 
 	public void setWindow(String bgImagePath) {
 		try {
@@ -59,61 +77,7 @@ public abstract class Scene {
 		imagePanel.setFocusable(true);
 		imagePanel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-
-				switch (e.getKeyCode()) {
-					case KeyEvent.VK_DOWN:
-						System.out.println("Down pressed");
-						for (int i = 0; i < persons.size(); ++i) {
-							Person person = persons.get(i);
-							if (person.isDropped == false) {
-								person.lb.setVisible(true);
-								person.personInitPx = aircrafts.get(0).positionX + aircrafts.get(0).imageWidth / 2;
-								person.personInitPy = aircrafts.get(0).positionY + aircrafts.get(0).imageHeight / 2;
-								person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVx,
-										person.personInitVy, person.personInitAx, person.personInitAy);
-								person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
-								person.isDropped = true;
-							}
-						}
-						break;
-					case KeyEvent.VK_N:
-						/*for (int i = 0; i < WindowController.NumOfStage; ++i) {
-							System.out.print(WindowController.stageStatus[i] + " ");
-						}
-						System.out.println(" ");*/
-						System.out.println("N pressed");
-						if (isPassed == true) {
-							timer.stop();
-							imagePanel.removeAll();
-							// go to next stage
-							WindowController.setStage(getNextStage());
-							System.out.println("go to next stage");
-							isPassed = false;
-							imagePanel.setFocusable(false);
-						}
-						break;
-					case KeyEvent.VK_R:
-						System.out.println("R pressed");
-						if (isPassed == false) {
-							timer.stop();
-							imagePanel.removeAll();
-							// restart current stage
-							WindowController.setStage(getCurrentStage());
-							System.out.println("replay");
-							isPassed = false;
-							imagePanel.setFocusable(false);
-						}
-						break;
-					case KeyEvent.VK_ENTER:
-						System.out.println("Enter pressed");
-						timer.stop();
-						imagePanel.removeAll();
-						WindowController.setStage(getNextStage());
-						System.out.println("Jump");
-						isPassed = false;
-						imagePanel.setFocusable(false);
-						break;
-				}
+				remoteController.pressButton(e.getKeyCode(), imagePanel, getInstance(), isPassed, timer, persons, aircrafts);
 			}
 		});
 	}
