@@ -7,7 +7,7 @@ import destination.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TeachingScene extends Scene implements ActionListener {
+public class TeachingScene extends Scene implements ActionListener, SceneFactory {
 
 	public TeachingScene() {
 
@@ -16,27 +16,11 @@ public class TeachingScene extends Scene implements ActionListener {
 		timer = new Timer(10, this);
 
 		// declare elements in scene
-		Person person = new Person(0, 0, 1, 1, 0, 0);
-		person.lb.setVisible(false);
-		persons.add(person);
-		imagePanel.add(persons.get(0).lb);
-
-		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
-		aircrafts.add(aircraft);
-		imagePanel.add(aircraft.lb);
-
-		Destination destination = new Island(1000, 500, 1, 1, 1, 1);
-		destinations.add(destination);
-
-		imagePanel.add(destinations.get(0).lbSuccess);
-		imagePanel.add(destinations.get(0).lbFail);
-		destinations.get(0).lbSuccess.setVisible(false);
-		destinations.get(0).lbFail.setVisible(false);
-		imagePanel.add(destinations.get(0).lb);
-
-		// set window
-		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
-		setWindow(bgImagePath);
+		createPerson();
+		createAircraft();
+		createDestination();
+		createDisturbance();
+		createBackground();
 
 		// start timer
 		timer.start();
@@ -67,6 +51,49 @@ public class TeachingScene extends Scene implements ActionListener {
 		for (int i = 0; i < destinations.size(); ++i) {
 			destinations.get(i).effect(persons, this);
 		}
+	}
+
+	@Override
+	public void createBackground() {
+		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
+		setWindow(bgImagePath);
+		
+	}
+
+	@Override
+	public void createPerson() {
+		Person person = new Person(0, 0, 1, 1, 0, 0);
+		person.lb.setVisible(false);
+		persons.add(person);
+		imagePanel.add(persons.get(0).lb);
+		
+	}
+
+	@Override
+	public void createAircraft() {
+		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
+		aircrafts.add(aircraft);
+		imagePanel.add(aircraft.lb);
+		
+	}
+
+	@Override
+	public void createDestination() {
+		Destination destination = new Island(1000, 500, 1, 1, 1, 1);
+		destinations.add(destination);
+
+		imagePanel.add(destinations.get(0).lbSuccess);
+		imagePanel.add(destinations.get(0).lbFail);
+		destinations.get(0).lbSuccess.setVisible(false);
+		destinations.get(0).lbFail.setVisible(false);
+		imagePanel.add(destinations.get(0).lb);
+		
+	}
+
+	@Override
+	public void createDisturbance() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

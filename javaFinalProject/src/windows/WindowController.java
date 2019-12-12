@@ -41,5 +41,5 @@ public class WindowController extends JFrame {
 		wc.add(stage.imagePanel);
 		wc.repaint();
 		System.out.println(stage.getClass());
-		}
+	}
 };
