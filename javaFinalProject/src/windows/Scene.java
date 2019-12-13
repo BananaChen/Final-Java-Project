@@ -79,9 +79,59 @@ public abstract class Scene implements ActionListener {
 		imagePanel.setFocusable(true);
 		imagePanel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-				remoteController.pressButton(e.getKeyCode(), imagePanel, getInstance(), isPassed, timer, persons, aircrafts);
+				remoteController.pressButton(e.getKeyCode(), getInstance());
 			}
 		});
+	}
+	public void goToNextStage() {
+		System.out.println("N pressed");
+		if (isPassed == true) {
+			timer.stop();
+			imagePanel.removeAll();
+			// go to next stage
+			WindowController.setStage(getNextStage());
+			System.out.println("go to next stage");
+			isPassed = false;
+			imagePanel.setFocusable(false);
+		}
+	}
+	
+	public void skipToNextStage() {
+		System.out.println("Enter pressed");
+		timer.stop();
+		imagePanel.removeAll();
+		WindowController.setStage(getNextStage());
+		isPassed = false;
+		imagePanel.setFocusable(false);
+	}
+	
+	public void replay() {
+		System.out.println("R pressed");
+		if (isPassed == false) {
+			timer.stop();
+			imagePanel.removeAll();
+			// restart current stage
+			WindowController.setStage(getCurrentStage());
+			System.out.println("replay");
+			isPassed = false;
+			imagePanel.setFocusable(false);
+		}
+	}
+	
+	public void jumpOff() {
+		System.out.println("Down pressed");
+		for (int i = 0; i < persons.size(); ++i) {
+			Person person = persons.get(i);
+			if (person.isDropped == false) {
+				person.lb.setVisible(true);
+				person.personInitPx = aircrafts.get(i).positionX + aircrafts.get(i).imageWidth / 2;
+				person.personInitPy = aircrafts.get(i).positionY + aircrafts.get(i).imageHeight / 2;
+				person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVx,
+						person.personInitVy, person.personInitAx, person.personInitAy);
+				person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
+				person.isDropped = true;
+			}
+		}
 	}
 	
 	public void addElementToPanel(SceneFactory factory) {
