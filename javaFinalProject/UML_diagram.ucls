@@ -19,16 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="windows.WindowController" project="javaFinalProject2" 
-    file="/javaFinalProject2/src/windows/WindowController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="725" y="-655"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="windows.Stage2Factory" project="javaFinalProject2" 
+  <class id="3" language="java" name="windows.Stage2Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage2Factory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="151" width="122" x="1755" y="-112"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="windows.Stage3Factory" project="javaFinalProject2" 
+  <class id="4" language="java" name="windows.Stage3Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage3Factory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="151" width="125" x="1883" y="-111"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,16 +37,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="windows.Scene" project="javaFinalProject2" 
+  <class id="5" language="java" name="windows.Scene" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Scene.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="427" width="218" x="618" y="-473"/>    
+    <position height="282" width="257" x="625" y="-376"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="7" language="java" name="windows.SceneFactory" project="javaFinalProject2" 
+  <interface id="6" language="java" name="windows.SceneFactory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/SceneFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1847" y="-254"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="8" language="java" name="windows.Stage1Factory" project="javaFinalProject2" 
+  <class id="7" language="java" name="windows.Stage1Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage1Factory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="153" width="127" x="1623" y="-113"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="windows.Stage1" project="javaFinalProject2" 
+  <class id="8" language="java" name="windows.Stage1" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="135" width="85" x="543" y="127"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="windows.Stage2" project="javaFinalProject2" 
+  <class id="9" language="java" name="windows.Stage2" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="131" width="85" x="636" y="130"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="windows.Stage3" project="javaFinalProject2" 
+  <class id="10" language="java" name="windows.Stage3" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage3.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="133" width="85" x="730" y="129"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="windows.Stage4" project="javaFinalProject2" 
+  <class id="11" language="java" name="windows.Stage4" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage4.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="133" width="85" x="825" y="127"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="windows.Stage5" project="javaFinalProject2" 
+  <class id="12" language="java" name="windows.Stage5" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage5.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="130" width="85" x="921" y="129"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="windows.EndScene" project="javaFinalProject2" 
+  <class id="13" language="java" name="windows.EndScene" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/EndScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="127" width="90" x="1017" y="128"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="windows.TeachingScene" project="javaFinalProject2" 
+  <class id="14" language="java" name="windows.TeachingScene" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/TeachingScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="133" width="111" x="422" y="130"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="windows.StartScene" project="javaFinalProject2" 
+  <class id="15" language="java" name="windows.StartScene" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/StartScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="133" width="88" x="324" y="130"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -145,7 +136,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="items.Items" project="javaFinalProject2" 
+  <class id="16" language="java" name="items.Items" project="javaFinalProject2" 
     file="/javaFinalProject2/src/items/Items.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="175" width="205" x="1230" y="196"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -154,7 +145,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="items.Destination" project="javaFinalProject2" 
+  <class id="17" language="java" name="items.Destination" project="javaFinalProject2" 
     file="/javaFinalProject2/src/items/Destination.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="101" width="134" x="596" y="542"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,7 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="items.Person" project="javaFinalProject2" 
+  <class id="18" language="java" name="items.Person" project="javaFinalProject2" 
     file="/javaFinalProject2/src/items/Person.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="104" width="128" x="1020" y="532"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -172,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="items.Aircraft" project="javaFinalProject2" 
+  <class id="19" language="java" name="items.Aircraft" project="javaFinalProject2" 
     file="/javaFinalProject2/src/items/Aircraft.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="103" width="122" x="1460" y="535"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -181,7 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="items.Disturbance" project="javaFinalProject2" 
+  <class id="20" language="java" name="items.Disturbance" project="javaFinalProject2" 
     file="/javaFinalProject2/src/items/Disturbance.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="118" width="119" x="1965" y="571"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="disturbance.SmallLight" project="javaFinalProject2" 
+  <class id="21" language="java" name="disturbance.SmallLight" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/SmallLight.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1244" y="864"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="disturbance.BigLight" project="javaFinalProject2" 
+  <class id="22" language="java" name="disturbance.BigLight" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/BigLight.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1333" y="863"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="disturbance.Arrow" project="javaFinalProject2" 
+  <class id="23" language="java" name="disturbance.Arrow" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Arrow.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="111" width="85" x="1421" y="864"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +208,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="disturbance.BigFan" project="javaFinalProject2" 
+  <class id="24" language="java" name="disturbance.BigFan" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/BigFan.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1511" y="863"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +217,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="disturbance.FireBall" project="javaFinalProject2" 
+  <class id="25" language="java" name="disturbance.FireBall" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/FireBall.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="114" width="85" x="1604" y="865"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -235,7 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="disturbance.Road" project="javaFinalProject2" 
+  <class id="26" language="java" name="disturbance.Road" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Road.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1696" y="863"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -244,7 +235,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="disturbance.Magnetic1" project="javaFinalProject2" 
+  <class id="27" language="java" name="disturbance.Magnetic1" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Magnetic1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1787" y="864"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +244,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="disturbance.UpPipe" project="javaFinalProject2" 
+  <class id="28" language="java" name="disturbance.UpPipe" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/UpPipe.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="1880" y="864"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,7 +253,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="disturbance.Magnetic2" project="javaFinalProject2" 
+  <class id="29" language="java" name="disturbance.Magnetic2" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Magnetic2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="107" width="85" x="1972" y="867"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -271,7 +262,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="disturbance.DownPipe" project="javaFinalProject2" 
+  <class id="30" language="java" name="disturbance.DownPipe" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/DownPipe.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="2062" y="864"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,7 +271,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="disturbance.Magnetic3" project="javaFinalProject2" 
+  <class id="31" language="java" name="disturbance.Magnetic3" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Magnetic3.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="2154" y="867"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -289,7 +280,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="disturbance.Spring" project="javaFinalProject2" 
+  <class id="32" language="java" name="disturbance.Spring" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Spring.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="2245" y="866"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -298,7 +289,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="disturbance.MarioSpring" project="javaFinalProject2" 
+  <class id="33" language="java" name="disturbance.MarioSpring" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/MarioSpring.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="93" x="2336" y="867"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -307,7 +298,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="disturbance.Planet1" project="javaFinalProject2" 
+  <class id="34" language="java" name="disturbance.Planet1" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/Planet1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="2434" y="866"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -316,7 +307,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="disturbance.BlackHole1" project="javaFinalProject2" 
+  <class id="35" language="java" name="disturbance.BlackHole1" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/BlackHole1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="123" width="90" x="2528" y="858"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -325,7 +316,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="disturbance.BlackHole2" project="javaFinalProject2" 
+  <class id="36" language="java" name="disturbance.BlackHole2" project="javaFinalProject2" 
     file="/javaFinalProject2/src/disturbance/BlackHole2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="123" width="90" x="2625" y="859"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -334,7 +325,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="aircraft.RollerCoaster" project="javaFinalProject2" 
+  <class id="37" language="java" name="aircraft.RollerCoaster" project="javaFinalProject2" 
     file="/javaFinalProject2/src/aircraft/RollerCoaster.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="104" x="1297" y="681"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -343,7 +334,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="aircraft.AirPlane" project="javaFinalProject2" 
+  <class id="38" language="java" name="aircraft.AirPlane" project="javaFinalProject2" 
     file="/javaFinalProject2/src/aircraft/AirPlane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="85" x="1405" y="681"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -352,7 +343,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="40" language="java" name="aircraft.Bee" project="javaFinalProject2" 
+  <class id="39" language="java" name="aircraft.Bee" project="javaFinalProject2" 
     file="/javaFinalProject2/src/aircraft/Bee.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="95" width="85" x="1497" y="682"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -361,7 +352,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="41" language="java" name="aircraft.Mario" project="javaFinalProject2" 
+  <class id="40" language="java" name="aircraft.Mario" project="javaFinalProject2" 
     file="/javaFinalProject2/src/aircraft/Mario.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="92" width="85" x="1679" y="682"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -370,7 +361,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="42" language="java" name="aircraft.UFO" project="javaFinalProject2" 
+  <class id="41" language="java" name="aircraft.UFO" project="javaFinalProject2" 
     file="/javaFinalProject2/src/aircraft/UFO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="92" width="85" x="1588" y="681"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -379,7 +370,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="43" language="java" name="person.Alien" project="javaFinalProject2" 
+  <class id="42" language="java" name="person.Alien" project="javaFinalProject2" 
     file="/javaFinalProject2/src/person/Alien.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="85" x="806" y="666"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -388,7 +379,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="44" language="java" name="person.PokemonMaster" project="javaFinalProject2" 
+  <class id="43" language="java" name="person.PokemonMaster" project="javaFinalProject2" 
     file="/javaFinalProject2/src/person/PokemonMaster.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="118" x="900" y="667"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -397,7 +388,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="45" language="java" name="person.Turtle" project="javaFinalProject2" 
+  <class id="44" language="java" name="person.Turtle" project="javaFinalProject2" 
     file="/javaFinalProject2/src/person/Turtle.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="85" x="1027" y="667"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -406,7 +397,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="46" language="java" name="person.Thug" project="javaFinalProject2" 
+  <class id="45" language="java" name="person.Thug" project="javaFinalProject2" 
     file="/javaFinalProject2/src/person/Thug.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="98" width="95" x="1121" y="665"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -415,7 +406,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="47" language="java" name="destination.Honeycomb" project="javaFinalProject2" 
+  <class id="46" language="java" name="destination.Honeycomb" project="javaFinalProject2" 
     file="/javaFinalProject2/src/destination/Honeycomb.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="109" width="93" x="395" y="801"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -424,7 +415,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="48" language="java" name="destination.Island" project="javaFinalProject2" 
+  <class id="47" language="java" name="destination.Island" project="javaFinalProject2" 
     file="/javaFinalProject2/src/destination/Island.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="494" y="799"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -433,7 +424,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="49" language="java" name="destination.BlueMoon" project="javaFinalProject2" 
+  <class id="48" language="java" name="destination.BlueMoon" project="javaFinalProject2" 
     file="/javaFinalProject2/src/destination/BlueMoon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="85" x="586" y="800"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -442,7 +433,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="50" language="java" name="destination.Flower" project="javaFinalProject2" 
+  <class id="49" language="java" name="destination.Flower" project="javaFinalProject2" 
     file="/javaFinalProject2/src/destination/Flower.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="125" width="90" x="681" y="801"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -451,7 +442,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="51" language="java" name="destination.Home" project="javaFinalProject2" 
+  <class id="50" language="java" name="destination.Home" project="javaFinalProject2" 
     file="/javaFinalProject2/src/destination/Home.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="115" width="85" x="780" y="803"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -460,52 +451,52 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="52" language="java" name="command.JumpOffCommand" project="javaFinalProject2" 
+  <class id="51" language="java" name="command.JumpOffCommand" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/JumpOffCommand.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-158" y="-117"/>    
+    <position height="-1" width="-1" x="-146" y="-347"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="53" language="java" name="command.NextStageCommand" project="javaFinalProject2" 
+  <class id="52" language="java" name="command.NextStageCommand" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/NextStageCommand.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-9" y="-117"/>    
+    <position height="-1" width="-1" x="3" y="-347"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="54" language="java" name="command.RemoteController" project="javaFinalProject2" 
+  <class id="53" language="java" name="command.RemoteController" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/RemoteController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="115" width="140" x="312" y="-424"/>    
+    <position height="115" width="140" x="307" y="-626"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="55" language="java" name="command.ReplayCommand" project="javaFinalProject2" 
+  <class id="54" language="java" name="command.ReplayCommand" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/ReplayCommand.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="133" y="-116"/>    
+    <position height="-1" width="-1" x="145" y="-346"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="56" language="java" name="command.SkipStageCommand" project="javaFinalProject2" 
+  <class id="55" language="java" name="command.SkipStageCommand" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/SkipStageCommand.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="272" y="-114"/>    
+    <position height="-1" width="-1" x="284" y="-344"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="57" language="java" name="windows.TeachingSceneFactory" project="javaFinalProject2" 
+  <class id="56" language="java" name="windows.TeachingSceneFactory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/TeachingSceneFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="151" width="160" x="1459" y="-112"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -514,314 +505,312 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="58" language="java" name="command.Command" project="javaFinalProject2" 
+  <interface id="57" language="java" name="command.Command" project="javaFinalProject2" 
     file="/javaFinalProject2/src/command/Command.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="68" y="-371"/>    
+    <position height="-1" width="-1" x="70" y="-567"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
+  <class id="58" language="java" name="windows.WindowController" project="javaFinalProject2" 
+    file="/javaFinalProject2/src/windows/WindowController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="749" y="-568"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <generalization id="59">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="21"/>  
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <realization id="60">    
     <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="7"/>  
+    <end type="TARGET" refId="6"/>  
   </realization>  
   <generalization id="61">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="20"/>  
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="19"/>  
   </generalization>  
   <generalization id="62">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="17"/>  
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <association id="63">    
-    <bendpoint x="-158" y="-2"/>    
-    <bendpoint x="362" y="-1"/>    
-    <end type="SOURCE" refId="52" navigable="false">      
+    <bendpoint x="-144" y="-221"/>    
+    <bendpoint x="342" y="-225"/>    
+    <end type="SOURCE" refId="51" navigable="false">      
       <attribute id="64" name="scene"/>      
       <multiplicity id="65" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="66">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="67">    
     <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="45"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <generalization id="69">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="51"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <generalization id="71">    
-    <end type="SOURCE" refId="46"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <generalization id="72">    
-    <end type="SOURCE" refId="39"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="69">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
   <generalization id="73">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="21"/>  
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <generalization id="74">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
   </generalization>  
   <generalization id="75">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="17"/>  
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <realization id="76">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
+    <end type="TARGET" refId="6"/>  
   </realization>  
   <generalization id="77">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <generalization id="78">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="79">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="80">    
-    <end type="SOURCE" refId="50"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <generalization id="81">    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="78">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="79" name="remoteController"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <generalization id="82">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <generalization id="83">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
   <generalization id="84">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
   </generalization>  
-  <association id="85">    
-    <bendpoint x="-9" y="-13"/>    
-    <bendpoint x="360" y="-14"/>    
-    <end type="SOURCE" refId="53" navigable="false">      
-      <attribute id="86" name="scene"/>      
-      <multiplicity id="87" minimum="0" maximum="1"/>    
+  <generalization id="85">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="86">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="87" name="stage"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="88">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
   <generalization id="89">    
-    <end type="SOURCE" refId="48"/>    
-    <end type="TARGET" refId="18"/>  
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
   </generalization>  
   <generalization id="90">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="21"/>  
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
   </generalization>  
-  <generalization id="91">    
-    <end type="SOURCE" refId="49"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <generalization id="92">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <association id="93">    
-    <bendpoint x="134" y="-27"/>    
-    <bendpoint x="359" y="-29"/>    
-    <end type="SOURCE" refId="55" navigable="false">      
-      <attribute id="94" name="scene"/>      
-      <multiplicity id="95" minimum="0" maximum="1"/>    
+  <association id="91">    
+    <bendpoint x="4" y="-235"/>    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="92" name="scene"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="96">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <association id="97">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="98" name="remoteController"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="54" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="100">    
-    <end type="SOURCE" refId="42"/>    
+  <generalization id="94">    
+    <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="101">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <generalization id="102">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <association id="103">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="104" name="factory">        
-        <position height="0" width="0" x="-2" y="-24"/>      
-      </attribute>      
-      <multiplicity id="105" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-2" y="-24"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="106">    
+  <generalization id="95">    
     <end type="SOURCE" refId="47"/>    
-    <end type="TARGET" refId="18"/>  
+    <end type="TARGET" refId="17"/>  
   </generalization>  
-  <realization id="107">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <generalization id="108">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <generalization id="109">    
-    <end type="SOURCE" refId="38"/>    
+  <generalization id="96">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <association id="110">    
-    <bendpoint x="271" y="-41"/>    
-    <bendpoint x="355" y="-42"/>    
-    <end type="SOURCE" refId="56" navigable="false">      
-      <attribute id="111" name="scene"/>      
-      <multiplicity id="112" minimum="0" maximum="1"/>    
+  <generalization id="97">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="99">    
+    <bendpoint x="146" y="-253"/>    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="100" name="scene"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="113">    
-    <end type="SOURCE" refId="54" navigable="false">      
-      <attribute id="114" name="controller"/>      
-      <multiplicity id="115" minimum="0" maximum="2147483647"/>    
+  <association id="102">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="103" name="wc"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="116">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="5"/>  
   </generalization>  
-  <realization id="117">    
-    <end type="SOURCE" refId="53"/>    
-    <end type="TARGET" refId="58"/>  
-  </realization>  
-  <generalization id="118">    
-    <end type="SOURCE" refId="43"/>    
+  <generalization id="106">    
+    <end type="SOURCE" refId="41"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <generalization id="119">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <realization id="120">    
-    <end type="SOURCE" refId="52"/>    
-    <end type="TARGET" refId="58"/>  
+  <realization id="107">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
   </realization>  
-  <realization id="121">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <realization id="122">    
-    <end type="SOURCE" refId="57"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <association id="123">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="124" name="wc">        
-        <position height="0" width="0" x="563" y="-429"/>      
-      </attribute>      
-      <multiplicity id="125" minimum="0" maximum="1">        
-        <position height="0" width="0" x="563" y="-429"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="126">    
-    <end type="SOURCE" refId="37"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="127">    
-    <end type="SOURCE" refId="41"/>    
+  <generalization id="108">    
+    <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="128">    
-    <end type="SOURCE" refId="56"/>    
-    <end type="TARGET" refId="58"/>  
-  </realization>  
-  <generalization id="129">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="130">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <generalization id="131">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="21"/>  
-  </generalization>  
-  <association id="132">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="133" name="stage">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="109">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="110" name="factory">        
+        <position height="0" width="0" x="-2" y="-24"/>      
       </attribute>      
-      <multiplicity id="134" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="111" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-2" y="-24"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="135">    
-    <end type="SOURCE" refId="44"/>    
+  <generalization id="112">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <realization id="113">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="37"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
+  <association id="116">    
+    <bendpoint x="284" y="-262"/>    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="117" name="scene"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="120" name="controller"/>      
+      <multiplicity id="121" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="57" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="122">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <realization id="123">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <generalization id="124">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="125">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="126">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <realization id="127">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="128">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="129">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="130">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="131">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <generalization id="132">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="133">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="134">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="135">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
   <generalization id="136">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="21"/>  
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <realization id="137">    
-    <end type="SOURCE" refId="55"/>    
-    <end type="TARGET" refId="58"/>  
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="57"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

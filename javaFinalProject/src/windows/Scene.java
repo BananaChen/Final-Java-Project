@@ -4,7 +4,6 @@ import items.*;
 import person.Thug;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.swing.*;
 
@@ -38,8 +37,7 @@ public abstract class Scene implements ActionListener {
 	// factory method instance
 	public SceneFactory factory;
 	
-	// command pattern instance
-	RemoteController remoteController = new RemoteController();
+	
 
 	public Scene() {
 		imagePanel = new JPanel();
@@ -51,17 +49,13 @@ public abstract class Scene implements ActionListener {
 		wp.lb.setVisible(true);
 		imagePanel.add(wp.lb);
 		
-		remoteController.setRemoteController(KeyEvent.VK_DOWN, new JumpOffCommand());
-		remoteController.setRemoteController(KeyEvent.VK_N, new NextStageCommand());
-		remoteController.setRemoteController(KeyEvent.VK_R, new ReplayCommand());
-		remoteController.setRemoteController(KeyEvent.VK_ENTER, new SkipStageCommand());
+		// set up commands
+//		setCommand();
 	}
 	
 	public Scene getInstance() {
 		return Scene.this;
 	}
-	
-	
 
 	public void setWindow(String bgImagePath) {
 		try {
@@ -79,10 +73,18 @@ public abstract class Scene implements ActionListener {
 		imagePanel.setFocusable(true);
 		imagePanel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-				remoteController.pressButton(e.getKeyCode(), getInstance());
+				WindowController.remoteController.pressButton(e.getKeyCode(), getInstance());
 			}
 		});
 	}
+	
+	public void setCommand() {
+		WindowController.remoteController.setRemoteController(KeyEvent.VK_DOWN, new JumpOffCommand());
+		WindowController.remoteController.setRemoteController(KeyEvent.VK_N, new NextStageCommand());
+		WindowController.remoteController.setRemoteController(KeyEvent.VK_R, new ReplayCommand());
+		WindowController.remoteController.setRemoteController(KeyEvent.VK_ENTER, new SkipStageCommand());
+	}
+	
 	public void goToNextStage() {
 		System.out.println("N pressed");
 		if (isPassed == true) {
@@ -136,6 +138,19 @@ public abstract class Scene implements ActionListener {
 	
 	public void addElementToPanel(SceneFactory factory) {
 		// create person
+		addPersonToPanel(factory);
+		
+		// create aircraft
+		addAircraftToPanel(factory);
+		
+		// create destination
+		addDestinationToPanel(factory);
+		
+		// create disturbance
+		addDisturbanceToPanel(factory);
+	}
+	
+	private void addPersonToPanel(SceneFactory factory) {
 		persons = factory.createPerson();
 		for (int i = 0; i < persons.size(); ++i) {
 			if (persons.get(i) instanceof Thug) {
@@ -147,13 +162,21 @@ public abstract class Scene implements ActionListener {
 			
 			imagePanel.add(persons.get(i).lb);
 		}
-		
-		// create aircraft
+	}
+	
+	private void addAircraftToPanel(SceneFactory factory) {
 		aircrafts = factory.createAircraft();
 		for (int i = 0; i < aircrafts.size(); ++i)
 			imagePanel.add(aircrafts.get(i).lb);
-		
-		// create destination
+	}
+	
+	private void addDisturbanceToPanel(SceneFactory factory) {
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+	}
+	
+	private void addDestinationToPanel(SceneFactory factory) {
 		destinations = factory.createDestination();
 		for (int i = 0; i < destinations.size(); ++i) {
 			imagePanel.add(destinations.get(i).lbSuccess);
@@ -162,11 +185,6 @@ public abstract class Scene implements ActionListener {
 			destinations.get(i).lbFail.setVisible(false);
 			imagePanel.add(destinations.get(i).lb);
 		}
-		
-		// create disturbance
-		disturbances = factory.createDisturbance();
-		for (int i = 0; i < disturbances.size(); ++i)
-			imagePanel.add(disturbances.get(i).lb);
 	}
 	
 	public void startTimer() {
@@ -174,8 +192,19 @@ public abstract class Scene implements ActionListener {
 		timer.start();
 	}
 	
-	public void performAction(boolean initPersonSpeed) {
+	public void performAction(boolean initSpeed) {
+		brushPanel();
+		personAction(initSpeed);
+		aircraftAction(initSpeed);
+		disturbanceAction(initSpeed);
+		destinationAction(initSpeed);
+	}
+	
+	private void brushPanel() {
 		wp.brush();
+	}
+	
+	private void personAction(boolean initPersonSpeed) {
 		for (int i = 0; i < persons.size(); ++i) {
 			if (initPersonSpeed) {
 				persons.get(i).personInitVx = aircrafts.get(i).getVelocityX();
@@ -183,15 +212,24 @@ public abstract class Scene implements ActionListener {
 			}
 			persons.get(i).move();
 		}
+	}
+	
+	private void aircraftAction(boolean initAircraftSpeed) {
 		for (int i = 0; i < aircrafts.size(); ++i) {
 			aircrafts.get(i).move();
 			if (aircrafts.get(i).getPositionX() > bgWidth) {
 				aircrafts.get(i).setPositionX(-aircrafts.get(i).imageWidth);
 			}
 		}
+	}
+	
+	private void disturbanceAction(boolean initDisturbanceSpeed) {
 		for (int i = 0; i < disturbances.size(); ++i) {
 			disturbances.get(i).effect(persons);
 		}
+	}
+	
+	private void destinationAction(boolean initDestinationSpeed) {
 		for (int i = 0; i < destinations.size(); ++i) {
 			destinations.get(i).effect(persons, this);
 		}
