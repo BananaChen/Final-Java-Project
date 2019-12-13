@@ -2,19 +2,17 @@ package windows;
 
 import java.util.ArrayList;
 
-import aircraft.AirPlane;
-import destination.Island;
-import items.Aircraft;
-import items.Destination;
-import items.Disturbance;
-import items.Person;
+import items.*;
+import aircraft.*;
+import destination.*;
+import disturbance.*;
 
 public class TeachingSceneFactory implements SceneFactory{
 
 	@Override
 	public ArrayList<Person> createPerson() {
 		ArrayList<Person> persons = new ArrayList<Person>();
-		Person person = new Person(0, 0, 1, 1, 0, 0);
+		Person person = new Person(0, 0, 1, 1, 0, 0.01);
 		person.lb.setVisible(false);
 		persons.add(person);
 		

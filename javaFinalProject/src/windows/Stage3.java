@@ -16,36 +16,10 @@ public class Stage3 extends Scene implements ActionListener {
 		
 		super();
 		
-		// Timer
-		timer = new Timer(10, this);
-		
 		// declare concrete factory
 		factory = new Stage3Factory();
 		
-		// create person
-		persons = factory.createPerson();
-		for (int i = 0; i < persons.size(); ++i)
-			imagePanel.add(persons.get(i).lb);
-		
-		// create aircraft
-		aircrafts = factory.createAircraft();
-		for (int i = 0; i < aircrafts.size(); ++i)
-			imagePanel.add(aircrafts.get(i).lb);
-		
-		// create destination
-		destinations = factory.createDestination();
-		for (int i = 0; i < destinations.size(); ++i) {
-			imagePanel.add(destinations.get(i).lbSuccess);
-			imagePanel.add(destinations.get(i).lbFail);
-			destinations.get(i).lbSuccess.setVisible(false);
-			destinations.get(i).lbFail.setVisible(false);
-			imagePanel.add(destinations.get(i).lb);
-		}
-		
-		// create disturbance
-		disturbances = factory.createDisturbance();
-		for (int i = 0; i < disturbances.size(); ++i)
-			imagePanel.add(disturbances.get(i).lb);
+		addElementToPanel(factory);
 		
 		
 		// set background
@@ -53,25 +27,12 @@ public class Stage3 extends Scene implements ActionListener {
 		setWindow(bgImagePath);
 		
 		// start timer
-		timer.start();
+		startTimer();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		wp.brush();
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
-			person.move();
-		}
-		for (int i = 0; i < aircrafts.size(); ++i) {
-			aircrafts.get(i).move();
-		}
-		for (int i = 0; i < disturbances.size(); ++i) {
-		    disturbances.get(i).effect(persons);
-		}
-		for (int i = 0; i < destinations.size(); ++i) {
-		    destinations.get(i).effect(persons, this);
-		}
+		performAction(false);
 	}
 	
 	@Override

@@ -14,8 +14,7 @@ public class StartScene extends Scene implements ActionListener {
 		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
 		setWindow(bgImagePath);
 		
-		timer = new Timer(10, this);
-		timer.start();
+		startTimer();
 	}
 	
 	
@@ -32,7 +31,7 @@ public class StartScene extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		wp.brush();
 		
 	}
 

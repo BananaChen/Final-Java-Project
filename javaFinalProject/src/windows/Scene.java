@@ -1,6 +1,7 @@
 package windows;
 
 import items.*;
+import person.Thug;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,12 +12,13 @@ import aircraft.WindowPainter;
 import command.*;
 
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public abstract class Scene {
+public abstract class Scene implements ActionListener {
 
 	protected JPanel imagePanel;
 	protected String bgImagePath;
@@ -80,6 +82,69 @@ public abstract class Scene {
 				remoteController.pressButton(e.getKeyCode(), imagePanel, getInstance(), isPassed, timer, persons, aircrafts);
 			}
 		});
+	}
+	
+	public void addElementToPanel(SceneFactory factory) {
+		// create person
+		persons = factory.createPerson();
+		for (int i = 0; i < persons.size(); ++i) {
+			if (persons.get(i) instanceof Thug) {
+				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
+				imagePanel.add(((Thug)persons.get(i)).heart1);
+				imagePanel.add(((Thug)persons.get(i)).heart2);
+				imagePanel.add(((Thug)persons.get(i)).heart3);
+			}
+			
+			imagePanel.add(persons.get(i).lb);
+		}
+		
+		// create aircraft
+		aircrafts = factory.createAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i)
+			imagePanel.add(aircrafts.get(i).lb);
+		
+		// create destination
+		destinations = factory.createDestination();
+		for (int i = 0; i < destinations.size(); ++i) {
+			imagePanel.add(destinations.get(i).lbSuccess);
+			imagePanel.add(destinations.get(i).lbFail);
+			destinations.get(i).lbSuccess.setVisible(false);
+			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(destinations.get(i).lb);
+		}
+		
+		// create disturbance
+		disturbances = factory.createDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i)
+			imagePanel.add(disturbances.get(i).lb);
+	}
+	
+	public void startTimer() {
+		timer = new Timer(10, this);
+		timer.start();
+	}
+	
+	public void performAction(boolean initPersonSpeed) {
+		wp.brush();
+		for (int i = 0; i < persons.size(); ++i) {
+			if (initPersonSpeed) {
+				persons.get(i).personInitVx = aircrafts.get(i).getVelocityX();
+				persons.get(i).personInitVy = aircrafts.get(i).getVelocityY();
+			}
+			persons.get(i).move();
+		}
+		for (int i = 0; i < aircrafts.size(); ++i) {
+			aircrafts.get(i).move();
+			if (aircrafts.get(i).getPositionX() > bgWidth) {
+				aircrafts.get(i).setPositionX(-aircrafts.get(i).imageWidth);
+			}
+		}
+		for (int i = 0; i < disturbances.size(); ++i) {
+			disturbances.get(i).effect(persons);
+		}
+		for (int i = 0; i < destinations.size(); ++i) {
+			destinations.get(i).effect(persons, this);
+		}
 	}
 
 	public abstract Scene getCurrentStage();
