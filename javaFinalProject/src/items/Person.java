@@ -3,7 +3,7 @@ package items;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-public class Person extends Items {
+public abstract class Person extends Items {
 
 	private String imagePath = "https://image.flaticon.com/icons/png/512/72/72924.png";
 	public boolean isDropped = false;
@@ -20,7 +20,7 @@ public class Person extends Items {
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
 		setInitMoveData(x, y, vx, vy, ax, ay);
-		setImage(x, y, 100, 100, imagePath);
+//		setImage(x, y, 100, 100, imagePath);
 	}
 
 	public void setInitMoveData(double x, double y, double vx, double vy, double ax, double ay) {

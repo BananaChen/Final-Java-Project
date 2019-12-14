@@ -3,6 +3,7 @@ package windows;
 import java.util.ArrayList;
 
 import items.*;
+import person.*;
 import aircraft.*;
 import destination.*;
 import disturbance.*;
@@ -14,7 +15,7 @@ public class Stage1Factory implements SceneFactory{
 	@Override
 	public ArrayList<Person> createPerson() {
 		ArrayList<Person> persons = new ArrayList<Person>();
-		Person person = new Person(0, 0, 1, 1, 0, gravity);
+		Person person = new NormalPerson(0, 0, 1, 1, 0, gravity);
 		person.lb.setVisible(false);
 		persons.add(person);
 		

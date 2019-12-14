@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="windows.Stage4Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage4Factory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="151" width="120" x="2018" y="-109"/>    
+    <position height="151" width="120" x="1803" y="-94"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="windows.Stage5Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage5Factory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="151" width="109" x="2150" y="-106"/>    
+    <position height="151" width="109" x="1935" y="-91"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="windows.Stage2Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage2Factory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="151" width="122" x="1755" y="-112"/>    
+    <position height="151" width="122" x="1540" y="-97"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="windows.Stage3Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage3Factory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="151" width="125" x="1883" y="-111"/>    
+    <position height="151" width="125" x="1668" y="-96"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <interface id="6" language="java" name="windows.SceneFactory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/SceneFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1847" y="-254"/>    
+    <position height="-1" width="-1" x="1632" y="-239"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </interface>  
   <class id="7" language="java" name="windows.Stage1Factory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/Stage1Factory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="127" x="1623" y="-113"/>    
+    <position height="153" width="127" x="1408" y="-98"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -498,7 +498,7 @@
   </class>  
   <class id="56" language="java" name="windows.TeachingSceneFactory" project="javaFinalProject2" 
     file="/javaFinalProject2/src/windows/TeachingSceneFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="151" width="160" x="1459" y="-112"/>    
+    <position height="151" width="160" x="1244" y="-97"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -706,10 +706,10 @@
   <association id="109">    
     <end type="SOURCE" refId="5" navigable="false">      
       <attribute id="110" name="factory">        
-        <position height="0" width="0" x="-2" y="-24"/>      
+        <position height="0" width="0" x="-217" y="-9"/>      
       </attribute>      
       <multiplicity id="111" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-2" y="-24"/>      
+        <position height="0" width="0" x="-217" y="-9"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
