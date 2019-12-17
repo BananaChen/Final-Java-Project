@@ -52,6 +52,11 @@ public abstract class Destination extends Items {
 			}
 		}
 	}
+	
+	@Override
+	public void move() {
+		
+	}
 
 //	public abstract void effect(ArrayList<Items> items, Scene currentScene);
 }

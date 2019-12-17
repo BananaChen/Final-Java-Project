@@ -15,7 +15,6 @@ public class Island extends Destination {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-
 		for (int i = 0; i < items.size(); ++i) {
 			Person person = (Person)items.get(i);
 			// if successfully landing

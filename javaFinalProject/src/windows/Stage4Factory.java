@@ -11,36 +11,36 @@ import disturbance.*;
 public class Stage4Factory implements SceneFactory{
 
 	@Override
-	public ArrayList<Items> createPerson() {
+	public CompositeItem createPerson(CompositeItem compositeItems) {
 		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Alien(10, 10, 0, 0, 0, 0);
 		person.lb.setVisible(false);
-		persons.add(person);
+		compositeItems.addItem(person);
 		
-		return persons;
+		return compositeItems;
 		
 	}
 
 	@Override
-	public ArrayList<Items> createAircraft() {
+	public CompositeItem createAircraft(CompositeItem compositeItems) {
 		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new UFO(30, 20, 10, 0, 0, 0,"https://i.imgur.com/4G0ZiGK.gif");
-		aircrafts.add(aircraft);
+		compositeItems.addItem(aircraft);
 		
-		return aircrafts;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDestination() {
+	public CompositeItem createDestination(CompositeItem compositeItems) {
 		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new BlueMoon(1200, 830, 1, 1, 1, 1, "https://i.imgur.com/91LhC53.png");
-		destinations.add(destination);
+		compositeItems.addItem(destination);
 		
-		return destinations;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDisturbance() {
+	public CompositeItem createDisturbance(CompositeItem compositeItems) {
 		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance blackhole1 = new BlackHole1(850, 600, 0, 0, 0, 0);
 		Disturbance blackhole2 = new BlackHole2(1650, 300, 0, 0, 0, 0);
@@ -49,14 +49,14 @@ public class Stage4Factory implements SceneFactory{
 		Disturbance magnetic3 = new Magnetic3(1720, 500, 0, 0, 0, 0);
 		Disturbance planet1 = new Planet1(1000, 150, 0, 0, 0, 0);
 		
-		disturbances.add(blackhole1);
-		disturbances.add(blackhole2);
-		disturbances.add(magnetic1);
-		disturbances.add(magnetic2);
-		disturbances.add(magnetic3);
-		disturbances.add(planet1);
+		compositeItems.addItem(blackhole1);
+		compositeItems.addItem(blackhole2);
+		compositeItems.addItem(magnetic1);
+		compositeItems.addItem(magnetic2);
+		compositeItems.addItem(magnetic3);
+		compositeItems.addItem(planet1);
 		
-		return disturbances;
+		return compositeItems;
 	}
 
 }

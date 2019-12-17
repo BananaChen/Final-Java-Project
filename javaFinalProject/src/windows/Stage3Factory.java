@@ -11,35 +11,35 @@ import disturbance.*;
 public class Stage3Factory implements SceneFactory{
 
 	@Override
-	public ArrayList<Items> createPerson() {
+	public CompositeItem createPerson(CompositeItem compositeItems) {
 		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
 		person.lb.setVisible(false);
-		persons.add(person);
+		compositeItems.addItem(person);
 		
-		return persons;
+		return compositeItems;
 		
 	}
 
 	@Override
-	public ArrayList<Items> createAircraft() {
+	public CompositeItem createAircraft(CompositeItem compositeItems) {
 		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
-		aircrafts.add(aircraft);
-		return aircrafts;
+		compositeItems.addItem(aircraft);
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDestination() {
+	public CompositeItem createDestination(CompositeItem compositeItems) {
 		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
-		destinations.add(destination);
+		compositeItems.addItem(destination);
 		
-		return destinations;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDisturbance() {
+	public CompositeItem createDisturbance(CompositeItem compositeItems) {
 		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance spring = new MarioSpring(100, 660, 0, 0, 0, 0);
 		Disturbance smallLight = new SmallLight(450 , 400, 0, 0, 0, 0);
@@ -53,16 +53,16 @@ public class Stage3Factory implements SceneFactory{
 		Disturbance leftPipe = new Road(0, 400, 0, 0, 0, 0, "https://i.imgur.com/1Y60ahd.png");
 		leftPipe.setImage(0, 180,  50, 130, "https://i.imgur.com/1Y60ahd.png");
 		
-		disturbances.add(spring);
-		disturbances.add(smallLight);
-		disturbances.add(bigLight);
-		disturbances.add(upPipe);
-		disturbances.add(downPipe);
-		disturbances.add(road);
-		disturbances.add(rightPipe);
-		disturbances.add(leftPipe);
+		compositeItems.addItem(spring);
+		compositeItems.addItem(smallLight);
+		compositeItems.addItem(bigLight);
+		compositeItems.addItem(upPipe);
+		compositeItems.addItem(downPipe);
+		compositeItems.addItem(road);
+		compositeItems.addItem(rightPipe);
+		compositeItems.addItem(leftPipe);
 		
-		return disturbances;
+		return compositeItems;
 	}
 
 }

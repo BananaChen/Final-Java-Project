@@ -21,6 +21,11 @@ public abstract class Person extends Items {
 	
 	public int blood = 3;
 
+	public Person() {
+//		super();
+//		setInitMoveData(0,0,0,0,0,0);
+	}
+	
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
 		setInitMoveData(x, y, vx, vy, ax, ay);
@@ -35,7 +40,7 @@ public abstract class Person extends Items {
 	
 	}
 	
-	@Override
+//	@Override
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		
 	}

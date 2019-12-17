@@ -14,6 +14,7 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -33,6 +34,7 @@ public abstract class Scene implements ActionListener {
 	public ArrayList<Items> aircrafts = new ArrayList<Items>();
 	public ArrayList<Items> destinations = new ArrayList<Items>();
 	public ArrayList<Items> disturbances = new ArrayList<Items>();
+	CompositeItem compositeItems = new CompositeItem();
 	
 	// factory method instance
 	public SceneFactory factory;
@@ -90,6 +92,7 @@ public abstract class Scene implements ActionListener {
 		if (isPassed == true) {
 			timer.stop();
 			imagePanel.removeAll();
+			compositeItems.clear();
 			// go to next stage
 			WindowController.setStage(getNextStage());
 			System.out.println("go to next stage");
@@ -102,6 +105,7 @@ public abstract class Scene implements ActionListener {
 		System.out.println("Enter pressed");
 		timer.stop();
 		imagePanel.removeAll();
+		compositeItems.clear();
 		WindowController.setStage(getNextStage());
 		isPassed = false;
 		imagePanel.setFocusable(false);
@@ -112,6 +116,7 @@ public abstract class Scene implements ActionListener {
 		if (isPassed == false) {
 			timer.stop();
 			imagePanel.removeAll();
+			compositeItems.clear();
 			// restart current stage
 			WindowController.setStage(getCurrentStage());
 			System.out.println("replay");
@@ -122,6 +127,11 @@ public abstract class Scene implements ActionListener {
 	
 	public void jumpOff() {
 		System.out.println("Down pressed");
+		if (compositeItems.isEmpty()) {
+			return;
+		}
+		
+		
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = (Person) persons.get(i);
 			if (person.isDropped == false) {
@@ -151,7 +161,8 @@ public abstract class Scene implements ActionListener {
 	}
 	
 	private void addPersonToPanel(SceneFactory factory) {
-		persons = factory.createPerson();
+		compositeItems = factory.createPerson(compositeItems);
+		persons = compositeItems.getPerson();
 		for (int i = 0; i < persons.size(); ++i) {
 			if (persons.get(i) instanceof Thug) {
 				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
@@ -162,22 +173,35 @@ public abstract class Scene implements ActionListener {
 			
 			imagePanel.add(persons.get(i).lb);
 		}
+		
+//		try {
+//			persons = compositeItems.getElementsByClass(Person.class);
+//		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+//				| NoSuchMethodException | SecurityException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	private void addAircraftToPanel(SceneFactory factory) {
-		aircrafts = factory.createAircraft();
-		for (int i = 0; i < aircrafts.size(); ++i)
+		compositeItems = factory.createAircraft(compositeItems);
+		aircrafts = compositeItems.getAircraft();
+		for (int i = 0; i < aircrafts.size(); ++i) {
 			imagePanel.add(aircrafts.get(i).lb);
+		}
 	}
 	
 	private void addDisturbanceToPanel(SceneFactory factory) {
-		disturbances = factory.createDisturbance();
-		for (int i = 0; i < disturbances.size(); ++i)
+		compositeItems = factory.createDisturbance(compositeItems);
+		disturbances = compositeItems.getDisturbance();
+		for (int i = 0; i < disturbances.size(); ++i) {
 			imagePanel.add(disturbances.get(i).lb);
+		}
 	}
 	
 	private void addDestinationToPanel(SceneFactory factory) {
-		destinations = factory.createDestination();
+		compositeItems = factory.createDestination(compositeItems);
+		destinations = compositeItems.getDestination();
 		for (int i = 0; i < destinations.size(); ++i) {
 			imagePanel.add(((Destination)destinations.get(i)).lbSuccess);
 			imagePanel.add(((Destination)destinations.get(i)).lbFail);
@@ -194,46 +218,23 @@ public abstract class Scene implements ActionListener {
 	
 	public void performAction(boolean initSpeed) {
 		brushPanel();
-		personAction(initSpeed);
-		aircraftAction(initSpeed);
-		disturbanceAction(initSpeed);
-		destinationAction(initSpeed);
+		compositeItems.move();
+		compositeItems.effect(this);
 	}
 	
 	private void brushPanel() {
 		wp.brush();
 	}
 	
-	private void personAction(boolean initPersonSpeed) {
-		for (int i = 0; i < persons.size(); ++i) {
-			if (initPersonSpeed) {
-				((Person)persons.get(i)).personInitVx = aircrafts.get(i).getVelocityX();
-				((Person)persons.get(i)).personInitVy = aircrafts.get(i).getVelocityY();
-			}
-			persons.get(i).move();
-		}
-	}
-	
-	private void aircraftAction(boolean initAircraftSpeed) {
-		for (int i = 0; i < aircrafts.size(); ++i) {
-			aircrafts.get(i).move();
-			if (aircrafts.get(i).getPositionX() > bgWidth) {
-				aircrafts.get(i).setPositionX(-aircrafts.get(i).imageWidth);
-			}
-		}
-	}
-	
-	private void disturbanceAction(boolean initDisturbanceSpeed) {
-		for (int i = 0; i < disturbances.size(); ++i) {
-			disturbances.get(i).effect(persons, this);
-		}
-	}
-	
-	private void destinationAction(boolean initDestinationSpeed) {
-		for (int i = 0; i < destinations.size(); ++i) {
-			destinations.get(i).effect(persons, this);
-		}
-	}
+//	private void personAction(boolean initPersonSpeed) {
+//		for (int i = 0; i < persons.size(); ++i) {
+//			if (initPersonSpeed) {
+//				((Person)persons.get(i)).personInitVx = aircrafts.get(i).getVelocityX();
+//				((Person)persons.get(i)).personInitVy = aircrafts.get(i).getVelocityY();
+//			}
+//			persons.get(i).move();
+//		}
+//	}
 
 	public abstract Scene getCurrentStage();
 

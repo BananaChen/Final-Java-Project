@@ -523,295 +523,357 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
+  <class id="59" language="java" name="items.CompositeItem" project="javaFinalProject2" 
+    file="/javaFinalProject2/src/items/CompositeItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="170" width="207" x="2332" y="540"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <realization id="60">    
-    <end type="SOURCE" refId="1"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <generalization id="61">    
-    <end type="SOURCE" refId="39"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
+  <realization id="61">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
   <generalization id="62">    
-    <end type="SOURCE" refId="17"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <association id="63">    
-    <bendpoint x="-144" y="-221"/>    
-    <bendpoint x="342" y="-225"/>    
-    <end type="SOURCE" refId="51" navigable="false">      
-      <attribute id="64" name="scene"/>      
-      <multiplicity id="65" minimum="0" maximum="1"/>    
+  <association id="64">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="65" name="stage">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="66" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="66">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
   <generalization id="67">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="44"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <generalization id="69">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="50"/>    
+    <end type="SOURCE" refId="46"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="71">    
-    <end type="SOURCE" refId="45"/>    
-    <end type="TARGET" refId="18"/>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
-  <generalization id="72">    
+  <generalization id="69">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="70">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="71">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="72" name="controller">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="73" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="57" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="75">    
+    <bendpoint x="4" y="-235"/>    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="76" name="scene">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="77" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="78">    
+    <bendpoint x="284" y="-262"/>    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="79" name="scene">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="80" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="82">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="84">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="85">    
     <end type="SOURCE" refId="38"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <generalization id="73">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="74">    
+  <generalization id="86">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <generalization id="75">    
-    <end type="SOURCE" refId="19"/>    
+  <generalization id="87">    
+    <end type="SOURCE" refId="59"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <realization id="76">    
-    <end type="SOURCE" refId="2"/>    
+  <generalization id="88">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="90">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="91">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="92">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="94">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <realization id="95">    
+    <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <generalization id="77">    
+  <generalization id="96">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="97">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <association id="98">    
+    <bendpoint x="2427" y="286"/>    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="99" name="items"/>      
+      <multiplicity id="100" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="101">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="102">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <association id="103">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="104" name="compositeItems"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="106">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="107">    
+    <bendpoint x="-144" y="-221"/>    
+    <bendpoint x="342" y="-225"/>    
+    <end type="SOURCE" refId="51" navigable="false">      
+      <attribute id="108" name="scene">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="109" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="110">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="111">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="112">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="113">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="118">    
+    <bendpoint x="146" y="-253"/>    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="119" name="scene">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="120" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="121">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="122">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <realization id="124">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <generalization id="125">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <association id="78">    
+  <association id="126">    
     <end type="SOURCE" refId="58" navigable="false">      
-      <attribute id="79" name="remoteController"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
+      <attribute id="127" name="remoteController">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="128" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="53" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="82">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <generalization id="83">    
-    <end type="SOURCE" refId="49"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="84">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="85">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="86">    
+  <association id="129">    
     <end type="SOURCE" refId="58" navigable="false">      
-      <attribute id="87" name="stage"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="89">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="90">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="91">    
-    <bendpoint x="4" y="-235"/>    
-    <end type="SOURCE" refId="52" navigable="false">      
-      <attribute id="92" name="scene"/>      
-      <multiplicity id="93" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="94">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="95">    
-    <end type="SOURCE" refId="47"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="96">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="97">    
-    <end type="SOURCE" refId="48"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="98">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <association id="99">    
-    <bendpoint x="146" y="-253"/>    
-    <end type="SOURCE" refId="54" navigable="false">      
-      <attribute id="100" name="scene"/>      
-      <multiplicity id="101" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="102">    
-    <end type="SOURCE" refId="58" navigable="false">      
-      <attribute id="103" name="wc"/>      
-      <multiplicity id="104" minimum="0" maximum="1"/>    
+      <attribute id="130" name="wc">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="131" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="58" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="105">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="106">    
-    <end type="SOURCE" refId="41"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="107">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
+  <realization id="132">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="57"/>  
   </realization>  
-  <generalization id="108">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="20"/>  
+  <generalization id="133">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
-  <association id="109">    
+  <generalization id="134">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="135">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="110" name="factory">        
+      <attribute id="136" name="factory">        
         <position height="0" width="0" x="-217" y="-9"/>      
       </attribute>      
-      <multiplicity id="111" minimum="0" maximum="1">        
+      <multiplicity id="137" minimum="0" maximum="1">        
         <position height="0" width="0" x="-217" y="-9"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="112">    
-    <end type="SOURCE" refId="46"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <realization id="113">    
+  <realization id="138">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <generalization id="114">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="115">    
-    <end type="SOURCE" refId="37"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="116">    
-    <bendpoint x="284" y="-262"/>    
-    <end type="SOURCE" refId="55" navigable="false">      
-      <attribute id="117" name="scene"/>      
-      <multiplicity id="118" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="119">    
-    <end type="SOURCE" refId="53" navigable="false">      
-      <attribute id="120" name="controller"/>      
-      <multiplicity id="121" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="57" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="122">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <realization id="123">    
-    <end type="SOURCE" refId="52"/>    
-    <end type="TARGET" refId="57"/>  
-  </realization>  
-  <generalization id="124">    
-    <end type="SOURCE" refId="42"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <generalization id="125">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <realization id="126">    
-    <end type="SOURCE" refId="51"/>    
-    <end type="TARGET" refId="57"/>  
-  </realization>  
-  <realization id="127">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="128">    
-    <end type="SOURCE" refId="56"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <generalization id="129">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="130">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="131">    
-    <end type="SOURCE" refId="55"/>    
-    <end type="TARGET" refId="57"/>  
-  </realization>  
-  <generalization id="132">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="133">    
+  <generalization id="139">    
     <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <generalization id="134">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="20"/>  
+  <generalization id="140">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="19"/>  
   </generalization>  
-  <generalization id="135">    
-    <end type="SOURCE" refId="43"/>    
+  <generalization id="141">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="142">    
+    <end type="SOURCE" refId="45"/>    
     <end type="TARGET" refId="18"/>  
   </generalization>  
-  <generalization id="136">    
-    <end type="SOURCE" refId="27"/>    
+  <generalization id="143">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="144">    
+    <end type="SOURCE" refId="33"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="137">    
-    <end type="SOURCE" refId="54"/>    
-    <end type="TARGET" refId="57"/>  
-  </realization>  
+  <generalization id="145">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

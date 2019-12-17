@@ -11,37 +11,37 @@ import disturbance.*;
 public class TeachingSceneFactory implements SceneFactory{
 
 	@Override
-	public ArrayList<Items> createPerson() {
-		ArrayList<Items> persons = new ArrayList<Items>();
+	public CompositeItem createPerson(CompositeItem compositeItems) {
+//		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new NormalPerson(0, 0, 1, 1, 0, 0.01);
 		person.lb.setVisible(false);
-		persons.add(person);
+		compositeItems.addItem(person);
 		
-		return persons;
+		return compositeItems;
 		
 	}
 
 	@Override
-	public ArrayList<Items> createAircraft() {
-		ArrayList<Items> aircrafts = new ArrayList<Items>();
+	public CompositeItem createAircraft(CompositeItem compositeItems) {
+//		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new AirPlane(0, 0, 2, 0, 0, 0);
-		aircrafts.add(aircraft);
-		return aircrafts;
+		compositeItems.addItem(aircraft);
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDestination() {
-		ArrayList<Items> destinations = new ArrayList<Items>();
+	public CompositeItem createDestination(CompositeItem compositeItems) {
+//		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Island(1000, 500, 1, 1, 1, 1);
-		destinations.add(destination);
+		compositeItems.addItem(destination);
 		
-		return destinations;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDisturbance() {
-		ArrayList<Items> disturbances = new ArrayList<Items>();
+	public CompositeItem createDisturbance(CompositeItem compositeItems) {
+//		ArrayList<Items> disturbances = new ArrayList<Items>();
 		
-		return disturbances;
+		return compositeItems;
 	}
 }

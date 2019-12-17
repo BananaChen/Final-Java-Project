@@ -1,36 +1,29 @@
 package windows;
 
-import java.util.ArrayList;
 
-import aircraft.Bee;
 import aircraft.RollerCoaster;
 import destination.Home;
-import destination.Honeycomb;
-import disturbance.Arrow;
 import disturbance.FireBall;
 import items.Aircraft;
+import items.CompositeItem;
 import items.Destination;
-import items.Disturbance;
-import items.Items;
 import items.Person;
 import person.PokemonMaster;
 
 public class Stage5Factory implements SceneFactory{
 	
 	@Override
-	public ArrayList<Items> createPerson() {
-		ArrayList<Items> persons = new ArrayList<Items>();
+	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
 		person.lb.setVisible(false);
-		persons.add(person);
+		compositeItems.addItem(person);
 		
-		return persons;
+		return compositeItems;
 		
 	}
 
 	@Override
-	public ArrayList<Items> createAircraft() {
-		ArrayList<Items> aircrafts = new ArrayList<Items>();
+	public CompositeItem createAircraft(CompositeItem compositeItems) {
 		
 		Aircraft roller1 = new RollerCoaster(900, 30, 0, 0, 247.5, 0);
 		roller1.setImage(1, 1, 150, 150, "https://i.imgur.com/ggI5oOx.png");
@@ -50,32 +43,30 @@ public class Stage5Factory implements SceneFactory{
 		Aircraft roller6 = new RollerCoaster(1180, 50, 0, 0, 360, 0);
 		roller6.setImage(1, 1, 100, 100, "https://i.imgur.com/GFtcyKx.png");
 		
-		aircrafts.add(roller1);
-		aircrafts.add(roller2);
-		aircrafts.add(roller3);
-		aircrafts.add(roller4);
-		aircrafts.add(roller5);
-		aircrafts.add(roller6);
+		compositeItems.addItem(roller1);
+		compositeItems.addItem(roller2);
+		compositeItems.addItem(roller3);
+		compositeItems.addItem(roller4);
+		compositeItems.addItem(roller5);
+		compositeItems.addItem(roller6);
 		
-		return aircrafts;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDestination() {
-		ArrayList<Items> destinations = new ArrayList<Items>();
+	public CompositeItem createDestination(CompositeItem compositeItems) {
 		Destination destination = new Home(600, 650, 1, 1, 1, 1);
-		destinations.add(destination);
+		compositeItems.addItem(destination);
 		
-		return destinations;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDisturbance() {
-		ArrayList<Items> disturbances = new ArrayList<Items>();
+	public CompositeItem createDisturbance(CompositeItem compositeItems) {
 		for (int i = 0; i < 4; ++i) {
-			disturbances.add(new FireBall(0, 700, 0, 0, 0, 0, "https://i.imgur.com/I9l1stq.png"));
+			compositeItems.addItem(new FireBall(0, 700, 0, 0, 0, 0, "https://i.imgur.com/I9l1stq.png"));
 		}
 		
-		return disturbances;
+		return compositeItems;
 	}
 }

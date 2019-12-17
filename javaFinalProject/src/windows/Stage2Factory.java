@@ -11,7 +11,7 @@ import disturbance.*;
 public class Stage2Factory implements SceneFactory{
 
 	@Override
-	public ArrayList<Items> createPerson() {
+	public CompositeItem createPerson(CompositeItem compositeItems) {
 		ArrayList<Items> persons = new ArrayList<Items>();
 		Thug person = new Thug(50, 50, 1, 1, 0, 0);
 		person.lb.setVisible(false);
@@ -19,38 +19,38 @@ public class Stage2Factory implements SceneFactory{
 		person.heart1.setVisible(false);
 		person.heart2.setVisible(false);
 		person.heart3.setVisible(false);
-		persons.add(person);
+		compositeItems.addItem(person);
 		
-		return persons;
+		return compositeItems;
 		
 	}
 
 	@Override
-	public ArrayList<Items> createAircraft() {
+	public CompositeItem createAircraft(CompositeItem compositeItems) {
 		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new Bee(0, 50, 0, 0, 0.1, 0.1, "https://i.imgur.com/kE4cmKB.png");
-		aircrafts.add(aircraft);
+		compositeItems.addItem(aircraft);
 		
-		return aircrafts;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDestination() {
+	public CompositeItem createDestination(CompositeItem compositeItems) {
 		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Honeycomb(700, 700, 1, 1, 1, 1, "https://i.imgur.com/LqQXJuJ.png");
-		destinations.add(destination);
+		compositeItems.addItem(destination);
 		
-		return destinations;
+		return compositeItems;
 	}
 
 	@Override
-	public ArrayList<Items> createDisturbance() {
+	public CompositeItem createDisturbance(CompositeItem compositeItems) {
 		ArrayList<Items> disturbances = new ArrayList<Items>();
 		for (int i = 0; i < 2; ++i) {
-			disturbances.add(new Arrow(0, 700, 0, 0, 0, 0, "https://i.imgur.com/rhhmCwP.png"));
+			compositeItems.addItem(new Arrow(0, 700, 0, 0, 0, 0, "https://i.imgur.com/rhhmCwP.png"));
 		}
 		
-		return disturbances;
+		return compositeItems;
 	}
 
 }
