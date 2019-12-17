@@ -14,10 +14,10 @@ public class Home extends Destination {
 		setImage(x, y, 350, 292, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons, Scene curStage) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			// if successfully landing
 			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX
 					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
@@ -26,16 +26,16 @@ public class Home extends Destination {
 				lbSuccess.setVisible(true);
 				person.lb.setVisible(false);
 				
-				curStage.isPassed = true;
-				curStage.timer.stop();
-				setNextStageStatus(curStage);
+				currentScene.isPassed = true;
+				currentScene.timer.stop();
+				setNextStageStatus(currentScene);
 
 			}
 			// if not
 			else if (this.positionY - (person.getPositionY()) < 0) {
 				lbFail.setVisible(true);
 				person.lb.setVisible(false);
-				curStage.timer.stop();
+				currentScene.timer.stop();
 			}
 		}
 	}

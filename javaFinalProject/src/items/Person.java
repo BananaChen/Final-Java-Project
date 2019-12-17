@@ -1,7 +1,11 @@
 package items;
 
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.Timer;
+
+import windows.Scene;
 
 public abstract class Person extends Items {
 
@@ -29,6 +33,11 @@ public abstract class Person extends Items {
 		personInitAx = ax;
 		personInitAy = ay;
 	
+	}
+	
+	@Override
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		
 	}
 
 	@Override

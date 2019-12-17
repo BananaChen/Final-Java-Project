@@ -3,6 +3,7 @@ package disturbance;
 import java.util.ArrayList;
 
 import items.*;
+import windows.Scene;
 
 public class Road extends Disturbance {
 
@@ -13,7 +14,7 @@ public class Road extends Disturbance {
 		setImage(x, y, 400 , 60, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 		
 	}
 }

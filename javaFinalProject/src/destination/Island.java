@@ -14,10 +14,10 @@ public class Island extends Destination {
 		setImage(x, y, 350, 369, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons, Scene curStage) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			// if successfully landing
 			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX+50
 					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
@@ -25,9 +25,9 @@ public class Island extends Destination {
 					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
 				lbSuccess.setVisible(true);
 				//person.lb.setVisible(false);
-				curStage.isPassed = true;
-				curStage.timer.stop();
-				setNextStageStatus(curStage);
+				currentScene.isPassed = true;
+				currentScene.timer.stop();
+				setNextStageStatus(currentScene);
 
 			}
 			// if not
@@ -35,7 +35,7 @@ public class Island extends Destination {
 				lbFail.setVisible(true);
 				person.lb.setVisible(false);
 				
-				curStage.timer.stop();
+				currentScene.timer.stop();
 			}
 		}
 	}

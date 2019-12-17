@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import items.Destination;
+import items.Items;
 import items.Person;
 import windows.Scene;
 
@@ -19,10 +20,10 @@ public class BlueMoon extends Destination {
 		setImage(x, y, imageWidth, imageHeight, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons, Scene curStage) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			// if successfully landing
 			if (person.isDropped && person.getPositionX() + person.imageWidth >= 1250
 					&& person.getPositionX() + person.imageWidth <= 1650
@@ -34,9 +35,9 @@ public class BlueMoon extends Destination {
 				person.setVelocityX(0);
 				person.setVelocityY(0);
 				
-				curStage.isPassed = true;
-				curStage.timer.stop();
-				setNextStageStatus(curStage);
+				currentScene.isPassed = true;
+				currentScene.timer.stop();
+				setNextStageStatus(currentScene);
 			}
 			// if not
 			else if (person.isDropped && person.getPositionY() + person.imageHeight < 0
@@ -49,7 +50,7 @@ public class BlueMoon extends Destination {
 				person.setVelocityX(0);
 				person.setVelocityY(0);
 				
-				curStage.timer.stop();
+				currentScene.timer.stop();
 			}
 		}
 	}

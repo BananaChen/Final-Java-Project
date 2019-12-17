@@ -11,14 +11,15 @@ import disturbance.FireBall;
 import items.Aircraft;
 import items.Destination;
 import items.Disturbance;
+import items.Items;
 import items.Person;
 import person.PokemonMaster;
 
 public class Stage5Factory implements SceneFactory{
 	
 	@Override
-	public ArrayList<Person> createPerson() {
-		ArrayList<Person> persons = new ArrayList<Person>();
+	public ArrayList<Items> createPerson() {
+		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
 		person.lb.setVisible(false);
 		persons.add(person);
@@ -28,8 +29,8 @@ public class Stage5Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Aircraft> createAircraft() {
-		ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
+	public ArrayList<Items> createAircraft() {
+		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		
 		Aircraft roller1 = new RollerCoaster(900, 30, 0, 0, 247.5, 0);
 		roller1.setImage(1, 1, 150, 150, "https://i.imgur.com/ggI5oOx.png");
@@ -60,8 +61,8 @@ public class Stage5Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Destination> createDestination() {
-		ArrayList<Destination> destinations = new ArrayList<Destination>();
+	public ArrayList<Items> createDestination() {
+		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Home(600, 650, 1, 1, 1, 1);
 		destinations.add(destination);
 		
@@ -69,8 +70,8 @@ public class Stage5Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Disturbance> createDisturbance() {
-		ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
+	public ArrayList<Items> createDisturbance() {
+		ArrayList<Items> disturbances = new ArrayList<Items>();
 		for (int i = 0; i < 4; ++i) {
 			disturbances.add(new FireBall(0, 700, 0, 0, 0, 0, "https://i.imgur.com/I9l1stq.png"));
 		}

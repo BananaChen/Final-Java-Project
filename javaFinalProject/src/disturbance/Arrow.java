@@ -2,6 +2,7 @@ package disturbance;
 
 import items.*;
 import person.Thug;
+import windows.Scene;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,13 +32,14 @@ public class Arrow extends Disturbance implements ActionListener {
 	public void move() {
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		Person person = (Person) items.get(0);
 		// if getting shoot
-		if ((this.positionX + 100 > persons.get(0).getPositionX()
-				&& this.positionX + 100 < persons.get(0).getPositionX() + 100)
-				&& (this.positionY > persons.get(0).getPositionY()
-						&& this.positionY < persons.get(0).getPositionY() + 100)) {
-			persons.get(0).positionX += 10;
+		if ((this.positionX + 100 > person.getPositionX()
+				&& this.positionX + 100 < person.getPositionX() + 100)
+				&& (this.positionY > person.getPositionY()
+						&& this.positionY < person.getPositionY() + 100)) {
+			person.positionX += 10;
 			// relocated
 			this.positionX = Math.random() * screenWidth - screenWidth;
 			this.positionY = Math.random() * 200 + screenHeight;
@@ -45,14 +47,14 @@ public class Arrow extends Disturbance implements ActionListener {
 			isStop = true;
 			// set a random time to wait to restart
 			waitTime = (int) (Math.random() * 100 + 1);
-			if (persons.get(0).isDropped) {
-				persons.get(0).blood--;
-				if(persons.get(0).blood==2)
-					((Thug)persons.get(0)).heart3.setVisible(false);
-				else if (persons.get(0).blood==1)
-					((Thug)persons.get(0)).heart2.setVisible(false);
+			if (person.isDropped) {
+				person.blood--;
+				if(person.blood==2)
+					((Thug)person).heart3.setVisible(false);
+				else if (person.blood==1)
+					((Thug)person).heart2.setVisible(false);
 				else
-					((Thug)persons.get(0)).heart1.setVisible(false);
+					((Thug)person).heart1.setVisible(false);
 			}
 		}
 

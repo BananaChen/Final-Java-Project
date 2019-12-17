@@ -3,9 +3,13 @@ package items;
 import java.awt.Image;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import windows.Scene;
 
 public abstract class Items extends JPanel {
 
@@ -105,6 +109,8 @@ public abstract class Items extends JPanel {
 		setPositionX(getPositionX() + getVelocityX());
 		setPositionY(getPositionY() + getVelocityY());
 	}
+	
+	public abstract void effect(ArrayList<Items> items, Scene currentScene);
 
 	public void acceleration(int ax, int ay) {
 		setAccelerationX(getAccelerationX() + ax);

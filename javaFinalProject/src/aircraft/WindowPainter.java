@@ -1,6 +1,8 @@
 package aircraft;
 
 
+import java.util.ArrayList;
+
 import items.*;
 import windows.Scene;
 
@@ -17,5 +19,10 @@ public class WindowPainter extends Items{
 			positionX += 700;
 			lb.setLocation((int)positionX, (int)positionY);
 		}
+	}
+	
+	@Override
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		
 	}
 }

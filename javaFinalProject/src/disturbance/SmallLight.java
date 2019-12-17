@@ -3,6 +3,7 @@ package disturbance;
 import java.util.ArrayList;
 
 import items.*;
+import windows.Scene;
 
 public class SmallLight extends Disturbance {
 
@@ -13,9 +14,9 @@ public class SmallLight extends Disturbance {
 		setImage(x, y, 100, 100, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person) items.get(i);
 			if (this.positionX - person.getPositionX() < person.imageWidth
 					&& (this.positionX + this.imageWidth) > person.getPositionX()) {
 				//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");

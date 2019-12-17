@@ -1,6 +1,7 @@
 package disturbance;
 
 import items.*;
+import windows.Scene;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -82,7 +83,7 @@ public class FireBall extends Disturbance implements ActionListener {
 	}
 
 	@Override
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 		// TODO Auto-generated method stub
 
 	}

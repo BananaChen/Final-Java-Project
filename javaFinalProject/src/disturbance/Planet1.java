@@ -2,6 +2,7 @@ package disturbance;
 
 import java.util.ArrayList;
 import items.*;
+import windows.Scene;
 
 public class Planet1 extends Disturbance {
 	private String imagePath = "https://i.imgur.com/kLmxtW8.png";
@@ -11,10 +12,10 @@ public class Planet1 extends Disturbance {
 		setImage(x, y, 400, 241, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= 0
 					&& person.getPositionX() + person.imageWidth / 2 <= this.positionX + this.imageWidth / 2
 					&& person.getPositionY() + person.imageHeight / 2 >= 0

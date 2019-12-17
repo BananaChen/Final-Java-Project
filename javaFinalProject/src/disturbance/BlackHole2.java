@@ -2,6 +2,7 @@ package disturbance;
 
 import java.util.ArrayList;
 import items.*;
+import windows.Scene;
 
 public class BlackHole2 extends Disturbance {
 	private String imagePath = "https://i.imgur.com/OhyaatF.gif";
@@ -14,10 +15,10 @@ public class BlackHole2 extends Disturbance {
 		setImage(x, y, 200, 200, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 		}
 
 	}

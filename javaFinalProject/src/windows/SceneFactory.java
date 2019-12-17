@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import items.Aircraft;
 import items.Destination;
 import items.Disturbance;
+import items.Items;
 import items.Person;
 
 public interface SceneFactory {
-	public ArrayList<Person> createPerson();
-	public ArrayList<Aircraft> createAircraft();
-	public ArrayList<Destination> createDestination();
-	public ArrayList<Disturbance> createDisturbance();
+	public ArrayList<Items> createPerson();
+	public ArrayList<Items> createAircraft();
+	public ArrayList<Items> createDestination();
+	public ArrayList<Items> createDisturbance();
 }

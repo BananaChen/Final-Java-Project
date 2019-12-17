@@ -11,8 +11,8 @@ import disturbance.*;
 public class Stage4Factory implements SceneFactory{
 
 	@Override
-	public ArrayList<Person> createPerson() {
-		ArrayList<Person> persons = new ArrayList<Person>();
+	public ArrayList<Items> createPerson() {
+		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Alien(10, 10, 0, 0, 0, 0);
 		person.lb.setVisible(false);
 		persons.add(person);
@@ -22,8 +22,8 @@ public class Stage4Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Aircraft> createAircraft() {
-		ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
+	public ArrayList<Items> createAircraft() {
+		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new UFO(30, 20, 10, 0, 0, 0,"https://i.imgur.com/4G0ZiGK.gif");
 		aircrafts.add(aircraft);
 		
@@ -31,8 +31,8 @@ public class Stage4Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Destination> createDestination() {
-		ArrayList<Destination> destinations = new ArrayList<Destination>();
+	public ArrayList<Items> createDestination() {
+		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new BlueMoon(1200, 830, 1, 1, 1, 1, "https://i.imgur.com/91LhC53.png");
 		destinations.add(destination);
 		
@@ -40,8 +40,8 @@ public class Stage4Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Disturbance> createDisturbance() {
-		ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
+	public ArrayList<Items> createDisturbance() {
+		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance blackhole1 = new BlackHole1(850, 600, 0, 0, 0, 0);
 		Disturbance blackhole2 = new BlackHole2(1650, 300, 0, 0, 0, 0);
 		Disturbance magnetic1 = new Magnetic1(0, 300, 0, 0, 0, 0);

@@ -2,6 +2,7 @@ package disturbance;
 
 import java.util.ArrayList;
 import items.*;
+import windows.Scene;
 
 public class Spring extends Disturbance {
 
@@ -12,10 +13,10 @@ public class Spring extends Disturbance {
 		setImage(x, y, 200, 200, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person) items.get(i);
 			if (person.getPositionX() + person.imageWidth >= this.positionX
 					&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
 					&& (person.getPositionY() + person.imageHeight) >= this.positionY

@@ -3,6 +3,7 @@ package disturbance;
 import java.util.ArrayList;
 
 import items.*;
+import windows.Scene;
 
 public class UpPipe extends Disturbance {
 
@@ -13,9 +14,9 @@ public class UpPipe extends Disturbance {
 		setImage(x, y, 200, 340, imagePath);
 	}
 
-	public void effect(ArrayList<Person> persons) {
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person) items.get(i);
 			if (person.getPositionX() + person.labelWidth > this.positionX
 					&& person.getPositionY() < this.positionY + this.imageHeight
 					&& person.getPositionX() < this.positionX + this.imageWidth) {

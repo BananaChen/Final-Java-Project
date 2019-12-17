@@ -11,8 +11,8 @@ import disturbance.*;
 public class Stage3Factory implements SceneFactory{
 
 	@Override
-	public ArrayList<Person> createPerson() {
-		ArrayList<Person> persons = new ArrayList<Person>();
+	public ArrayList<Items> createPerson() {
+		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
 		person.lb.setVisible(false);
 		persons.add(person);
@@ -22,16 +22,16 @@ public class Stage3Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Aircraft> createAircraft() {
-		ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
+	public ArrayList<Items> createAircraft() {
+		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
 		aircrafts.add(aircraft);
 		return aircrafts;
 	}
 
 	@Override
-	public ArrayList<Destination> createDestination() {
-		ArrayList<Destination> destinations = new ArrayList<Destination>();
+	public ArrayList<Items> createDestination() {
+		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
 		destinations.add(destination);
 		
@@ -39,8 +39,8 @@ public class Stage3Factory implements SceneFactory{
 	}
 
 	@Override
-	public ArrayList<Disturbance> createDisturbance() {
-		ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
+	public ArrayList<Items> createDisturbance() {
+		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance spring = new MarioSpring(100, 660, 0, 0, 0, 0);
 		Disturbance smallLight = new SmallLight(450 , 400, 0, 0, 0, 0);
 		Disturbance bigLight = new BigLight(900 , 400, 0, 0, 0, 0);

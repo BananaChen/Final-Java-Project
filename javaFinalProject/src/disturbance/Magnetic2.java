@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import items.*;
+import windows.Scene;
 
 public class Magnetic2 extends Disturbance {
 	private String imagePath = "https://i.imgur.com/PXJrme7.png";
@@ -19,10 +20,10 @@ public class Magnetic2 extends Disturbance {
 
 	}
 
-	public void effect(ArrayList<Person> persons) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= this.positionX - 70
 					&& person.getPositionX() + person.imageWidth / 2 <= this.positionX + this.imageWidth + 70
 					&& person.getPositionY() + person.imageHeight / 2 >= 0

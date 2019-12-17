@@ -16,8 +16,8 @@ public class Flower extends Destination {
 	}
 
 	
-	public void effect(ArrayList<Person> persons, Scene curStage) {
-		Person person = persons.get(0);
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		Person person = (Person)items.get(0);
 		if (person.getPositionX() + person.labelWidth > this.positionX
 				&& person.getPositionX() < (this.positionX + this.imageWidth)
 				&& (person.getPositionY() + person.labelHeight) > this.positionY
@@ -27,20 +27,20 @@ public class Flower extends Destination {
 			isShooted = true;
 			lbSuccess.setVisible(true);
 
-			curStage.isPassed = true;
+			currentScene.isPassed = true;
 			temp++;
 			if(temp>=100){
-				curStage.timer.stop();
+				currentScene.timer.stop();
 			}
 			
-			setNextStageStatus(curStage);
+			setNextStageStatus(currentScene);
 			
 		} else if (person.getPositionY() > 800 && isShooted == false) {
 			lbFail.setVisible(true);
 			person.setVelocityY(0);
 			person.setAccelerationY(0);
 			
-			curStage.timer.stop();
+			currentScene.timer.stop();
 		}
 	}
 }

@@ -29,10 +29,10 @@ public abstract class Scene implements ActionListener {
 	public Timer timer;
 	
 	public WindowPainter wp;
-	public ArrayList<Person> persons = new ArrayList<Person>();
-	public ArrayList<Aircraft> aircrafts = new ArrayList<Aircraft>();
-	public ArrayList<Destination> destinations = new ArrayList<Destination>();
-	public ArrayList<Disturbance> disturbances = new ArrayList<Disturbance>();
+	public ArrayList<Items> persons = new ArrayList<Items>();
+	public ArrayList<Items> aircrafts = new ArrayList<Items>();
+	public ArrayList<Items> destinations = new ArrayList<Items>();
+	public ArrayList<Items> disturbances = new ArrayList<Items>();
 	
 	// factory method instance
 	public SceneFactory factory;
@@ -123,7 +123,7 @@ public abstract class Scene implements ActionListener {
 	public void jumpOff() {
 		System.out.println("Down pressed");
 		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+			Person person = (Person) persons.get(i);
 			if (person.isDropped == false) {
 				person.lb.setVisible(true);
 				person.personInitPx = aircrafts.get(i).positionX + aircrafts.get(i).imageWidth / 2;
@@ -179,10 +179,10 @@ public abstract class Scene implements ActionListener {
 	private void addDestinationToPanel(SceneFactory factory) {
 		destinations = factory.createDestination();
 		for (int i = 0; i < destinations.size(); ++i) {
-			imagePanel.add(destinations.get(i).lbSuccess);
-			imagePanel.add(destinations.get(i).lbFail);
-			destinations.get(i).lbSuccess.setVisible(false);
-			destinations.get(i).lbFail.setVisible(false);
+			imagePanel.add(((Destination)destinations.get(i)).lbSuccess);
+			imagePanel.add(((Destination)destinations.get(i)).lbFail);
+			((Destination)destinations.get(i)).lbSuccess.setVisible(false);
+			((Destination)destinations.get(i)).lbFail.setVisible(false);
 			imagePanel.add(destinations.get(i).lb);
 		}
 	}
@@ -207,8 +207,8 @@ public abstract class Scene implements ActionListener {
 	private void personAction(boolean initPersonSpeed) {
 		for (int i = 0; i < persons.size(); ++i) {
 			if (initPersonSpeed) {
-				persons.get(i).personInitVx = aircrafts.get(i).getVelocityX();
-				persons.get(i).personInitVy = aircrafts.get(i).getVelocityY();
+				((Person)persons.get(i)).personInitVx = aircrafts.get(i).getVelocityX();
+				((Person)persons.get(i)).personInitVy = aircrafts.get(i).getVelocityY();
 			}
 			persons.get(i).move();
 		}
@@ -225,7 +225,7 @@ public abstract class Scene implements ActionListener {
 	
 	private void disturbanceAction(boolean initDisturbanceSpeed) {
 		for (int i = 0; i < disturbances.size(); ++i) {
-			disturbances.get(i).effect(persons);
+			disturbances.get(i).effect(persons, this);
 		}
 	}
 	

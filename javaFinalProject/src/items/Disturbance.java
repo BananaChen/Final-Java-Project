@@ -11,6 +11,6 @@ public abstract class Disturbance extends Items {
 	public void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts) {
 		
 	}
-	public abstract void effect(ArrayList<Person> persons);
+//	public abstract void effect(ArrayList<Person> persons);
 	
 }

@@ -32,7 +32,7 @@ public class Honeycomb extends Destination{
 	public void collideEvent() {
 	}
 	
-	public void effect(ArrayList<Person> persons, Scene curStage) {
+	public void effect(ArrayList<Items> items, Scene currentScene) {
 		// move left
 		if (moveLeft)
 			this.positionX -= 2;
@@ -50,8 +50,8 @@ public class Honeycomb extends Destination{
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
 			
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = persons.get(i);
+		for (int i = 0; i < items.size(); ++i) {
+			Person person = (Person)items.get(i);
 			// if successfully landing
 			if (person.isDropped && person.getPositionX() >= this.positionX+50
 				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
@@ -64,9 +64,9 @@ public class Honeycomb extends Destination{
 				((Thug)person).lbSunGlasses.setVisible(true);
 				((Thug)person).timer.start();
 
-				curStage.isPassed = true;
-				curStage.timer.stop();
-				setNextStageStatus(curStage);
+				currentScene.isPassed = true;
+				currentScene.timer.stop();
+				setNextStageStatus(currentScene);
 			}
 			// if not
 			else if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
@@ -75,7 +75,7 @@ public class Honeycomb extends Destination{
 				person.lb.setVisible(false);
 				person.blood = 0;
 				
-				curStage.timer.stop();
+				currentScene.timer.stop();
 			}
 		}
 	}
