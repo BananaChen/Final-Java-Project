@@ -162,7 +162,7 @@ public abstract class Scene implements ActionListener {
 	
 	private void addPersonToPanel(SceneFactory factory) {
 		compositeItems = factory.createPerson(compositeItems);
-		persons = compositeItems.getPerson();
+		persons = compositeItems.getElementsByClassInstance(Person.class);
 		for (int i = 0; i < persons.size(); ++i) {
 			if (persons.get(i) instanceof Thug) {
 				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
@@ -185,7 +185,7 @@ public abstract class Scene implements ActionListener {
 	
 	private void addAircraftToPanel(SceneFactory factory) {
 		compositeItems = factory.createAircraft(compositeItems);
-		aircrafts = compositeItems.getAircraft();
+		aircrafts = compositeItems.getElementsByClassInstance(Aircraft.class);
 		for (int i = 0; i < aircrafts.size(); ++i) {
 			imagePanel.add(aircrafts.get(i).lb);
 		}
@@ -193,7 +193,7 @@ public abstract class Scene implements ActionListener {
 	
 	private void addDisturbanceToPanel(SceneFactory factory) {
 		compositeItems = factory.createDisturbance(compositeItems);
-		disturbances = compositeItems.getDisturbance();
+		disturbances = compositeItems.getElementsByClassInstance(Disturbance.class);
 		for (int i = 0; i < disturbances.size(); ++i) {
 			imagePanel.add(disturbances.get(i).lb);
 		}
@@ -201,7 +201,7 @@ public abstract class Scene implements ActionListener {
 	
 	private void addDestinationToPanel(SceneFactory factory) {
 		compositeItems = factory.createDestination(compositeItems);
-		destinations = compositeItems.getDestination();
+		destinations = compositeItems.getElementsByClassInstance(Destination.class);
 		for (int i = 0; i < destinations.size(); ++i) {
 			imagePanel.add(((Destination)destinations.get(i)).lbSuccess);
 			imagePanel.add(((Destination)destinations.get(i)).lbFail);

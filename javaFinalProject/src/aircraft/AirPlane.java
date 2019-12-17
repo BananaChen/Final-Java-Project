@@ -19,11 +19,13 @@ public class AirPlane extends Aircraft {
 		this.velocityX += this.accelerationX;
 		this.positionX += this.velocityX;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		
+		relocatePosition();
 	}
 	
-	public void relocatePosition() {
+	private void relocatePosition() {
 		if (getPositionX() > bgWidth) {
-			setPositionX(imageWidth);
+			setPositionX(-imageWidth);
 		}
 	}
 }

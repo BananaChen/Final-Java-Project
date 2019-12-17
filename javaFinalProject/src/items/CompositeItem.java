@@ -55,79 +55,10 @@ public class CompositeItem extends Items{
 		
 	}
 	
-	public ArrayList<Items> getPerson() {
-		return this.items.stream().filter(i -> i instanceof Person)
-				.collect(Collectors.toCollection(ArrayList::new));
-	}
-	
-	public ArrayList<Items> getAircraft() {
-		return this.items.stream().filter(i -> i instanceof Aircraft)
+	public <T> ArrayList<Items> getElementsByClassInstance(Class<T> type) {
+		return this.items.stream().filter(i -> type.isInstance(i))
+//				.map(j -> (Items)j)
     			.collect(Collectors.toCollection(ArrayList::new));
 	}
 	
-	public ArrayList<Items> getDisturbance() {
-		return this.items.stream().filter(i -> i instanceof Disturbance)
-    			.collect(Collectors.toCollection(ArrayList::new));
-	}
-	
-	public ArrayList<Items> getDestination() {
-		return this.items.stream().filter(i -> i instanceof Destination)
-    			.collect(Collectors.toCollection(ArrayList::new));
-	}
-	
-	public <T> ArrayList<Items> getElementsByClass(Class<T> cls) throws IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException {
-        T inst = cls.getConstructor().newInstance();
-        ArrayList<Items> list = new ArrayList<Items>();
-        
-        if (inst instanceof Person) {
-        	return this.items.stream().filter(i -> i instanceof Person)
-        			.map(j -> (Items)j)
-        			.collect(Collectors.toCollection(ArrayList::new));
-        } else if (inst instanceof Disturbance) {
-        	return this.items.stream().filter(i -> i instanceof Disturbance)
-        			.map(j -> (Items)j)
-        			.collect(Collectors.toCollection(ArrayList::new));
-        } else if (inst instanceof Destination) {
-        	return this.items.stream().filter(i -> i instanceof Destination)
-        			.map(j -> (Items)j)
-        			.collect(Collectors.toCollection(ArrayList::new));
-        } else if (inst instanceof Aircraft) {
-        	return this.items.stream().filter(i -> i instanceof Aircraft)
-        			.map(j -> (Items)j)
-        			.collect(Collectors.toCollection(ArrayList::new));
-//        	for (Items item : this.items) {
-//	    		if (item instanceof Disturbance) {
-//	    			list.add((T) item);
-//	    		}
-//	    	}
-        } else {
-        	return list;
-        }
-//		ArrayList<T> list = (ArrayList<T>) this.items.query("SELECT * FROM objects WHERE type=" + cls.getName());
-    }
-	
-//	public <Any> Any getElementsByClass(Class cls) {
-//		Class c = cls.getClass(); 
-//		ArrayList<Items> selectedItems = new ArrayList<Items>();
-//		for (Items item : items) {
-//			System.out.println(item.getClass().getName());
-//			if (item.getClass().getName() == className) {
-//				selectedItems.add(item);
-//			}
-//		}
-//		
-//		return (Any) selectedItems;
-//	}
-	
-//	public ArrayList<Items> getElementsByClass(String className) {
-//		 ArrayList<Items> selectedItems = new ArrayList<Items>();
-//		for (Items item : items) {
-//			System.out.println(item.getClass().getName());
-//			if (item.getClass().getName() == className) {
-//				selectedItems.add(item);
-//			}
-//		}
-//		
-//		return selectedItems;
-//	}
 }
