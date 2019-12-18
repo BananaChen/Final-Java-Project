@@ -3,10 +3,9 @@ package items;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import windows.Scene;
+import javax.swing.JPanel;
 
-import java.lang.reflect.InvocationTargetException;
-//import java.sql.*;
+import windows.Scene;
 
 public class CompositeItem extends Items{
 	private static final long serialVersionUID = 1L;
@@ -30,6 +29,14 @@ public class CompositeItem extends Items{
 		for (Items item : this.items) {
 			item.effect(items, currentScene);
 		}
+	}
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		for (Items item : this.items) {
+			item.addLabelToScreen(panel);
+		}
+		return panel;
 	}
 	
 	// add element to list
@@ -61,5 +68,4 @@ public class CompositeItem extends Items{
 //				.map(j -> (Items)j)
     			.collect(Collectors.toCollection(ArrayList::new));
 	}
-	
 }

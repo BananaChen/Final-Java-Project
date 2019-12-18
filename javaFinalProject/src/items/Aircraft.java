@@ -2,6 +2,8 @@ package items;
 
 import java.util.ArrayList;
 
+import javax.swing.JPanel;
+
 import windows.Scene;
 
 public abstract class Aircraft extends Items {
@@ -20,5 +22,11 @@ public abstract class Aircraft extends Items {
 		if (getPositionX() > Scene.bgWidth) {
 			setPositionX(-imageWidth);
 		}
+	}
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		panel.add(this.lb);
+		return panel;
 	}
 }

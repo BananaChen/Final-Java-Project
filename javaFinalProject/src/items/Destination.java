@@ -57,6 +57,12 @@ public abstract class Destination extends Items {
 	public void move() {
 		
 	}
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		panel.add(this.lb);
+		return panel;
+	}
 
 //	public abstract void effect(ArrayList<Items> items, Scene currentScene);
 }

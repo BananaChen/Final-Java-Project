@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import windows.Scene;
 
 public abstract class Items extends JPanel {
-
+	private static final long serialVersionUID = 1L;
 	public JLabel lb;
 	public int imageWidth;
 	public int imageHeight;
@@ -118,4 +118,6 @@ public abstract class Items extends JPanel {
 		setAccelerationX(getAccelerationX() + ax);
 		setAccelerationY(getAccelerationX() + ay);
 	}
+	
+	public abstract JPanel addLabelToScreen(JPanel panel);
 }

@@ -50,12 +50,12 @@ public class Arrow extends Disturbance implements ActionListener {
 				waitTime = (int) (Math.random() * 100 + 1);
 				if (person.isDropped) {
 					person.blood--;
-					if(person.blood==2)
-						((Thug)person).heart3.setVisible(false);
-					else if (person.blood==1)
-						((Thug)person).heart2.setVisible(false);
-					else
-						((Thug)person).heart1.setVisible(false);
+//					if(person.blood==2)
+//						((Thug)person).heart3.setVisible(false);
+//					else if (person.blood==1)
+//						((Thug)person).heart2.setVisible(false);
+//					else
+//						((Thug)person).heart1.setVisible(false);
 				}
 			}
 	

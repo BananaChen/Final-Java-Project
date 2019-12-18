@@ -148,66 +148,49 @@ public abstract class Scene implements ActionListener {
 	
 	public void addElementToPanel(SceneFactory factory) {
 		// create person
-		addPersonToPanel(factory);
+		createPerson(factory);
 		
 		// create aircraft
-		addAircraftToPanel(factory);
+		createAircraft(factory);
 		
 		// create destination
-		addDestinationToPanel(factory);
+		createDisturbance(factory);
 		
 		// create disturbance
-		addDisturbanceToPanel(factory);
+		createDestination(factory);
+		
+		// add all elements to screen
+		imagePanel = compositeItems.addLabelToScreen(imagePanel);
 	}
 	
-	private void addPersonToPanel(SceneFactory factory) {
+	private void createPerson(SceneFactory factory) {
 		compositeItems = factory.createPerson(compositeItems);
 		persons = compositeItems.getElementsByClassInstance(Person.class);
-		for (int i = 0; i < persons.size(); ++i) {
-			if (persons.get(i) instanceof Thug) {
-				imagePanel.add(((Thug)persons.get(i)).lbSunGlasses);
-				imagePanel.add(((Thug)persons.get(i)).heart1);
-				imagePanel.add(((Thug)persons.get(i)).heart2);
-				imagePanel.add(((Thug)persons.get(i)).heart3);
+		for (Items person : persons) {
+			if (person instanceof Thug) {
+				imagePanel.add(((Thug)person).lbSunGlasses);
 			}
-			
-			imagePanel.add(persons.get(i).lb);
 		}
-		
-//		try {
-//			persons = compositeItems.getElementsByClass(Person.class);
-//		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-//				| NoSuchMethodException | SecurityException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 	}
 	
-	private void addAircraftToPanel(SceneFactory factory) {
+	private void createAircraft(SceneFactory factory) {
 		compositeItems = factory.createAircraft(compositeItems);
 		aircrafts = compositeItems.getElementsByClassInstance(Aircraft.class);
-		for (int i = 0; i < aircrafts.size(); ++i) {
-			imagePanel.add(aircrafts.get(i).lb);
-		}
 	}
 	
-	private void addDisturbanceToPanel(SceneFactory factory) {
+	private void createDisturbance(SceneFactory factory) {
 		compositeItems = factory.createDisturbance(compositeItems);
 		disturbances = compositeItems.getElementsByClassInstance(Disturbance.class);
-		for (int i = 0; i < disturbances.size(); ++i) {
-			imagePanel.add(disturbances.get(i).lb);
-		}
 	}
 	
-	private void addDestinationToPanel(SceneFactory factory) {
+	private void createDestination(SceneFactory factory) {
 		compositeItems = factory.createDestination(compositeItems);
 		destinations = compositeItems.getElementsByClassInstance(Destination.class);
-		for (int i = 0; i < destinations.size(); ++i) {
-			imagePanel.add(((Destination)destinations.get(i)).lbSuccess);
-			imagePanel.add(((Destination)destinations.get(i)).lbFail);
-			((Destination)destinations.get(i)).lbSuccess.setVisible(false);
-			((Destination)destinations.get(i)).lbFail.setVisible(false);
-			imagePanel.add(destinations.get(i).lb);
+		for (Items destination : destinations) {
+			imagePanel.add(((Destination) destination).lbSuccess);
+			imagePanel.add(((Destination) destination).lbFail);
+			((Destination) destination).lbSuccess.setVisible(false);
+			((Destination) destination).lbFail.setVisible(false);
 		}
 	}
 	
@@ -226,16 +209,6 @@ public abstract class Scene implements ActionListener {
 	private void brushPanel() {
 		wp.brush();
 	}
-	
-//	private void personAction(boolean initPersonSpeed) {
-//		for (int i = 0; i < persons.size(); ++i) {
-//			if (initPersonSpeed) {
-//				((Person)persons.get(i)).personInitVx = aircrafts.get(i).getVelocityX();
-//				((Person)persons.get(i)).personInitVy = aircrafts.get(i).getVelocityY();
-//			}
-//			persons.get(i).move();
-//		}
-//	}
 
 	public abstract Scene getCurrentStage();
 

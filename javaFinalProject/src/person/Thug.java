@@ -40,6 +40,7 @@ public class Thug extends Person implements ActionListener {
 			lbSunGlasses.setLocation((int) 0, (int) 0);
 			lbSunGlasses.setSize(imageWidth, imageHeight);
 			lbSunGlasses.setLayout(null);
+//			lb.add(lbSunGlasses);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -48,9 +49,10 @@ public class Thug extends Person implements ActionListener {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/dvVH6wA.png"));
 			icon.setImage(icon.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 			heart1 = new JLabel(icon);
-			heart1.setLocation((int) x, (int) y);
+			heart1.setLocation((int) 0, (int) 0);
 			heart1.setSize(imageWidth/3, imageWidth/3);
 			heart1.setLayout(null);
+			lb.add(heart1);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -58,9 +60,10 @@ public class Thug extends Person implements ActionListener {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/dvVH6wA.png"));
 			icon.setImage(icon.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 			heart2 = new JLabel(icon);
-			heart2.setLocation((int) x/3, (int) y);
+			heart2.setLocation((int) imageWidth/3, (int) 0);
 			heart2.setSize(imageWidth/3, imageWidth/3);
 			heart2.setLayout(null);
+			lb.add(heart2);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -68,9 +71,10 @@ public class Thug extends Person implements ActionListener {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/dvVH6wA.png"));
 			icon.setImage(icon.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 			heart3 = new JLabel(icon);
-			heart3.setLocation((int) x*2/3, (int) y);
+			heart3.setLocation((int) imageWidth*2/3, (int) 0);
 			heart3.setSize(imageWidth/3, imageWidth/3);
 			heart3.setLayout(null);
+			lb.add(heart3);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -104,9 +108,6 @@ public class Thug extends Person implements ActionListener {
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
-		this.heart1.setLocation((int) this.positionX, (int) this.positionY-30);
-		this.heart2.setLocation((int) this.positionX+imageWidth/3, (int) this.positionY-30);
-		this.heart3.setLocation((int) this.positionX+imageWidth*2/3, (int) this.positionY-30);
 	}
 
 	@Override

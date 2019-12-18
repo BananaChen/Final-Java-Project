@@ -2,14 +2,13 @@ package items;
 
 import java.util.ArrayList;
 
-import javax.swing.JLabel;
-import javax.swing.Timer;
+import javax.swing.JPanel;
 
 import windows.Scene;
 
 public abstract class Person extends Items {
-
-	private String imagePath = "https://image.flaticon.com/icons/png/512/72/72924.png";
+	private static final long serialVersionUID = 1L;
+//	private String imagePath = "https://image.flaticon.com/icons/png/512/72/72924.png";
 	public boolean isDropped = false;
 
 	public double personInitPx = 0;
@@ -54,5 +53,10 @@ public abstract class Person extends Items {
 		this.positionY += this.velocityY;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
 	}
-
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		panel.add(this.lb);
+		return panel;
+	}
 }

@@ -3,6 +3,8 @@ package aircraft;
 
 import java.util.ArrayList;
 
+import javax.swing.JPanel;
+
 import items.*;
 import windows.Scene;
 
@@ -24,5 +26,11 @@ public class WindowPainter extends Items{
 	@Override
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		
+	}
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		panel.add(this.lb);
+		return panel;
 	}
 }

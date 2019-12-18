@@ -2,6 +2,8 @@ package items;
 
 import java.util.ArrayList;
 
+import javax.swing.JPanel;
+
 public abstract class Disturbance extends Items {
 
 	public Disturbance(double x, double y, double vx, double vy, double ax, double ay) {
@@ -11,5 +13,11 @@ public abstract class Disturbance extends Items {
 //	public void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts) {
 //		
 //	}
+	
+	@Override
+	public JPanel addLabelToScreen(JPanel panel) {
+		panel.add(this.lb);
+		return panel;
+	}
 	
 }
