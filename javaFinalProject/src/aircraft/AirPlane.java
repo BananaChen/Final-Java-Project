@@ -6,8 +6,6 @@ import items.*;
 public class AirPlane extends Aircraft {
 
 	private String imagePath = "https://i.imgur.com/9HrrZCt.png";
-	private int bgWidth = 1920;
-	private int bgHeight = 1000;
 
 	public AirPlane(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
@@ -20,12 +18,8 @@ public class AirPlane extends Aircraft {
 		this.positionX += this.velocityX;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
 		
-		relocatePosition();
+		relocatePositionIfNeed();
 	}
 	
-	private void relocatePosition() {
-		if (getPositionX() > bgWidth) {
-			setPositionX(-imageWidth);
-		}
-	}
+	
 }

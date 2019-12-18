@@ -25,6 +25,13 @@ public class CompositeItem extends Items{
 		}
 	}
 	
+	@Override
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		for (Items item : this.items) {
+			item.effect(items, currentScene);
+		}
+	}
+	
 	// add element to list
 	public void addItem(Items item) {
 		this.items.add(item);
@@ -47,12 +54,6 @@ public class CompositeItem extends Items{
 	// check if list is empty
 	public boolean isEmpty() {
 		return this.items.isEmpty();
-	}
-
-	@Override
-	public void effect(ArrayList<Items> items, Scene currentScene) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	public <T> ArrayList<Items> getElementsByClassInstance(Class<T> type) {

@@ -30,10 +30,10 @@ public abstract class Scene implements ActionListener {
 	public Timer timer;
 	
 	public WindowPainter wp;
-	public ArrayList<Items> persons = new ArrayList<Items>();
-	public ArrayList<Items> aircrafts = new ArrayList<Items>();
-	public ArrayList<Items> destinations = new ArrayList<Items>();
-	public ArrayList<Items> disturbances = new ArrayList<Items>();
+	public ArrayList<Items> persons;
+	public ArrayList<Items> aircrafts;
+	public ArrayList<Items> destinations;
+	public ArrayList<Items> disturbances;
 	CompositeItem compositeItems = new CompositeItem();
 	
 	// factory method instance
@@ -219,7 +219,8 @@ public abstract class Scene implements ActionListener {
 	public void performAction(boolean initSpeed) {
 		brushPanel();
 		compositeItems.move();
-		compositeItems.effect(this);
+//		compositeItems.effect(this);
+		compositeItems.effect(persons, this);
 	}
 	
 	private void brushPanel() {
