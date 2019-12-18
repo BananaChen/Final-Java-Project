@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Home extends Destination {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/N8Il1QP.png";
 
 	public Home(double x, double y, double vx, double vy, double ax, double ay) {
@@ -23,19 +24,17 @@ public class Home extends Destination {
 					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
 					&& person.getPositionY() + person.imageHeight >= this.positionY
 					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
-				lbSuccess.setVisible(true);
+				
 				person.lb.setVisible(false);
 				
-				currentScene.isPassed = true;
-				currentScene.timer.stop();
+				currentScene.successHandler();
 				setNextStageStatus(currentScene);
 
 			}
 			// if not
 			else if (this.positionY - (person.getPositionY()) < 0) {
-				lbFail.setVisible(true);
 				person.lb.setVisible(false);
-				currentScene.timer.stop();
+				currentScene.failureHandler();
 			}
 		}
 	}

@@ -1,8 +1,6 @@
 package person;
 
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -12,7 +10,7 @@ import javax.swing.Timer;
 
 import items.*;
 
-public class Thug extends Person implements ActionListener {
+public class Thug extends Person {
 
 	private static final long serialVersionUID = -1233480500986673884L;
 	
@@ -20,8 +18,6 @@ public class Thug extends Person implements ActionListener {
 	public JLabel heart2;
 	public JLabel heart3;
 	public JLabel lbSunGlasses;
-	public double gx;
-	public double gy = 1000;
 	public Timer timer;
 	
 	public Thug(double x, double y, double vx, double vy, double ax, double ay) {
@@ -30,17 +26,16 @@ public class Thug extends Person implements ActionListener {
 		imageWidth = 100;
 		imageHeight = 100;
 		
-		timer = new Timer(10, this);
 		setImage(x, y, imageWidth, imageHeight, "https://image.flaticon.com/icons/png/512/72/72924.png");
 		
 		try {
 			ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/uSpGrlw.png"));
 			icon.setImage(icon.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
 			lbSunGlasses = new JLabel(icon);
-			lbSunGlasses.setLocation((int) 0, (int) 0);
+			lbSunGlasses.setLocation((int) 0, (int) 10);
 			lbSunGlasses.setSize(imageWidth, imageHeight);
 			lbSunGlasses.setLayout(null);
-//			lb.add(lbSunGlasses);
+			lb.add(lbSunGlasses);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -108,15 +103,5 @@ public class Thug extends Person implements ActionListener {
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// put on sunglasses
-		if (gy > this.positionY + 10) {
-			this.gy -= 2;
-			lbSunGlasses.setLocation((int) this.gx, (int) this.gy);
-		} else
-			timer.stop();
 	}
 }

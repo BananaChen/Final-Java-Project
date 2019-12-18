@@ -2,6 +2,7 @@ package windows;
 
 import items.*;
 import person.Thug;
+import result.*;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,6 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -27,6 +27,9 @@ public abstract class Scene implements ActionListener {
 
 	public boolean isPassed = false;
 	protected static boolean isPaused = false;
+	public Result successLabel = new Success(300, 200, 800, 400);
+	public Result failureLabel = new Failure(300, 200, 800, 400);
+
 	public Timer timer;
 	
 	public WindowPainter wp;
@@ -36,7 +39,7 @@ public abstract class Scene implements ActionListener {
 	public ArrayList<Items> disturbances;
 	CompositeItem compositeItems = new CompositeItem();
 	
-	// factory method instance
+	// abstract factory method instance
 	public SceneFactory factory;
 	
 	
@@ -50,9 +53,6 @@ public abstract class Scene implements ActionListener {
 		wp = new WindowPainter(0, 0, 0, 0, 0, 0);
 		wp.lb.setVisible(true);
 		imagePanel.add(wp.lb);
-		
-		// set up commands
-//		setCommand();
 	}
 	
 	public Scene getInstance() {
@@ -60,6 +60,7 @@ public abstract class Scene implements ActionListener {
 	}
 
 	public void setWindow(String bgImagePath) {
+		// add background
 		try {
 			ImageIcon icon = new ImageIcon(new URL(bgImagePath));
 			icon.setImage(icon.getImage().getScaledInstance(bgWidth, bgHeight, Image.SCALE_DEFAULT));
@@ -131,7 +132,6 @@ public abstract class Scene implements ActionListener {
 			return;
 		}
 		
-		
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = (Person) persons.get(i);
 			if (person.isDropped == false) {
@@ -147,6 +147,16 @@ public abstract class Scene implements ActionListener {
 	}
 	
 	public void addElementToPanel(SceneFactory factory) {
+		// create all elements
+		createElement(factory);
+		
+		// add all elements to screen
+		imagePanel = compositeItems.addLabelToScreen(imagePanel);
+		imagePanel = successLabel.addLabelToScreen(imagePanel);
+		imagePanel = failureLabel.addLabelToScreen(imagePanel);
+	}
+	
+	private void createElement(SceneFactory factory) {
 		// create person
 		createPerson(factory);
 		
@@ -158,19 +168,11 @@ public abstract class Scene implements ActionListener {
 		
 		// create disturbance
 		createDestination(factory);
-		
-		// add all elements to screen
-		imagePanel = compositeItems.addLabelToScreen(imagePanel);
 	}
 	
 	private void createPerson(SceneFactory factory) {
 		compositeItems = factory.createPerson(compositeItems);
 		persons = compositeItems.getElementsByClassInstance(Person.class);
-		for (Items person : persons) {
-			if (person instanceof Thug) {
-				imagePanel.add(((Thug)person).lbSunGlasses);
-			}
-		}
 	}
 	
 	private void createAircraft(SceneFactory factory) {
@@ -186,12 +188,6 @@ public abstract class Scene implements ActionListener {
 	private void createDestination(SceneFactory factory) {
 		compositeItems = factory.createDestination(compositeItems);
 		destinations = compositeItems.getElementsByClassInstance(Destination.class);
-		for (Items destination : destinations) {
-			imagePanel.add(((Destination) destination).lbSuccess);
-			imagePanel.add(((Destination) destination).lbFail);
-			((Destination) destination).lbSuccess.setVisible(false);
-			((Destination) destination).lbFail.setVisible(false);
-		}
 	}
 	
 	public void startTimer() {
@@ -208,6 +204,17 @@ public abstract class Scene implements ActionListener {
 	
 	private void brushPanel() {
 		wp.brush();
+	}
+	
+	public void successHandler() {
+		successLabel.setLabelVisibility(true);
+		isPassed = true;
+		timer.stop();
+	}
+	
+	public void failureHandler() {
+		failureLabel.setLabelVisibility(true);
+		timer.stop();
 	}
 
 	public abstract Scene getCurrentStage();

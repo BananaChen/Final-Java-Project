@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Flower extends Destination {
 
+	private static final long serialVersionUID = 1L;
 	public static boolean isShooted = false;
 	public int temp = 0;
 	
@@ -25,22 +26,20 @@ public class Flower extends Destination {
 			person.setVelocityY(-6);
 			this.lb.setVisible(false);
 			isShooted = true;
-			lbSuccess.setVisible(true);
-
-			currentScene.isPassed = true;
+			
 			temp++;
 			if(temp>=100){
 				currentScene.timer.stop();
 			}
 			
+			currentScene.successHandler();
 			setNextStageStatus(currentScene);
 			
 		} else if (person.getPositionY() > 800 && isShooted == false) {
-			lbFail.setVisible(true);
 			person.setVelocityY(0);
 			person.setAccelerationY(0);
 			
-			currentScene.timer.stop();
+			currentScene.failureHandler();
 		}
 	}
 }

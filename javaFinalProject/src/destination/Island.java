@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Island extends Destination {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/T8Jrc9m.png";
 
 	public Island(double x, double y, double vx, double vy, double ax, double ay) {
@@ -22,19 +23,17 @@ public class Island extends Destination {
 					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
 					&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.85
 					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
-				lbSuccess.setVisible(true);
+				
 				//person.lb.setVisible(false);
-				currentScene.isPassed = true;
-				currentScene.timer.stop();
+				currentScene.successHandler();
 				setNextStageStatus(currentScene);
 
 			}
 			// if not
 			else if (person.isDropped && (this.getPositionY()+this.imageHeight) - person.positionY < 0) {
-				lbFail.setVisible(true);
 				person.lb.setVisible(false);
 				
-				currentScene.timer.stop();
+				currentScene.failureHandler();
 			}
 		}
 	}

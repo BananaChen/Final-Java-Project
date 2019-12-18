@@ -48,14 +48,10 @@ public class Arrow extends Disturbance implements ActionListener {
 				isStop = true;
 				// set a random time to wait to restart
 				waitTime = (int) (Math.random() * 100 + 1);
+				
+				// decrease blood
 				if (person.isDropped) {
 					person.blood--;
-//					if(person.blood==2)
-//						((Thug)person).heart3.setVisible(false);
-//					else if (person.blood==1)
-//						((Thug)person).heart2.setVisible(false);
-//					else
-//						((Thug)person).heart1.setVisible(false);
 				}
 			}
 	

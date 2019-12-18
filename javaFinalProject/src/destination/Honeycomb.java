@@ -4,15 +4,11 @@ import items.*;
 import person.*;
 import windows.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.Timer;
 
 public class Honeycomb extends Destination{
 
-	private static final long serialVersionUID = -4756067190093780646L;
-
+	private static final long serialVersionUID = 1L;
 	public int screenWidth = 1920;
 	public int screenHeight = 1000;
 
@@ -57,25 +53,21 @@ public class Honeycomb extends Destination{
 				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
 				&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
 				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9) {
-				lbSuccess.setVisible(true);
+				
 				// Scene2.person.lb.setVisible(false);
-				((Thug)person).gx = person.positionX;
-				((Thug)person).lbSunGlasses.setLocation((int) person.positionX, screenHeight);
 				((Thug)person).lbSunGlasses.setVisible(true);
-				((Thug)person).timer.start();
 
-				currentScene.isPassed = true;
-				currentScene.timer.stop();
+				currentScene.successHandler();
 				setNextStageStatus(currentScene);
 			}
 			// if not
 			else if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
 					|| person.blood == 0)) {
-				lbFail.setVisible(true);
+				
 				person.lb.setVisible(false);
 				person.blood = 0;
 				
-				currentScene.timer.stop();
+				currentScene.failureHandler();
 			}
 		}
 	}
