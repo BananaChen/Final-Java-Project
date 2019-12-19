@@ -25,12 +25,12 @@ This is a simple parachute game written in Java, which aims to make good use of 
 
 - Too many of it. Basically in almost every abstract class.
 
-### Abstract Facory Pattern
+### Abstract Factory Pattern
 
 - Used to create groups of objects.
 
 <p align="center">
-    <img src = 'https://i.imgur.com/Wlghxu0.jpg'>
+    <img src = 'https://i.imgur.com/v1maoGt.jpg'>
 </p>
 
 ### Command Pattern
