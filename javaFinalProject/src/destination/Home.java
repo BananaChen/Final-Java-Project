@@ -20,23 +20,35 @@ public class Home extends Destination {
 		for (int i = 0; i < items.size(); ++i) {
 			Person person = (Person)items.get(i);
 			// if successfully landing
-			if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX
-					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
-					&& person.getPositionY() + person.imageHeight >= this.positionY
-					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight) {
-				
-				person.lb.setVisible(false);
-				
+			if (successfulLanding(person)) {
+				personActionAfterward(person);
 				currentScene.successHandler();
 				setNextStageStatus(currentScene);
 
 			}
 			// if not
-			else if (this.positionY - (person.getPositionY()) < 0) {
-				person.lb.setVisible(false);
+			else if (failedLanding(person)) {
+				personActionAfterward(person);
 				currentScene.failureHandler();
 			}
 		}
+	}
+
+	@Override
+	public boolean successfulLanding(Person person) {
+		if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX
+					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
+					&& person.getPositionY() + person.imageHeight >= this.positionY
+					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight)
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean failedLanding(Person person) {
+		if (this.positionY - (person.getPositionY()) < 0)
+			return true;
+		return false;
 	}
 
 }

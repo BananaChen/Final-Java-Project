@@ -59,10 +59,7 @@ public abstract class Scene implements ActionListener {
 	}
 
 	public void setWindow(String bgImagePath) {
-		// add background
 		setBackground();
-
-		// key event
 		setKeyEvent();
 	}
 	
@@ -73,7 +70,6 @@ public abstract class Scene implements ActionListener {
 			JLabel lb = new JLabel(icon);
 			imagePanel.add(lb);
 			lb.setSize(bgWidth, bgHeight);
-			// add(imagePanel);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -134,23 +130,26 @@ public abstract class Scene implements ActionListener {
 	private void dropOnePerson() {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = (Person) persons.get(i);
-			if (person.isDropped) {
+			Aircraft aircraft = (Aircraft) aircrafts.get(i);
+			if (person.isDropped)
 				continue;
-			} else {
+			else {
+				initPersonStatus(person, aircraft);
 				person.isDropped = true;
-				person.lb.setVisible(true);
-				person.setPositionX(aircrafts.get(i).positionX + aircrafts.get(i).imageWidth / 2);
-				person.setPositionY(aircrafts.get(i).positionY + aircrafts.get(i).imageHeight / 2);
-				person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 			}
 		}
 	}
 	
+	private void initPersonStatus(Person person, Aircraft aircraft) {
+		person.lb.setVisible(true);
+		person.personInitPx = aircraft.positionX + aircraft.imageWidth / 2;
+		person.personInitPy = aircraft.positionY + aircraft.imageHeight / 2;
+		person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVx, person.personInitVy, person.personInitAx, person.personInitAy);
+		person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
+	}
+	
 	public void addElementToPanel(SceneFactory factory) {
-		// create all elements
 		createElement(factory);
-		
-		// add all elements to screen
 		imagePanel = compositeItems.addLabelToScreen(imagePanel);
 		imagePanel = successLabel.addLabelToScreen(imagePanel);
 		imagePanel = failureLabel.addLabelToScreen(imagePanel);

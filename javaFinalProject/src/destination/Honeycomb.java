@@ -49,27 +49,35 @@ public class Honeycomb extends Destination{
 		for (int i = 0; i < items.size(); ++i) {
 			Person person = (Person)items.get(i);
 			// if successfully landing
-			if (person.isDropped && person.getPositionX() >= this.positionX+50
-				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
-				&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
-				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9) {
-				
-				// Scene2.person.lb.setVisible(false);
+			if (successfulLanding(person)) {
 				((Thug)person).lbSunGlasses.setVisible(true);
-
 				currentScene.successHandler();
 				setNextStageStatus(currentScene);
 			}
 			// if not
-			else if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
-					|| person.blood == 0)) {
-				
-				person.lb.setVisible(false);
-				person.blood = 0;
-				
+			else if (failedLanding(person)) {
+				personActionAfterward(person);
 				currentScene.failureHandler();
 			}
 		}
+	}
+
+	@Override
+	public boolean successfulLanding(Person person) {
+		if (person.isDropped && person.getPositionX() >= this.positionX+50
+				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
+				&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
+				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9)
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean failedLanding(Person person) {
+		if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
+					|| person.blood == 0))
+			return true;
+		return false;
 	}
 
 }

@@ -19,27 +19,43 @@ public class Flower extends Destination {
 	
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		Person person = (Person)items.get(0);
-		if (person.getPositionX() + person.labelWidth > this.positionX
-				&& person.getPositionX() < (this.positionX + this.imageWidth)
-				&& (person.getPositionY() + person.labelHeight) > this.positionY
-				&& person.getPositionY() < this.positionY + this.imageHeight) {
+		if (successfulLanding(person)) {
 			person.setVelocityY(-6);
 			this.lb.setVisible(false);
 			isShooted = true;
 			
 			temp++;
-			if(temp>=100){
+			if(temp >= 100){
 				currentScene.timer.stop();
 			}
 			
 			currentScene.successHandler();
 			setNextStageStatus(currentScene);
 			
-		} else if (person.getPositionY() > 800 && isShooted == false) {
+		} else if (failedLanding(person)) {
 			person.setVelocityY(0);
 			person.setAccelerationY(0);
 			
 			currentScene.failureHandler();
 		}
+	}
+
+
+	@Override
+	public boolean successfulLanding(Person person) {
+		if (person.getPositionX() + person.labelWidth > this.positionX
+				&& person.getPositionX() < (this.positionX + this.imageWidth)
+				&& (person.getPositionY() + person.labelHeight) > this.positionY
+				&& person.getPositionY() < this.positionY + this.imageHeight)
+			return true;
+		return false;
+	}
+
+
+	@Override
+	public boolean failedLanding(Person person) {
+		if (person.getPositionY() > 800 && isShooted == false)
+			return true;
+		return false;
 	}
 }

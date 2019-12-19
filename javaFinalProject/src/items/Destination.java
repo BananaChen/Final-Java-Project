@@ -36,6 +36,17 @@ public abstract class Destination extends Items {
 		panel.add(this.lb);
 		return panel;
 	}
+	
+	public abstract boolean successfulLanding(Person person);
+	public abstract boolean failedLanding(Person person);
+	
+	public void personActionAfterward(Person person) {
+		person.lb.setVisible(false);
+		person.setAccelerationX(0);
+		person.setAccelerationY(0);
+		person.setVelocityX(0);
+		person.setVelocityY(0);
+	}
 
 //	public abstract void effect(ArrayList<Items> items, Scene currentScene);
 }
