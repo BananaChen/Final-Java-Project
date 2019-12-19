@@ -1,7 +1,6 @@
 package windows;
 
 import items.*;
-import person.Thug;
 import result.*;
 
 import java.util.ArrayList;
@@ -61,6 +60,13 @@ public abstract class Scene implements ActionListener {
 
 	public void setWindow(String bgImagePath) {
 		// add background
+		setBackground();
+
+		// key event
+		setKeyEvent();
+	}
+	
+	private void setBackground() {
 		try {
 			ImageIcon icon = new ImageIcon(new URL(bgImagePath));
 			icon.setImage(icon.getImage().getScaledInstance(bgWidth, bgHeight, Image.SCALE_DEFAULT));
@@ -71,8 +77,9 @@ public abstract class Scene implements ActionListener {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-
-		// key event
+	}
+	
+	private void setKeyEvent() {
 		imagePanel.setFocusable(true);
 		imagePanel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
@@ -91,39 +98,29 @@ public abstract class Scene implements ActionListener {
 	public void goToNextStage() {
 		System.out.println("N pressed");
 		if (isPassed == true) {
-			timer.stop();
-			imagePanel.removeAll();
-			compositeItems.clear();
-			// go to next stage
-			WindowController.setStage(getNextStage());
-			System.out.println("go to next stage");
-			isPassed = false;
-			imagePanel.setFocusable(false);
+			prepareForStage(getNextStage());
 		}
 	}
 	
 	public void skipToNextStage() {
 		System.out.println("Enter pressed");
-		timer.stop();
-		imagePanel.removeAll();
-		compositeItems.clear();
-		WindowController.setStage(getNextStage());
-		isPassed = false;
-		imagePanel.setFocusable(false);
+		prepareForStage(getNextStage());
 	}
 	
 	public void replay() {
 		System.out.println("R pressed");
 		if (isPassed == false) {
-			timer.stop();
-			imagePanel.removeAll();
-			compositeItems.clear();
-			// restart current stage
-			WindowController.setStage(getCurrentStage());
-			System.out.println("replay");
-			isPassed = false;
-			imagePanel.setFocusable(false);
+			prepareForStage(getCurrentStage());
 		}
+	}
+	
+	private void prepareForStage(Scene scene) {
+		timer.stop();
+		imagePanel.removeAll();
+		compositeItems.clear();
+		WindowController.setStage(scene);
+		isPassed = false;
+		imagePanel.setFocusable(false);
 	}
 	
 	public void jumpOff() {
@@ -131,17 +128,20 @@ public abstract class Scene implements ActionListener {
 		if (compositeItems.isEmpty()) {
 			return;
 		}
-		
+		dropOnePerson();
+	}
+	
+	private void dropOnePerson() {
 		for (int i = 0; i < persons.size(); ++i) {
 			Person person = (Person) persons.get(i);
-			if (person.isDropped == false) {
-				person.lb.setVisible(true);
-				person.personInitPx = aircrafts.get(i).positionX + aircrafts.get(i).imageWidth / 2;
-				person.personInitPy = aircrafts.get(i).positionY + aircrafts.get(i).imageHeight / 2;
-				person.setMoveData(person.personInitPx, person.personInitPy, person.personInitVx,
-						person.personInitVy, person.personInitAx, person.personInitAy);
-				person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
+			if (person.isDropped) {
+				continue;
+			} else {
 				person.isDropped = true;
+				person.lb.setVisible(true);
+				person.setPositionX(aircrafts.get(i).positionX + aircrafts.get(i).imageWidth / 2);
+				person.setPositionY(aircrafts.get(i).positionY + aircrafts.get(i).imageHeight / 2);
+				person.lb.setLocation((int) person.getPositionX(), (int) person.getPositionY());
 			}
 		}
 	}
@@ -157,16 +157,9 @@ public abstract class Scene implements ActionListener {
 	}
 	
 	private void createElement(SceneFactory factory) {
-		// create person
 		createPerson(factory);
-		
-		// create aircraft
 		createAircraft(factory);
-		
-		// create destination
 		createDisturbance(factory);
-		
-		// create disturbance
 		createDestination(factory);
 	}
 	
