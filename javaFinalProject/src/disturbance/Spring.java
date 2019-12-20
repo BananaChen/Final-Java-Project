@@ -6,6 +6,7 @@ import windows.Scene;
 
 public class Spring extends Disturbance {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/Dlg2zpx.png";
 
 	public Spring(int x, int y, int vx, int vy, int ax, int ay) {
@@ -15,13 +16,15 @@ public class Spring extends Disturbance {
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < items.size(); ++i) {
-			Person person = (Person) items.get(i);
-			if (person.getPositionX() + person.imageWidth >= this.positionX
-					&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
-					&& (person.getPositionY() + person.imageHeight) >= this.positionY
-					&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight) {
-				person.setVelocityX(person.getVelocityX() - 1.5);
+		for (Items item : items) {
+			if (item instanceof Person) {
+				Person person = (Person) item;
+				if (person.getPositionX() + person.imageWidth >= this.positionX
+						&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
+						&& (person.getPositionY() + person.imageHeight) >= this.positionY
+						&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight) {
+					person.setVelocityX(person.getVelocityX() - 1.5);
+				}
 			}
 		}
 

@@ -6,9 +6,12 @@ public class ReplayCommand implements Command{
 
 	Scene scene;
 	
-	@Override
-	public void execute(Scene scene) {
+	public ReplayCommand(Scene scene) {
 		this.scene = scene;
+	}
+	
+	@Override
+	public void execute() {
 		this.scene.replay();
 	}
 

@@ -6,6 +6,7 @@ import windows.Scene;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import javax.swing.Timer;
 
@@ -30,38 +31,42 @@ public class FireBall extends Disturbance implements ActionListener {
 	public void move() {
 	}
 
-	public void effect(ArrayList<Person> persons, ArrayList<Aircraft> aircrafts) {
+	@Override
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		ArrayList<Items> persons = items.stream().filter(i -> i instanceof Person).collect(Collectors.toCollection(ArrayList::new));
+		ArrayList<Items> aircrafts = items.stream().filter(i -> i instanceof Aircraft).collect(Collectors.toCollection(ArrayList::new));
 		resetX = aircrafts.get(0).getPositionX() - 20;
 		resetY = aircrafts.get(0).getPositionY() + 50;
+		for (Items item : persons) {
+			Person person = (Person) item;
+			// if getting shoot
+			if ((this.positionX + 100 > persons.get(0).getPositionX()
+					&& this.positionX + 100 < persons.get(0).getPositionX() + 100)
+					&& (this.positionY > persons.get(0).getPositionY()
+							&& this.positionY < persons.get(0).getPositionY() + 100)) {
+				persons.get(0).setPositionX(persons.get(0).getPositionX() - 5);
+				// relocated
+				this.positionX = resetX;
+				this.positionY = resetY;
+				this.lb.setLocation((int) this.positionX, (int) this.positionY);
+				isStop = true;
+				// set a random time to wait to restart
+				waitTime = (int) (Math.random() * 100 + 1);
+				if (person.isDropped)
+					person.blood--;
+			}
 
-		// if getting shoot
-		if ((this.positionX + 100 > persons.get(0).getPositionX()
-				&& this.positionX + 100 < persons.get(0).getPositionX() + 100)
-				&& (this.positionY > persons.get(0).getPositionY()
-						&& this.positionY < persons.get(0).getPositionY() + 100)) {
-			persons.get(0).setPositionX(persons.get(0).getPositionX() - 5);
-			// relocated
-			this.positionX = resetX;
-			this.positionY = resetY;
-			this.lb.setLocation((int) this.positionX, (int) this.positionY);
-			isStop = true;
-			// set a random time to wait to restart
-			waitTime = (int) (Math.random() * 100 + 1);
-			if (persons.get(0).isDropped)
-				persons.get(0).blood--;
+			// if out of bounds, relocated
+			if (this.positionY + 100 > 1000 || this.positionX < -100) {
+				this.positionX = resetX;
+				this.positionY = resetY;
+				this.lb.setLocation((int) this.positionX, (int) this.positionY);
+
+				isStop = true;
+				// set a random time to wait to restart
+				waitTime = (int) (Math.random() * 100 + 1);
+			}
 		}
-
-		// if out of bounds, relocated
-		if (this.positionY + 100 > 1000 || this.positionX < -100) {
-			this.positionX = resetX;
-			this.positionY = resetY;
-			this.lb.setLocation((int) this.positionX, (int) this.positionY);
-
-			isStop = true;
-			// set a random time to wait to restart
-			waitTime = (int) (Math.random() * 100 + 1);
-		}
-
 	}
 
 	@Override
@@ -81,11 +86,4 @@ public class FireBall extends Disturbance implements ActionListener {
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
 	}
-
-	@Override
-	public void effect(ArrayList<Items> items, Scene currentScene) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

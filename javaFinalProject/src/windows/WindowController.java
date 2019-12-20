@@ -6,6 +6,8 @@ import command.RemoteController;
 
 public class WindowController extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+	
 	public final static int NumOfStage = 6;
 	public static boolean[] stageStatus = new boolean[NumOfStage];
 

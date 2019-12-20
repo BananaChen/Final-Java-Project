@@ -7,6 +7,7 @@ import windows.Scene;
 
 public class SmallLight extends Disturbance {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/sHxjvrm.gif";
 
 	public SmallLight(int x, int y, int vx, int vy, int ax, int ay) {
@@ -15,12 +16,14 @@ public class SmallLight extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		for (int i = 0; i < items.size(); ++i) {
-			Person person = (Person) items.get(i);
-			if (this.positionX - person.getPositionX() < person.imageWidth
-					&& (this.positionX + this.imageWidth) > person.getPositionX()) {
-				//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");
-				person.lb.setSize(30,30);
+		for (Items item : items) {
+			if (item instanceof Person) {
+				Person person = (Person) item;
+				if (this.positionX - person.getPositionX() < person.imageWidth
+						&& (this.positionX + this.imageWidth) > person.getPositionX()) {
+					//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");
+					person.lb.setSize(30,30);
+				}
 			}
 		}
 	}

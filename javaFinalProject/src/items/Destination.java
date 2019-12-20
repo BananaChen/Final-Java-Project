@@ -40,6 +40,17 @@ public abstract class Destination extends Items {
 	public abstract boolean successfulLanding(Person person);
 	public abstract boolean failedLanding(Person person);
 	
+	public void successHandler(Scene scene) {
+		scene.successLabel.setLabelVisibility(true);
+		scene.isPassed = true;
+		scene.timer.stop();
+	}
+	
+	public void failureHandler(Scene scene) {
+		scene.failureLabel.setLabelVisibility(true);
+		scene.timer.stop();
+	}
+	
 	public void personActionAfterward(Person person) {
 		person.lb.setVisible(false);
 		person.setAccelerationX(0);

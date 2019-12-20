@@ -28,7 +28,8 @@ public class Honeycomb extends Destination{
 	public void collideEvent() {
 	}
 	
-	public void effect(ArrayList<Items> items, Scene currentScene) {
+	@Override
+	public void move() {
 		// move left
 		if (moveLeft)
 			this.positionX -= 2;
@@ -45,19 +46,24 @@ public class Honeycomb extends Destination{
 			moveRight = false;
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
-			
-		for (int i = 0; i < items.size(); ++i) {
-			Person person = (Person)items.get(i);
-			// if successfully landing
-			if (successfulLanding(person)) {
-				((Thug)person).lbSunGlasses.setVisible(true);
-				currentScene.successHandler();
-				setNextStageStatus(currentScene);
-			}
-			// if not
-			else if (failedLanding(person)) {
-				personActionAfterward(person);
-				currentScene.failureHandler();
+	}
+	
+	@Override
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		for (Items item : items) {
+			if (item instanceof Person) {
+				Person person = (Person) item;
+				// if successfully landing
+				if (successfulLanding(person)) {
+					((Thug)person).lbSunGlasses.setVisible(true);
+					successHandler(currentScene);
+					setNextStageStatus(currentScene);
+				}
+				// if not
+				else if (failedLanding(person)) {
+					personActionAfterward(person);
+					failureHandler(currentScene);
+				}
 			}
 		}
 	}

@@ -1,12 +1,9 @@
 package windows;
 
-import java.util.ArrayList;
-
 import items.*;
 import person.*;
 import aircraft.*;
 import destination.*;
-import disturbance.*;
 
 public class TeachingSceneFactory implements SceneFactory{
 

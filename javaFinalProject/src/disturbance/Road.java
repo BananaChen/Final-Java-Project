@@ -7,7 +7,7 @@ import windows.Scene;
 
 public class Road extends Disturbance {
 
-	private String imagePath = "https://i.imgur.com/wz1WDDg.jpg";
+	private static final long serialVersionUID = 1L;
 
 	public Road(int x, int y, int vx, int vy, int ax, int ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);

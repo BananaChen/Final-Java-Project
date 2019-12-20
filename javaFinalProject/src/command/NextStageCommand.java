@@ -6,9 +6,12 @@ public class NextStageCommand implements Command{
 
 	Scene scene;
 	
-	@Override
-	public void execute(Scene scene) {
+	public NextStageCommand(Scene scene) {
 		this.scene = scene;
+	}
+	
+	@Override
+	public void execute() {
 		this.scene.goToNextStage();
 	}
 

@@ -21,18 +21,20 @@ public class BlueMoon extends Destination {
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 
-		for (int i = 0; i < items.size(); ++i) {
-			Person person = (Person)items.get(i);
-			// if successfully landing
-			if (successfulLanding(person)) {
-				personActionAfterward(person);
-				currentScene.successHandler();
-				setNextStageStatus(currentScene);
-			}
-			// if not
-			else if (failedLanding(person)) {
-				personActionAfterward(person);
-				currentScene.failureHandler();
+		for (Items item : items) {
+			if (item instanceof Person) {
+				Person person = (Person) item;
+				// if successfully landing
+				if (successfulLanding(person)) {
+					personActionAfterward(person);
+					successHandler(currentScene);
+					setNextStageStatus(currentScene);
+				}
+				// if not
+				else if (failedLanding(person)) {
+					personActionAfterward(person);
+					failureHandler(currentScene);
+				}
 			}
 		}
 	}

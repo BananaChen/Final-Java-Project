@@ -1,7 +1,6 @@
 package disturbance;
 
 import items.*;
-import person.Thug;
 import windows.Scene;
 
 import java.awt.event.ActionEvent;
@@ -34,35 +33,37 @@ public class Arrow extends Disturbance implements ActionListener {
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		for (Items item : items) {
-			Person person = (Person) item;
-			// if getting shoot
-			if ((this.positionX + 100 > person.getPositionX()
-					&& this.positionX + 100 < person.getPositionX() + 100)
-					&& (this.positionY > person.getPositionY()
-							&& this.positionY < person.getPositionY() + 100)) {
-				person.positionX += 10;
-				// relocated
-				this.positionX = Math.random() * screenWidth - screenWidth;
-				this.positionY = Math.random() * 200 + screenHeight;
-				this.lb.setLocation((int) this.positionX, (int) this.positionY);
-				isStop = true;
-				// set a random time to wait to restart
-				waitTime = (int) (Math.random() * 100 + 1);
-				
-				// decrease blood
-				if (person.isDropped) {
-					person.blood--;
+			if (item instanceof Person) {
+				Person person = (Person) item;
+				// if getting shoot
+				if ((this.positionX + 100 > person.getPositionX()
+						&& this.positionX + 100 < person.getPositionX() + 100)
+						&& (this.positionY > person.getPositionY()
+								&& this.positionY < person.getPositionY() + 100)) {
+					person.positionX += 10;
+					// relocated
+					this.positionX = Math.random() * screenWidth - screenWidth;
+					this.positionY = Math.random() * 200 + screenHeight;
+					this.lb.setLocation((int) this.positionX, (int) this.positionY);
+					isStop = true;
+					// set a random time to wait to restart
+					waitTime = (int) (Math.random() * 100 + 1);
+					
+					// decrease blood
+					if (person.isDropped) {
+						person.blood--;
+					}
 				}
-			}
-	
-			// if out of bounds, relocated
-			if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
-				this.positionX = Math.random() * screenWidth - screenWidth;
-				this.positionY = Math.random() * 200 + screenHeight;
-				this.lb.setLocation((int) this.positionX, (int) this.positionY);
-				isStop = true;
-				// set a random time to wait to restart
-				waitTime = (int) (Math.random() * 100 + 1);
+		
+				// if out of bounds, relocated
+				if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
+					this.positionX = Math.random() * screenWidth - screenWidth;
+					this.positionY = Math.random() * 200 + screenHeight;
+					this.lb.setLocation((int) this.positionX, (int) this.positionY);
+					isStop = true;
+					// set a random time to wait to restart
+					waitTime = (int) (Math.random() * 100 + 1);
+				}
 			}
 		}
 	}

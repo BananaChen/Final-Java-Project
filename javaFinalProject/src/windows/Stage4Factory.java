@@ -1,7 +1,5 @@
 package windows;
 
-import java.util.ArrayList;
-
 import items.*;
 import person.Alien;
 import aircraft.*;
@@ -12,7 +10,6 @@ public class Stage4Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
-		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Alien(10, 10, 0, 0, 0, 0);
 		person.lb.setVisible(false);
 		compositeItems.addItem(person);
@@ -23,7 +20,6 @@ public class Stage4Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createAircraft(CompositeItem compositeItems) {
-		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new UFO(30, 20, 10, 0, 0, 0,"https://i.imgur.com/4G0ZiGK.gif");
 		compositeItems.addItem(aircraft);
 		
@@ -32,7 +28,6 @@ public class Stage4Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createDestination(CompositeItem compositeItems) {
-		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new BlueMoon(1200, 830, 1, 1, 1, 1, "https://i.imgur.com/91LhC53.png");
 		compositeItems.addItem(destination);
 		
@@ -41,7 +36,6 @@ public class Stage4Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createDisturbance(CompositeItem compositeItems) {
-		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance blackhole1 = new BlackHole1(850, 600, 0, 0, 0, 0);
 		Disturbance blackhole2 = new BlackHole2(1650, 300, 0, 0, 0, 0);
 		Disturbance magnetic1 = new Magnetic1(0, 300, 0, 0, 0, 0);

@@ -6,10 +6,13 @@ public class SkipStageCommand implements Command{
 
 	Scene scene;
 
-	@Override
-	public void execute(Scene scene) {
+	public SkipStageCommand(Scene scene) {
 		this.scene = scene;
-		this.scene.skipToNextStage();
+	}
+	
+	@Override
+	public void execute() {
+		this.scene.skipCurrentStage();
 		
 	}
 }

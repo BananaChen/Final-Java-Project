@@ -1,7 +1,5 @@
 package windows;
 
-import java.util.ArrayList;
-
 import items.*;
 import person.Turtle;
 import aircraft.*;
@@ -12,7 +10,6 @@ public class Stage3Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
-		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
 		person.lb.setVisible(false);
 		compositeItems.addItem(person);
@@ -23,7 +20,6 @@ public class Stage3Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createAircraft(CompositeItem compositeItems) {
-		ArrayList<Items> aircrafts = new ArrayList<Items>();
 		Aircraft aircraft = new Mario(50, 200, 10, 0, 0, 0);
 		compositeItems.addItem(aircraft);
 		return compositeItems;
@@ -31,7 +27,6 @@ public class Stage3Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createDestination(CompositeItem compositeItems) {
-		ArrayList<Items> destinations = new ArrayList<Items>();
 		Destination destination = new Flower(1250, 450, 0, 0, 0, 0, "https://i.imgur.com/iINy5rj.gif");
 		compositeItems.addItem(destination);
 		
@@ -40,7 +35,6 @@ public class Stage3Factory implements SceneFactory{
 
 	@Override
 	public CompositeItem createDisturbance(CompositeItem compositeItems) {
-		ArrayList<Items> disturbances = new ArrayList<Items>();
 		Disturbance spring = new MarioSpring(100, 660, 0, 0, 0, 0);
 		Disturbance smallLight = new SmallLight(450 , 400, 0, 0, 0, 0);
 		Disturbance bigLight = new BigLight(900 , 400, 0, 0, 0, 0);

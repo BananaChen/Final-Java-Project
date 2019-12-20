@@ -5,10 +5,10 @@ import items.*;
 import windows.Scene;
 
 public class BlackHole2 extends Disturbance {
-	private String imagePath = "https://i.imgur.com/OhyaatF.gif";
 
-	private boolean send = false;
-	private int stopSend = 0;
+	private static final long serialVersionUID = 1L;
+
+	private String imagePath = "https://i.imgur.com/OhyaatF.gif";
 
 	public BlackHole2(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
@@ -16,10 +16,6 @@ public class BlackHole2 extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-
-		for (int i = 0; i < items.size(); ++i) {
-			Person person = (Person)items.get(i);
-		}
 
 	}
 

@@ -1,12 +1,5 @@
 package windows;
 
-import items.*;
-import person.*;
-import aircraft.*;
-import destination.*;
-import disturbance.*;
-
-import javax.swing.*;
 import java.awt.event.*;
 
 public class Stage4 extends Scene implements ActionListener {
@@ -30,7 +23,7 @@ public class Stage4 extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		performAction(true);
+		performAction();
 	}
 
 	@Override

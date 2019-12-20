@@ -6,9 +6,12 @@ public class JumpOffCommand implements Command{
 	
 	Scene scene;
 	
-	@Override
-	public void execute(Scene scene) {
+	public JumpOffCommand(Scene scene) {
 		this.scene = scene;
+	}
+	
+	@Override
+	public void execute() {
 		this.scene.jumpOff();
 	}
 

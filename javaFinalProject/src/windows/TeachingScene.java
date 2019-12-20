@@ -32,7 +32,7 @@ public class TeachingScene extends Scene implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		performAction(false);
+		performAction();
 	}
 
 }

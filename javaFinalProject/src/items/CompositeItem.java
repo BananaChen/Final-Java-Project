@@ -20,7 +20,8 @@ public class CompositeItem extends Items{
 	
 	public void effect(Scene currentScene) {
 		for (Items item : items) {
-			item.effect(this.items.stream().filter(i -> i instanceof Person).collect(Collectors.toCollection(ArrayList::new)), currentScene);
+//			item.effect(this.items.stream().filter(i -> i instanceof Person).collect(Collectors.toCollection(ArrayList::new)), currentScene);
+			item.effect(this.items, currentScene);
 		}
 	}
 	

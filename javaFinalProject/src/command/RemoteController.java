@@ -2,8 +2,6 @@ package command;
 
 import java.util.HashMap;
 
-import windows.Scene;
-
 public class RemoteController {
 	
 	private HashMap<Integer, Command> controller = new HashMap<Integer, Command>();
@@ -16,9 +14,9 @@ public class RemoteController {
 		controller.put(key, control);
     }
 	
-	public void pressButton(int key, Scene scene) {
+	public void pressButton(int key) {
 		if (controller.containsKey(key)) {
-			controller.get(key).execute(scene);
+			controller.get(key).execute();
 		}
 	}
 }

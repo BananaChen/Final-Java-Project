@@ -8,7 +8,6 @@ import windows.Scene;
 
 public abstract class Person extends Items {
 	private static final long serialVersionUID = 1L;
-//	private String imagePath = "https://image.flaticon.com/icons/png/512/72/72924.png";
 	public boolean isDropped = false;
 
 	public double personInitPx = 0;
@@ -21,14 +20,12 @@ public abstract class Person extends Items {
 	public int blood = 3;
 
 	public Person() {
-//		super();
-//		setInitMoveData(0,0,0,0,0,0);
+		
 	}
 	
 	public Person(double x, double y, double vx, double vy, double ax, double ay) {
 		super();
 		setInitMoveData(x, y, vx, vy, ax, ay);
-//		setImage(x, y, 100, 100, imagePath);
 	}
 
 	public void setInitMoveData(double x, double y, double vx, double vy, double ax, double ay) {
@@ -41,12 +38,14 @@ public abstract class Person extends Items {
 	
 //	@Override
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		
+		if (this.isDropped == false) {
+			// move with aircraft
+		}
 	}
 
 	@Override
 	public void move() {
-		//System.out.print("m");
+		
 		this.velocityX += this.accelerationX;
 		this.velocityY += this.accelerationY;
 		this.positionX += this.velocityX;
@@ -58,5 +57,18 @@ public abstract class Person extends Items {
 	public JPanel addLabelToScreen(JPanel panel) {
 		panel.add(this.lb);
 		return panel;
+	}
+	
+	public void parachute(Aircraft aircraft) {
+		System.out.println("parachute!");
+		if (this.isDropped)
+			return;
+		this.isDropped = true;
+		
+		this.lb.setVisible(true);
+		this.personInitPx = aircraft.positionX + aircraft.imageWidth / 2;
+		this.personInitPy = aircraft.positionY + aircraft.imageHeight / 2;
+		this.setMoveData(this.personInitPx, this.personInitPy, this.personInitVx, this.personInitVy, this.personInitAx, this.personInitAy);
+		this.lb.setLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 }
