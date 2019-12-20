@@ -9,6 +9,9 @@ import items.*;
 import windows.Scene;
 
 public class WindowPainter extends Items{
+
+	private static final long serialVersionUID = 1L;
+
 	public WindowPainter(double x, double y, double vx, double vy, double ax, double ay) {
 		super(x, y, vx, vy, ax, ay);
 		imageWidth = 150;

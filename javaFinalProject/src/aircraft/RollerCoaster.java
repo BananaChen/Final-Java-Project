@@ -6,6 +6,7 @@ import windows.Scene;
 
 public class RollerCoaster extends Aircraft {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/2CToQ7a.png";
 	double degrees;
 	double dif;

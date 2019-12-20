@@ -1,17 +1,10 @@
 package aircraft;
 
-
-import java.awt.*;
-import javax.swing.*;
-
 import items.*;
-
-import java.awt.event.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class Mario extends Aircraft {
 
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/2wX6akd.gif";
 
 

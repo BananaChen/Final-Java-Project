@@ -8,6 +8,7 @@ import items.Aircraft;
 
 public class UFO extends Aircraft {
 
+	private static final long serialVersionUID = 1L;
 	private Random random = new Random();
 	private int nextPositionX = 0;
 	private int nextPositionY = 0;

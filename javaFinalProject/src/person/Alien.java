@@ -3,7 +3,8 @@ package person;
 import items.*;
 
 public class Alien extends Person{
-	
+
+	private static final long serialVersionUID = 1L;
 	private String imagePath = "https://i.imgur.com/bg3surr.png";
 	
 	public Alien(double x, double y, double vx, double vy, double ax, double ay) {
