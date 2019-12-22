@@ -3,8 +3,6 @@ package windows;
 import items.*;
 import result.*;
 
-import java.util.ArrayList;
-
 import javax.swing.*;
 
 import aircraft.WindowPainter;
@@ -32,10 +30,6 @@ public abstract class Scene implements ActionListener {
 	public Timer timer;
 	
 	public WindowPainter wp;
-	public ArrayList<Items> persons;
-	public ArrayList<Items> aircrafts;
-//	public ArrayList<Items> destinations;
-//	public ArrayList<Items> disturbances;
 	CompositeItem compositeItems = new CompositeItem();
 	
 	// abstract factory method instance
@@ -77,7 +71,7 @@ public abstract class Scene implements ActionListener {
 	}
 	
 	public void setCommand() {
-		WindowController.remoteController.setRemoteController(KeyEvent.VK_DOWN, new JumpOffCommand(this));
+		WindowController.remoteController.setRemoteController(KeyEvent.VK_DOWN, new JumpOffCommand(compositeItems.getElementsByClassInstance(Person.class)));
 		WindowController.remoteController.setRemoteController(KeyEvent.VK_N, new NextStageCommand(this));
 		WindowController.remoteController.setRemoteController(KeyEvent.VK_R, new ReplayCommand(this));
 		WindowController.remoteController.setRemoteController(KeyEvent.VK_ENTER, new SkipStageCommand(this));
@@ -111,14 +105,6 @@ public abstract class Scene implements ActionListener {
 		imagePanel.setFocusable(false);
 	}
 	
-	public void jumpOff() {
-		for (int i = 0; i < persons.size(); ++i) {
-			Person person = (Person) persons.get(i);
-			Aircraft aircraft = (Aircraft) aircrafts.get(i);
-			person.parachute(aircraft);
-		}
-	}
-	
 	public void addElementToPanel(SceneFactory factory) {
 		createElement(factory);
 		imagePanel = successLabel.addLabelToScreen(imagePanel);
@@ -131,9 +117,6 @@ public abstract class Scene implements ActionListener {
 		compositeItems = factory.createAircraft(compositeItems);
 		compositeItems = factory.createDisturbance(compositeItems);
 		compositeItems = factory.createDestination(compositeItems);
-		
-		persons = compositeItems.getElementsByClassInstance(Person.class);
-		aircrafts = compositeItems.getElementsByClassInstance(Aircraft.class);
 	}
 	
 	public void startTimer() {

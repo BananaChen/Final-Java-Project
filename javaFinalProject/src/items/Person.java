@@ -36,10 +36,18 @@ public abstract class Person extends Items {
 	
 	}
 	
-//	@Override
+	@Override
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		if (this.isDropped == false) {
 			// move with aircraft
+			for (Items item : items) {
+				if (item instanceof Aircraft) {
+					Aircraft aircraft = (Aircraft) item;
+					this.personInitPx = aircraft.positionX + aircraft.imageWidth / 2;
+					this.personInitPy = aircraft.positionY + aircraft.imageHeight / 2;
+					this.setMoveData(this.personInitPx, this.personInitPy, this.personInitVx, this.personInitVy, this.personInitAx, this.personInitAy);
+				}
+			}
 		}
 	}
 
@@ -59,16 +67,12 @@ public abstract class Person extends Items {
 		return panel;
 	}
 	
-	public void parachute(Aircraft aircraft) {
+	public void parachute() {
 		System.out.println("parachute!");
 		if (this.isDropped)
 			return;
 		this.isDropped = true;
-		
 		this.lb.setVisible(true);
-		this.personInitPx = aircraft.positionX + aircraft.imageWidth / 2;
-		this.personInitPy = aircraft.positionY + aircraft.imageHeight / 2;
-		this.setMoveData(this.personInitPx, this.personInitPy, this.personInitVx, this.personInitVy, this.personInitAx, this.personInitAy);
 		this.lb.setLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 }

@@ -1,18 +1,23 @@
 package command;
 
-import windows.Scene;
+import java.util.ArrayList;
+
+import items.Items;
+import items.Person;
 
 public class JumpOffCommand implements Command{
 	
-	Scene scene;
+	ArrayList<Items> persons;
 	
-	public JumpOffCommand(Scene scene) {
-		this.scene = scene;
+	public JumpOffCommand(ArrayList<Items> persons) {
+		this.persons = persons;
 	}
 	
 	@Override
 	public void execute() {
-		this.scene.jumpOff();
+		for (Items person : this.persons) {
+			((Person) person).parachute();
+		}
 	}
 
 }
