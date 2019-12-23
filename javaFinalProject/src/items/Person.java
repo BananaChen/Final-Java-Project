@@ -58,12 +58,12 @@ public abstract class Person extends Items {
 		this.velocityY += this.accelerationY;
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 	
 	@Override
 	public JPanel addLabelToScreen(JPanel panel) {
-		panel.add(this.lb);
+		panel.add(this.getLabel());
 		return panel;
 	}
 	
@@ -72,7 +72,7 @@ public abstract class Person extends Items {
 		if (this.isDropped)
 			return;
 		this.isDropped = true;
-		this.lb.setVisible(true);
-		this.lb.setLocation((int) this.getPositionX(), (int) this.getPositionY());
+		this.setLabelVisibility(true);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 }

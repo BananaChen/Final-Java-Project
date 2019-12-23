@@ -21,7 +21,7 @@ public class SmallLight extends Disturbance {
 				Person person = (Person) item;
 				if (hasContactWithPerson(person)) {
 					//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");
-					person.lb.setSize(30,30);
+					person.getLabel().setSize(30,30);
 				}
 			}
 		}

@@ -49,7 +49,7 @@ public class UFO extends Aircraft {
 				readyToStop = 100;
 			}
 			
-			this.lb.setLocation((int) this.positionX, (int) this.positionY);
+			this.setLabelLocation((int) this.positionX, (int) this.positionY);
 			
 			readyToStop ++ ;
 			if(readyToStop >= 100) {
@@ -60,7 +60,7 @@ public class UFO extends Aircraft {
 		else {
 			this.velocityX = 0;
 			this.velocityY = 0;
-			this.lb.setLocation((int) this.positionX, (int) this.positionY);
+			this.setLabelLocation((int) this.positionX, (int) this.positionY);
 			readyToStop -- ;
 			if(readyToStop == 0) {
 				isMoveable = true;

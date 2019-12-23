@@ -33,7 +33,7 @@ public abstract class Destination extends Items {
 	
 	@Override
 	public JPanel addLabelToScreen(JPanel panel) {
-		panel.add(this.lb);
+		panel.add(this.getLabel());
 		return panel;
 	}
 	
@@ -52,7 +52,7 @@ public abstract class Destination extends Items {
 	}
 	
 	public void personActionAfterward(Person person) {
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		person.setAccelerationX(0);
 		person.setAccelerationY(0);
 		person.setVelocityX(0);

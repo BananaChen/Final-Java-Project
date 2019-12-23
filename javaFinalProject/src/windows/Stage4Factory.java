@@ -11,7 +11,7 @@ public class Stage4Factory implements SceneFactory{
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Person person = new Alien(10, 10, 0, 0, 0, 0);
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		compositeItems.addItem(person);
 		
 		return compositeItems;

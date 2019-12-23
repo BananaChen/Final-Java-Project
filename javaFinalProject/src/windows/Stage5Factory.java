@@ -15,7 +15,7 @@ public class Stage5Factory implements SceneFactory{
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Person person = new PokemonMaster(50, 50, 0, 0, 0, 0.01);
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		compositeItems.addItem(person);
 		
 		return compositeItems;

@@ -35,7 +35,7 @@ public class Thug extends Person {
 			lbSunGlasses.setLocation((int) 0, (int) 10);
 			lbSunGlasses.setSize(imageWidth, imageHeight);
 			lbSunGlasses.setLayout(null);
-			lb.add(lbSunGlasses);
+			this.getLabel().add(lbSunGlasses);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -47,7 +47,7 @@ public class Thug extends Person {
 			heart1.setLocation((int) 0, (int) 0);
 			heart1.setSize(imageWidth/3, imageWidth/3);
 			heart1.setLayout(null);
-			lb.add(heart1);
+			this.getLabel().add(heart1);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class Thug extends Person {
 			heart2.setLocation((int) imageWidth/3, (int) 0);
 			heart2.setSize(imageWidth/3, imageWidth/3);
 			heart2.setLayout(null);
-			lb.add(heart2);
+			this.getLabel().add(heart2);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +69,7 @@ public class Thug extends Person {
 			heart3.setLocation((int) imageWidth*2/3, (int) 0);
 			heart3.setSize(imageWidth/3, imageWidth/3);
 			heart3.setLayout(null);
-			lb.add(heart3);
+			this.getLabel().add(heart3);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -102,6 +102,6 @@ public class Thug extends Person {
 		this.velocityY += this.accelerationY;
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 }

@@ -11,7 +11,7 @@ public class Stage2Factory implements SceneFactory{
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Thug person = new Thug(50, 50, 1, 1, 0, 0);
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		person.lbSunGlasses.setVisible(false);
 		person.heart1.setVisible(false);
 		person.heart2.setVisible(false);

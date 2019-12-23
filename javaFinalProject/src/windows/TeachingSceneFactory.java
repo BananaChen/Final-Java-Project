@@ -11,7 +11,7 @@ public class TeachingSceneFactory implements SceneFactory{
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 //		ArrayList<Items> persons = new ArrayList<Items>();
 		Person person = new NormalPerson(0, 0, 1, 1, 0, 0.01);
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		compositeItems.addItem(person);
 		
 		return compositeItems;

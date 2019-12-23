@@ -13,7 +13,7 @@ public class Stage1Factory implements SceneFactory{
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Person person = new NormalPerson(0, 0, 1, 1, 0, gravity);
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		compositeItems.addItem(person);
 		
 		return compositeItems;

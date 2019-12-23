@@ -45,7 +45,7 @@ public class Honeycomb extends Destination{
 			moveLeft = true;
 			moveRight = false;
 		}
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 	
 	@Override

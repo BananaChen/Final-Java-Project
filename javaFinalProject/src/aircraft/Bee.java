@@ -35,7 +35,7 @@ public class Bee extends Aircraft {
 			this.positionY += (Math.random() * 5 - 1.5) * Math.sin(this.velocityY);
 		else
 			this.positionY += Math.random() * 5 + 1;
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 		
 		relocatePositionIfNeed();
 	}

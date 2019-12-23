@@ -44,8 +44,8 @@ public abstract class Scene implements ActionListener {
 		imagePanel.setLayout(null);
 		
 		wp = new WindowPainter(0, 0, 0, 0, 0, 0);
-		wp.lb.setVisible(true);
-		imagePanel.add(wp.lb);
+		wp.setLabelVisibility(true);
+		imagePanel.add(wp.getLabel());
 	}
 
 	public void setWindow(String bgImagePath) {

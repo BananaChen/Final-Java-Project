@@ -22,7 +22,7 @@ public class BlackHole1 extends Disturbance {
 				Person person = (Person) item;
 
 				if (hasContactWithPerson(person)) {
-					person.lb.setLocation(1650, 300);
+					person.setLabelLocation(1650, 300);
 					person.setPositionX(1650);
 					person.setPositionY(300);
 					person.setVelocityX(-5);

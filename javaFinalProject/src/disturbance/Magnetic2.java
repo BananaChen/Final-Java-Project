@@ -50,7 +50,7 @@ public class Magnetic2 extends Disturbance {
 				moveLeft = false;
 			}
 		}
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 
 	}
 

@@ -12,7 +12,7 @@ public abstract class Disturbance extends Items {
 	
 	@Override
 	public JPanel addLabelToScreen(JPanel panel) {
-		panel.add(this.lb);
+		panel.add(this.getLabel());
 		return panel;
 	}
 	

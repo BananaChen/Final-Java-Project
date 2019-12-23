@@ -11,7 +11,7 @@ public class Stage3Factory implements SceneFactory{
 	@Override
 	public CompositeItem createPerson(CompositeItem compositeItems) {
 		Person person = new Turtle(0, 0, 1, 0, 0, 0.1, "https://i.imgur.com/A05MTnq.gif");
-		person.lb.setVisible(false);
+		person.setLabelVisibility(false);
 		compositeItems.addItem(person);
 		
 		return compositeItems;

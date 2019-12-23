@@ -19,7 +19,7 @@ public class Mario extends Aircraft {
 		this.velocityX += this.accelerationX;
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 		if(this.positionX > 220) {
 			this.positionX = -500;
 		}

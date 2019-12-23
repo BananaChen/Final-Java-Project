@@ -41,7 +41,7 @@ public class Arrow extends Disturbance implements ActionListener {
 					// relocated
 					this.positionX = Math.random() * screenWidth - screenWidth;
 					this.positionY = Math.random() * 200 + screenHeight;
-					this.lb.setLocation((int) this.positionX, (int) this.positionY);
+					this.setLabelLocation((int) this.positionX, (int) this.positionY);
 					isStop = true;
 					// set a random time to wait to restart
 					waitTime = (int) (Math.random() * 100 + 1);
@@ -56,7 +56,7 @@ public class Arrow extends Disturbance implements ActionListener {
 				if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
 					this.positionX = Math.random() * screenWidth - screenWidth;
 					this.positionY = Math.random() * 200 + screenHeight;
-					this.lb.setLocation((int) this.positionX, (int) this.positionY);
+					this.setLabelLocation((int) this.positionX, (int) this.positionY);
 					isStop = true;
 					// set a random time to wait to restart
 					waitTime = (int) (Math.random() * 100 + 1);
@@ -81,7 +81,7 @@ public class Arrow extends Disturbance implements ActionListener {
 			this.positionX += 15;
 			this.positionY -= 15;
 		}
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 
 	@Override

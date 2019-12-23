@@ -35,7 +35,7 @@ public class RollerCoaster extends Aircraft {
 		if (this.positionX > 0) {
 			this.positionX = firstX - 60 * Math.cos(radians) + dif;
 			this.positionY = firstY - 60 * Math.sin(radians);
-			this.lb.setLocation((int) this.positionX, (int) this.positionY);
+			this.setLabelLocation((int) this.positionX, (int) this.positionY);
 		} else {
 			dif = 0;
 			firstX = Scene.bgWidth;

@@ -22,7 +22,7 @@ public class WindowPainter extends Items{
 	public void brush() {
 		if (positionX < Scene.bgWidth*2) {
 			positionX += 700;
-			lb.setLocation((int)positionX, (int)positionY);
+			this.setLabelLocation((int)positionX, (int)positionY);
 		}
 	}
 	
@@ -33,7 +33,7 @@ public class WindowPainter extends Items{
 	
 	@Override
 	public JPanel addLabelToScreen(JPanel panel) {
-		panel.add(this.lb);
+		panel.add(this.getLabel());
 		return panel;
 	}
 }

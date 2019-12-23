@@ -23,7 +23,7 @@ public class Flower extends Destination {
 				Person person = (Person) item;
 				if (successfulLanding(person)) {
 					person.setVelocityY(-6);
-					this.lb.setVisible(false);
+					this.setLabelVisibility(false);
 					isShooted = true;
 					
 					successHandler(currentScene);

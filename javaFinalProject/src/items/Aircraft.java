@@ -26,7 +26,7 @@ public abstract class Aircraft extends Items {
 	
 	@Override
 	public JPanel addLabelToScreen(JPanel panel) {
-		panel.add(this.lb);
+		panel.add(this.getLabel());
 		return panel;
 	}
 }

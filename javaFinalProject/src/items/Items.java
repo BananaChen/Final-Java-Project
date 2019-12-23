@@ -13,7 +13,7 @@ import windows.Scene;
 
 public abstract class Items extends JPanel {
 	private static final long serialVersionUID = 1L;
-	public JLabel lb;
+	private JLabel lb;
 	public int imageWidth;
 	public int imageHeight;
 	public int labelWidth;
@@ -46,6 +46,18 @@ public abstract class Items extends JPanel {
 		}
 		imageWidth = width;
 		imageHeight = height;
+	}
+	
+	public JLabel getLabel() {
+		return this.lb;
+	}
+	
+	public void setLabelVisibility(boolean is_visible) {
+		this.lb.setVisible(is_visible);
+	}
+	
+	public void setLabelLocation(int x, int y) {
+		this.lb.setLocation(x, y);
 	}
 
 	public void setMoveData(double x, double y, double vx, double vy, double ax, double ay) {

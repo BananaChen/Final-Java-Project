@@ -45,7 +45,7 @@ public class FireBall extends Disturbance implements ActionListener {
 				// relocated
 				this.positionX = resetX;
 				this.positionY = resetY;
-				this.lb.setLocation((int) this.positionX, (int) this.positionY);
+				this.setLabelLocation((int) this.positionX, (int) this.positionY);
 				isStop = true;
 				// set a random time to wait to restart
 				waitTime = (int) (Math.random() * 100 + 1);
@@ -57,7 +57,7 @@ public class FireBall extends Disturbance implements ActionListener {
 			if (this.positionY + 100 > 1000 || this.positionX < -100) {
 				this.positionX = resetX;
 				this.positionY = resetY;
-				this.lb.setLocation((int) this.positionX, (int) this.positionY);
+				this.setLabelLocation((int) this.positionX, (int) this.positionY);
 
 				isStop = true;
 				// set a random time to wait to restart
@@ -81,7 +81,7 @@ public class FireBall extends Disturbance implements ActionListener {
 			this.positionX -= 5;
 			this.positionY += 5;
 		}
-		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 
 	@Override
