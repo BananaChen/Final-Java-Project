@@ -41,4 +41,10 @@ public class Planet1 extends Disturbance {
 
 	}
 
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

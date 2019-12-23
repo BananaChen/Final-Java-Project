@@ -19,14 +19,21 @@ public class MarioSpring extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (this.positionX - person.getPositionX() < person.labelWidth
-						&& (this.positionX + this.imageWidth) > person.getPositionX()
-						&& this.positionY - person.getPositionY() < person.imageHeight
-						&& (this.positionY + this.imageHeight) > person.getPositionY()) {
+				if (hasContactWithPerson(person)) {
 					person.setVelocityX(8);
 					person.setVelocityY(-8);
 				}
 			}
 		}
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (this.positionX - person.getPositionX() < person.labelWidth
+				&& (this.positionX + this.imageWidth) > person.getPositionX()
+				&& this.positionY - person.getPositionY() < person.imageHeight
+				&& (this.positionY + this.imageHeight) > person.getPositionY())
+			return true;
+		return false;
 	}
 }

@@ -36,10 +36,7 @@ public class Arrow extends Disturbance implements ActionListener {
 			if (item instanceof Person) {
 				Person person = (Person) item;
 				// if getting shoot
-				if ((this.positionX + 100 > person.getPositionX()
-						&& this.positionX + 100 < person.getPositionX() + 100)
-						&& (this.positionY > person.getPositionY()
-								&& this.positionY < person.getPositionY() + 100)) {
+				if (hasContactWithPerson(person)) {
 					person.positionX += 10;
 					// relocated
 					this.positionX = Math.random() * screenWidth - screenWidth;
@@ -85,6 +82,16 @@ public class Arrow extends Disturbance implements ActionListener {
 			this.positionY -= 15;
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if ((this.positionX + 100 > person.getPositionX()
+				&& this.positionX + 100 < person.getPositionX() + 100)
+				&& (this.positionY > person.getPositionY()
+						&& this.positionY < person.getPositionY() + 100))
+			return true;
+		return false;
 	}
 
 }

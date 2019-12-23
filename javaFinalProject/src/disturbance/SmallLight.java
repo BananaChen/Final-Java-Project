@@ -19,12 +19,19 @@ public class SmallLight extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (this.positionX - person.getPositionX() < person.imageWidth
-						&& (this.positionX + this.imageWidth) > person.getPositionX()) {
+				if (hasContactWithPerson(person)) {
 					//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");
 					person.lb.setSize(30,30);
 				}
 			}
 		}
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (this.positionX - person.getPositionX() < person.imageWidth
+				&& (this.positionX + this.imageWidth) > person.getPositionX())
+			return true;
+		return false;
 	}
 }

@@ -26,10 +26,7 @@ public class Magnetic2 extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= this.positionX - 70
-						&& person.getPositionX() + person.imageWidth / 2 <= this.positionX + this.imageWidth + 70
-						&& person.getPositionY() + person.imageHeight / 2 >= 0
-						&& person.getPositionY() + person.imageHeight / 2 <= 1000) {
+				if (hasContactWithPerson(person)) {
 
 					person.velocityY += 0.01;
 					person.velocityX += this.velocityX * 0.01;
@@ -55,6 +52,16 @@ public class Magnetic2 extends Disturbance {
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
 
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= this.positionX - 70
+				&& person.getPositionX() + person.imageWidth / 2 <= this.positionX + this.imageWidth + 70
+				&& person.getPositionY() + person.imageHeight / 2 >= 0
+				&& person.getPositionY() + person.imageHeight / 2 <= 1000)
+			return true;
+		return false;
 	}
 
 }

@@ -17,4 +17,9 @@ public class Road extends Disturbance {
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		
 	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		return false;
+	}
 }

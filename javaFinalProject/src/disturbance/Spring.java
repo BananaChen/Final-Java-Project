@@ -19,15 +19,22 @@ public class Spring extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (person.getPositionX() + person.imageWidth >= this.positionX
-						&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
-						&& (person.getPositionY() + person.imageHeight) >= this.positionY
-						&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight) {
+				if (hasContactWithPerson(person)) {
 					person.setVelocityX(person.getVelocityX() - 1.5);
 				}
 			}
 		}
 
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (person.getPositionX() + person.imageWidth >= this.positionX
+				&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
+				&& (person.getPositionY() + person.imageHeight) >= this.positionY
+				&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight)
+			return true;
+		return false;
 	}
 
 }

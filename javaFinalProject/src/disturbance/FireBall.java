@@ -40,10 +40,7 @@ public class FireBall extends Disturbance implements ActionListener {
 		for (Items item : persons) {
 			Person person = (Person) item;
 			// if getting shoot
-			if ((this.positionX + 100 > persons.get(0).getPositionX()
-					&& this.positionX + 100 < persons.get(0).getPositionX() + 100)
-					&& (this.positionY > persons.get(0).getPositionY()
-							&& this.positionY < persons.get(0).getPositionY() + 100)) {
+			if (hasContactWithPerson(person)) {
 				persons.get(0).setPositionX(persons.get(0).getPositionX() - 5);
 				// relocated
 				this.positionX = resetX;
@@ -85,5 +82,15 @@ public class FireBall extends Disturbance implements ActionListener {
 			this.positionY += 5;
 		}
 		this.lb.setLocation((int) this.positionX, (int) this.positionY);
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if ((this.positionX + 100 > person.getPositionX()
+				&& this.positionX + 100 < person.getPositionX() + 100)
+				&& (this.positionY > person.getPositionY()
+						&& this.positionY < person.getPositionY() + 100))
+			return true;
+		return false;
 	}
 }

@@ -19,16 +19,23 @@ public class Magnetic1 extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= 0
-						&& person.getPositionX() + person.imageWidth / 2 <= 1000
-						&& person.getPositionY() + person.imageHeight / 2 >= 300
-						&& person.getPositionY() + person.imageHeight / 2 <= 500) {
+				if (hasContactWithPerson(person)) {
 
 					person.velocityX += -0.01;
 				}
 			}
 		}
 
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= 0
+				&& person.getPositionX() + person.imageWidth / 2 <= 1000
+				&& person.getPositionY() + person.imageHeight / 2 >= 300
+				&& person.getPositionY() + person.imageHeight / 2 <= 500)
+			return true;
+		return false;
 	}
 
 }

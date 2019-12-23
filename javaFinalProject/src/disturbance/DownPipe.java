@@ -19,12 +19,19 @@ public class DownPipe extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (person.getPositionX() + person.labelWidth > this.positionX
-						&& person.getPositionY() + person.labelHeight > this.positionY
-						&& person.getPositionX() < this.positionX + this.imageWidth) {
+				if (hasContactWithPerson(person)) {
 					person.setVelocityX(0);
 				}
 			}
 		}
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (person.getPositionX() + person.labelWidth > this.positionX
+				&& person.getPositionY() + person.labelHeight > this.positionY
+				&& person.getPositionX() < this.positionX + this.imageWidth)
+			return true;
+		return false;
 	}
 }

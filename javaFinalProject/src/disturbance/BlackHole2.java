@@ -19,4 +19,9 @@ public class BlackHole2 extends Disturbance {
 
 	}
 
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		return false;
+	}
+
 }

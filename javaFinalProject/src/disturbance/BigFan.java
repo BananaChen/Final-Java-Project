@@ -19,13 +19,20 @@ public class BigFan extends Disturbance {
 		for (Items item : items) {
 			if (item instanceof Person) {
 				Person person = (Person) item;
-				if (person.getPositionY() + person.imageHeight > this.getPositionY() + this.imageHeight / 5
-						&& person.getPositionY() + person.imageHeight < (this.getPositionY() + this.imageHeight)) {
+				if (hasContactWithPerson(person)) {
 					person.setVelocityX(person.getVelocityX() + 0.05);
 				}
 			}
 		}
 
+	}
+
+	@Override
+	public boolean hasContactWithPerson(Person person) {
+		if (person.getPositionY() + person.imageHeight > this.getPositionY() + this.imageHeight / 5
+						&& person.getPositionY() + person.imageHeight < (this.getPositionY() + this.imageHeight))
+			return true;
+		return false;
 	}
 
 }
