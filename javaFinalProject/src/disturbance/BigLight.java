@@ -16,15 +16,12 @@ public class BigLight extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				if (hasContactWithPerson(person)) {
-					//person.setImage(person.getPositionX(), person.getPositionY(), 30, 30, "https://i.imgur.com/2CToQ7a.png");
-					person.getLabel().setSize(100,100);
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.getLabel().setSize(100,100);
 			}
-		}
+		});
 	}
 
 	@Override

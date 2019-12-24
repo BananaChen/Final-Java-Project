@@ -20,38 +20,25 @@ public class Magnetic2 extends Disturbance {
 		setImage(x, y, 200, 200, imagePath);
 
 	}
-
-	public void effect(ArrayList<Items> items, Scene currentScene) {
-
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				if (hasContactWithPerson(person)) {
-
-					person.velocityY += 0.01;
-					person.velocityX += this.velocityX * 0.01;
-				}
-			}
-		}
-
-		if (moveRight) {
-			this.velocityX = 4;
-			this.positionX += this.velocityX;
-			if (this.positionX >= 800) {
-				moveRight = false;
-				moveLeft = true;
-			}
-		}
-		if (moveLeft) {
-			this.velocityX = -4;
-			this.positionX += this.velocityX;
-			if (this.positionX <= 100) {
-				moveRight = true;
-				moveLeft = false;
-			}
+	
+	@Override
+	public void move() {
+		this.positionX += moveRight ? 4 : -4;
+		if (this.positionX >= 800 || this.positionX <= 100) {
+			moveRight = !moveRight;
+			moveLeft = !moveLeft;
 		}
 		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+	}
 
+	public void effect(ArrayList<Items> items, Scene currentScene) {
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.velocityY += 0.01;
+				person.velocityX += this.velocityX * 0.01;
+			}
+		});
 	}
 
 	@Override

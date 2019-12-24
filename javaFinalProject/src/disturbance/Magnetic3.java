@@ -15,18 +15,13 @@ public class Magnetic3 extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				if (hasContactWithPerson(person)) {
-
-					person.velocityX += 0.07;
-					person.velocityY += 0.007;
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.velocityX += 0.07;
+				person.velocityY += 0.007;
 			}
-		}
-
+		});
 	}
 
 	@Override

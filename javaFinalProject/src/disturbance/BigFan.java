@@ -15,16 +15,12 @@ public class BigFan extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				if (hasContactWithPerson(person)) {
-					person.setVelocityX(person.getVelocityX() + 0.05);
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.setVelocityX(person.getVelocityX() + 0.05);
 			}
-		}
-
+		});
 	}
 
 	@Override

@@ -16,15 +16,13 @@ public class MarioSpring extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				if (hasContactWithPerson(person)) {
-					person.setVelocityX(8);
-					person.setVelocityY(-8);
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.setVelocityX(8);
+				person.setVelocityY(-8);
 			}
-		}
+		});
 	}
 
 	@Override

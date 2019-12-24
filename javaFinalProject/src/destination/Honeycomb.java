@@ -30,42 +30,30 @@ public class Honeycomb extends Destination{
 	
 	@Override
 	public void move() {
-		// move left
-		if (moveLeft)
-			this.positionX -= 2;
-		// move right
-		if (moveRight)
-			this.positionX += 2;
-			// boundary
-		if (moveLeft && this.positionX <= 400) {
-			moveLeft = false;
-			moveRight = true;
-		}
-		if (moveRight && this.positionX + imageWidth >= 1200) {
-			moveLeft = true;
-			moveRight = false;
+		this.positionX += (moveLeft) ? -2 : 2;
+		if (this.positionX <= 400 || this.positionX + imageWidth >= 1200) {
+			moveLeft = !moveLeft;
+			moveRight = !moveRight;
 		}
 		this.setLabelLocation((int) this.positionX, (int) this.positionY);
 	}
 	
 	@Override
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				// if successfully landing
-				if (successfulLanding(person)) {
-					((Thug)person).lbSunGlasses.setVisible(true);
-					successHandler(currentScene);
-					setNextStageStatus(currentScene);
-				}
-				// if not
-				else if (failedLanding(person)) {
-					personActionAfterward(person);
-					failureHandler(currentScene);
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			// if successfully landing
+			if (successfulLanding(person)) {
+				((Thug)person).lbSunGlasses.setVisible(true);
+				successHandler(currentScene);
+				setNextStageStatus(currentScene);
 			}
-		}
+			// if not
+			else if (failedLanding(person)) {
+				personActionAfterward(person);
+				failureHandler(currentScene);
+			}
+		});
 	}
 
 	@Override

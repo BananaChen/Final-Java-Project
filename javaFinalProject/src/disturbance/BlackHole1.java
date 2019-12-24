@@ -16,20 +16,15 @@ public class BlackHole1 extends Disturbance {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-
-				if (hasContactWithPerson(person)) {
-					person.setLabelLocation(1650, 300);
-					person.setPositionX(1650);
-					person.setPositionY(300);
-					person.setVelocityX(-5);
-				}
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			if (hasContactWithPerson(person)) {
+				person.setLabelLocation(1650, 300);
+				person.setPositionX(1650);
+				person.setPositionY(300);
+				person.setVelocityX(-5);
 			}
-		}
-
+		});
 	}
 
 	@Override

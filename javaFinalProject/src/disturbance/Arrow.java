@@ -32,37 +32,35 @@ public class Arrow extends Disturbance implements ActionListener {
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
-		for (Items item : items) {
-			if (item instanceof Person) {
-				Person person = (Person) item;
-				// if getting shoot
-				if (hasContactWithPerson(person)) {
-					person.positionX += 10;
-					// relocated
-					this.positionX = Math.random() * screenWidth - screenWidth;
-					this.positionY = Math.random() * 200 + screenHeight;
-					this.setLabelLocation((int) this.positionX, (int) this.positionY);
-					isStop = true;
-					// set a random time to wait to restart
-					waitTime = (int) (Math.random() * 100 + 1);
-					
-					// decrease blood
-					if (person.isDropped) {
-						person.blood--;
-					}
-				}
-		
-				// if out of bounds, relocated
-				if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
-					this.positionX = Math.random() * screenWidth - screenWidth;
-					this.positionY = Math.random() * 200 + screenHeight;
-					this.setLabelLocation((int) this.positionX, (int) this.positionY);
-					isStop = true;
-					// set a random time to wait to restart
-					waitTime = (int) (Math.random() * 100 + 1);
+		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
+			Person person = (Person) item;
+			// if getting shoot
+			if (hasContactWithPerson(person)) {
+				person.positionX += 10;
+				// relocated
+				this.positionX = Math.random() * screenWidth - screenWidth;
+				this.positionY = Math.random() * 200 + screenHeight;
+				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+				isStop = true;
+				// set a random time to wait to restart
+				waitTime = (int) (Math.random() * 100 + 1);
+				
+				// decrease blood
+				if (person.isDropped) {
+					person.blood--;
 				}
 			}
-		}
+	
+			// if out of bounds, relocated
+			if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
+				this.positionX = Math.random() * screenWidth - screenWidth;
+				this.positionY = Math.random() * 200 + screenHeight;
+				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+				isStop = true;
+				// set a random time to wait to restart
+				waitTime = (int) (Math.random() * 100 + 1);
+			}
+		});
 	}
 
 	@Override
