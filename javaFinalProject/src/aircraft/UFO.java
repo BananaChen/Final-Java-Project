@@ -15,7 +15,6 @@ public class UFO extends Aircraft {
 	private boolean isMoveable = true;
 	private int readyToStop = 0;
 	
-	//private String imagePath = "https://i.imgur.com/4G0ZiGK.gif";
 	public UFO(double x, double y, double vx, double vy, double ax, double ay, String imagePath) {
 		super(x, y, vx, vy, ax, ay);
 		imageWidth = 160;

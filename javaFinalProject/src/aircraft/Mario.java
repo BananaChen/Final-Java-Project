@@ -15,7 +15,6 @@ public class Mario extends Aircraft {
 
 	@Override
 	public void move() {
-		// this.valocityX += this.accelerationX;
 		this.velocityX += this.accelerationX;
 		this.positionX += this.velocityX;
 		this.positionY += this.velocityY;

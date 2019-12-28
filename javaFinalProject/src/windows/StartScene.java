@@ -8,7 +8,6 @@ public class StartScene extends Scene implements ActionListener {
 
 		super();
 		
-		// set background
 		bgImagePath = "https://i.imgur.com/RvxJ1mC.gif";
 		setWindow(bgImagePath);
 		

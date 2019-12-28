@@ -8,15 +8,12 @@ public class TeachingScene extends Scene implements ActionListener {
 
 		super();
 		
-		// declare concrete factory
 		factory = new TeachingSceneFactory();
 		addElementToPanel(factory);
 
-		// set background
 		bgImagePath = "https://i.imgur.com/BDmnRVK.jpg";
 		setWindow(bgImagePath);
 
-		// start timer
 		startTimer();
 	}
 

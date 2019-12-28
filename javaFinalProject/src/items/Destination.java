@@ -58,6 +58,4 @@ public abstract class Destination extends Items {
 		person.setVelocityX(0);
 		person.setVelocityY(0);
 	}
-
-//	public abstract void effect(ArrayList<Items> items, Scene currentScene);
 }

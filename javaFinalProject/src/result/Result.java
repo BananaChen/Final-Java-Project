@@ -15,7 +15,6 @@ public abstract class Result {
 	}
 
 	public Result(String imagePath, int x, int y, int imageWidth, int imageHeight) {
-		// create label
 		try {
 			ImageIcon icon = new ImageIcon(new URL(imagePath));
 			label = new JLabel(icon);

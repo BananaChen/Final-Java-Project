@@ -7,7 +7,6 @@ import java.awt.event.*;
 
 public class Stage5 extends Scene implements ActionListener {
 
-	// Container c;
 	public double bloodX;
 	public double bloodY;
 
@@ -17,16 +16,13 @@ public class Stage5 extends Scene implements ActionListener {
 
 		super();
 
-		// declare concrete factory
 		factory = new Stage5Factory();
 		
 		addElementToPanel(factory);
 
-		// set background
 		bgImagePath = "https://i.imgur.com/ntB2uDf.png";
 		setWindow(bgImagePath);
 		
-		// start timer
 		startTimer();
 	}
 

@@ -40,17 +40,14 @@ public class CompositeItem extends Items{
 		return panel;
 	}
 	
-	// add element to list
 	public void addItem(Items item) {
 		this.items.add(item);
 	}
 	
-	// remove element from list
 	public void removeItem(Items item) {
 		this.items.remove(item);
 	}
 	
-	// clean all elements
 	public void clear() {
 		System.out.println("Clearing all the Items.");
 		this.items.clear();
@@ -59,7 +56,6 @@ public class CompositeItem extends Items{
 		}
 	}
 	
-	// check if list is empty
 	public boolean isEmpty() {
 		return this.items.isEmpty();
 	}

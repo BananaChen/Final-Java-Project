@@ -18,12 +18,10 @@ public class Island extends Destination {
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
 			Person person = (Person) item;
-			// if successfully landing
 			if (successfulLanding(person)) {
 				successHandler(currentScene);
 				setNextStageStatus(currentScene);
 			}
-			// if not
 			else if (failedLanding(person)) {
 				personActionAfterward(person);
 				failureHandler(currentScene);

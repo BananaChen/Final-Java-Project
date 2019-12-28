@@ -8,16 +8,13 @@ public class Stage4 extends Scene implements ActionListener {
 		
 		super();
 
-		// declare concrete factory
 		factory = new Stage4Factory();
 		
 		addElementToPanel(factory);
 
-		// set background
 		bgImagePath = "https://i.imgur.com/jrWlbHA.jpg";
 		setWindow(bgImagePath);
 		
-		// start timer
 		startTimer();
 	}
 

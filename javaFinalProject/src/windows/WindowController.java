@@ -16,7 +16,6 @@ public class WindowController extends JFrame {
 	private int bgWidth = Scene.bgWidth;
 	private int bgHeight = Scene.bgHeight;
 	
-	// command pattern instance
 	static RemoteController remoteController = new RemoteController();
 
 	public WindowController() {
@@ -27,8 +26,6 @@ public class WindowController extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		
-		//init stage status
 		for (int i = 0; i < NumOfStage; ++i) {
 			stageStatus[i] = false;
 		}
@@ -44,7 +41,6 @@ public class WindowController extends JFrame {
 
 	public static void setStage(Scene nextStage) {
 		stage = null;
-		// wc.getContentPane().removeAll();
 		stage = nextStage;
 		stage.setCommand(); // set up command
 		wc.add(stage.imagePanel);

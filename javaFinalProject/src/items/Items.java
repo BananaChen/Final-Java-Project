@@ -123,8 +123,6 @@ public abstract class Items extends JPanel {
 	}
 	
 	public abstract void effect(ArrayList<Items> items, Scene currentScene);
-//	public abstract void effect();
-//	public abstract void effect(CompositeItem compositeItems, Scene currentScene);
 	
 	public void acceleration(int ax, int ay) {
 		setAccelerationX(getAccelerationX() + ax);

@@ -32,10 +32,8 @@ public abstract class Scene implements ActionListener {
 	public WindowPainter wp;
 	CompositeItem compositeItems = new CompositeItem();
 	
-	// abstract factory method instance
 	public SceneFactory factory;
-	
-	
+
 
 	public Scene() {
 		imagePanel = new JPanel();
@@ -128,7 +126,6 @@ public abstract class Scene implements ActionListener {
 		wp.brush();
 		compositeItems.move();
 		compositeItems.effect(this);
-//		compositeItems.effect(persons, this);
 	}
 
 	public abstract Scene getCurrentStage();

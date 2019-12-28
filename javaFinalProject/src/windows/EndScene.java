@@ -17,13 +17,11 @@ public class EndScene extends Scene implements ActionListener {
 
 	@Override
 	public Scene getCurrentStage() {
-		// TODO Auto-generated method stub
 		return new EndScene();
 	}
 
 	@Override
 	public Scene getNextStage() {
-		// TODO Auto-generated method stub
 		return new Stage1();
 	}
 
