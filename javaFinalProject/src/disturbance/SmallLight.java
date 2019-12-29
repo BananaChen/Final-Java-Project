@@ -26,8 +26,8 @@ public class SmallLight extends Disturbance {
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if (this.positionX - person.getPositionX() < person.imageWidth
-				&& (this.positionX + this.imageWidth) > person.getPositionX())
+		if (this.getPositionX() - person.getPositionX() < person.imageWidth
+				&& (this.getPositionX() + this.imageWidth) > person.getPositionX())
 			return true;
 		return false;
 	}

@@ -29,17 +29,17 @@ public class RollerCoaster extends Aircraft {
 		degrees -= 2;
 		double radians = Math.toRadians(degrees);
 
-		this.velocityX = (-1) * Math.sin(radians);
-		this.velocityY = (-1) * Math.cos(radians);
+		this.setVelocityX((-1) * Math.sin(radians));
+		this.setVelocityY((-1) * Math.cos(radians));
 
-		if (this.positionX > 0) {
-			this.positionX = firstX - 60 * Math.cos(radians) + dif;
-			this.positionY = firstY - 60 * Math.sin(radians);
-			this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		if (this.getPositionX() > 0) {
+			this.setPositionX(firstX - 60 * Math.cos(radians) + dif);
+			this.setPositionY(firstY - 60 * Math.sin(radians));
+			this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 		} else {
 			dif = 0;
 			firstX = Scene.bgWidth;
-			this.positionX = Scene.bgWidth;
+			this.setPositionX(Scene.bgWidth);
 		}
 	}
 }

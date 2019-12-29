@@ -45,10 +45,10 @@ public class Flower extends Destination {
 
 	@Override
 	public boolean successfulLanding(Person person) {
-		if (person.getPositionX() + person.labelWidth > this.positionX
-				&& person.getPositionX() < (this.positionX + this.imageWidth)
-				&& (person.getPositionY() + person.labelHeight) > this.positionY
-				&& person.getPositionY() < this.positionY + this.imageHeight)
+		if (person.getPositionX() + person.labelWidth > this.getPositionX()
+				&& person.getPositionX() < (this.getPositionX() + this.imageWidth)
+				&& (person.getPositionY() + person.labelHeight) > this.getPositionY()
+				&& person.getPositionY() < this.getPositionY() + this.imageHeight)
 			return true;
 		return false;
 	}

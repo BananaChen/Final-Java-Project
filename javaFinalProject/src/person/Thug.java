@@ -98,10 +98,10 @@ public class Thug extends Person {
 			break;
 		}
 		
-		this.velocityX += this.accelerationX;
-		this.velocityY += this.accelerationY;
-		this.positionX += this.velocityX;
-		this.positionY += this.velocityY;
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setVelocityX(this.getVelocityX() + this.getAccelerationX());
+		this.setVelocityY(this.getVelocityY() + this.getAccelerationY());
+		this.setPositionX(this.getPositionX() + this.getVelocityX());
+		this.setPositionY(this.getPositionY() + this.getVelocityY());
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 }

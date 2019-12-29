@@ -20,9 +20,9 @@ public class WindowPainter extends Items{
 	}
 	
 	public void brush() {
-		if (positionX < Scene.bgWidth*2) {
-			positionX += 700;
-			this.setLabelLocation((int)positionX, (int)positionY);
+		if (this.getPositionX() < Scene.bgWidth*2) {
+			this.setPositionX(this.getPositionX() + 700);
+			this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 		}
 	}
 	

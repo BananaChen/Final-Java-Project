@@ -25,10 +25,10 @@ public class Spring extends Disturbance {
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if (person.getPositionX() + person.imageWidth >= this.positionX
-				&& (person.getPositionX() + person.imageWidth) <= this.positionX + this.imageWidth
-				&& (person.getPositionY() + person.imageHeight) >= this.positionY
-				&& (person.getPositionY() + person.imageHeight) <= this.positionY + this.imageHeight)
+		if (person.getPositionX() + person.imageWidth >= this.getPositionX()
+				&& (person.getPositionX() + person.imageWidth) <= this.getPositionX() + this.imageWidth
+				&& (person.getPositionY() + person.imageHeight) >= this.getPositionY()
+				&& (person.getPositionY() + person.imageHeight) <= this.getPositionY() + this.imageHeight)
 			return true;
 		return false;
 	}

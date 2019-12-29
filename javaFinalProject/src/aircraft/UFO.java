@@ -36,19 +36,19 @@ public class UFO extends Aircraft {
 				else if(nextPositionY == 2) {
 					nextPositionY = 150;
 				}
-				this.velocityX = 10*(nextPositionX - this.positionX)/Math.sqrt((nextPositionX - this.positionX)*(nextPositionX - this.positionX)+(nextPositionY - this.positionY)*(nextPositionY - this.positionY));
-				this.velocityY = 10*(nextPositionY - this.positionY)/Math.sqrt((nextPositionX - this.positionX)*(nextPositionX - this.positionX)+(nextPositionY - this.positionY)*(nextPositionY - this.positionY));
+				this.setVelocityX(10*(nextPositionX - this.getPositionX())/Math.sqrt((nextPositionX - this.getPositionX())*(nextPositionX - this.getPositionX())+(nextPositionY - this.getPositionY())*(nextPositionY - this.getPositionY())));
+				this.setVelocityY(10*(nextPositionY - this.getPositionY())/Math.sqrt((nextPositionX - this.getPositionX())*(nextPositionX - this.getPositionX())+(nextPositionY - this.getPositionY())*(nextPositionY - this.getPositionY())));
 			}
 		
-			if((this.positionX + this.velocityX <= 1730)&&(this.positionX + this.velocityX > 30)&&(this.positionY + this.velocityY>=20)&&(this.positionY + this.velocityY<=150)) {
-				this.positionX += this.velocityX;
-				this.positionY += this.velocityY;
+			if((this.getPositionX() + this.getVelocityX() <= 1730)&&(this.getPositionX() + this.getVelocityX() > 30)&&(this.getPositionY() + this.getVelocityY()>=20)&&(this.getPositionY() + this.getVelocityY()<=150)) {
+				this.setPositionX(this.getPositionX() + this.getVelocityX());
+				this.setPositionY(this.getPositionY() + this.getVelocityY());
 			}
 			else {
 				readyToStop = 100;
 			}
 			
-			this.setLabelLocation((int) this.positionX, (int) this.positionY);
+			this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 			
 			readyToStop ++ ;
 			if(readyToStop >= 100) {
@@ -57,9 +57,9 @@ public class UFO extends Aircraft {
 			
 		}
 		else {
-			this.velocityX = 0;
-			this.velocityY = 0;
-			this.setLabelLocation((int) this.positionX, (int) this.positionY);
+			this.setVelocityX(0);
+			this.setVelocityY(0);
+			this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 			readyToStop -- ;
 			if(readyToStop == 0) {
 				isMoveable = true;

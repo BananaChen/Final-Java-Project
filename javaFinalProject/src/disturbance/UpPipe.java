@@ -26,9 +26,9 @@ public class UpPipe extends Disturbance {
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if (person.getPositionX() + person.labelWidth > this.positionX
-				&& person.getPositionY() < this.positionY + this.imageHeight
-				&& person.getPositionX() < this.positionX + this.imageWidth)
+		if (person.getPositionX() + person.labelWidth > this.getPositionX()
+				&& person.getPositionY() < this.getPositionY() + this.imageHeight
+				&& person.getPositionX() < this.getPositionX() + this.imageWidth)
 			return true;
 		return false;
 	}

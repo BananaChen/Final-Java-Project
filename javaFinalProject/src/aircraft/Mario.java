@@ -15,12 +15,17 @@ public class Mario extends Aircraft {
 
 	@Override
 	public void move() {
-		this.velocityX += this.accelerationX;
-		this.positionX += this.velocityX;
-		this.positionY += this.velocityY;
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
-		if(this.positionX > 220) {
-			this.positionX = -500;
+		this.setVelocityX(this.getVelocityX() + this.getAccelerationX());
+		this.setPositionX(this.getPositionX() + this.getVelocityX());
+		this.setPositionY(this.getPositionY() + this.getVelocityY());
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
+		relocatePositionIfNeed();
+	}
+	
+	@Override
+	public void relocatePositionIfNeed() {
+		if(this.getPositionX() > 220) {
+			this.setPositionX(-500);
 		}
 	}
 

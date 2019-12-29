@@ -27,10 +27,10 @@ public class MarioSpring extends Disturbance {
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if (this.positionX - person.getPositionX() < person.labelWidth
-				&& (this.positionX + this.imageWidth) > person.getPositionX()
-				&& this.positionY - person.getPositionY() < person.imageHeight
-				&& (this.positionY + this.imageHeight) > person.getPositionY())
+		if (this.getPositionX() - person.getPositionX() < person.labelWidth
+				&& (this.getPositionX() + this.imageWidth) > person.getPositionX()
+				&& this.getPositionY() - person.getPositionY() < person.imageHeight
+				&& (this.getPositionY() + this.imageHeight) > person.getPositionY())
 			return true;
 		return false;
 	}

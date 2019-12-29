@@ -23,28 +23,28 @@ public class Magnetic2 extends Disturbance {
 	
 	@Override
 	public void move() {
-		this.positionX += moveRight ? 4 : -4;
-		if (this.positionX >= 800 || this.positionX <= 100) {
+		this.setPositionX(this.getPositionX() + (moveRight ? 4 : -4));
+		if (this.getPositionX() >= 800 || this.getPositionX() <= 100) {
 			moveRight = !moveRight;
 			moveLeft = !moveLeft;
 		}
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
 			Person person = (Person) item;
 			if (hasContactWithPerson(person)) {
-				person.velocityY += 0.01;
-				person.velocityX += this.velocityX * 0.01;
+				person.setVelocityY(person.getVelocityY() + 0.01);
+				person.setVelocityX(this.getVelocityX() * 0.01);
 			}
 		});
 	}
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= this.positionX - 70
-				&& person.getPositionX() + person.imageWidth / 2 <= this.positionX + this.imageWidth + 70
+		if (person.isDropped && person.getPositionX() + person.imageWidth / 2 >= this.getPositionX() - 70
+				&& person.getPositionX() + person.imageWidth / 2 <= this.getPositionX() + this.imageWidth + 70
 				&& person.getPositionY() + person.imageHeight / 2 >= 0
 				&& person.getPositionY() + person.imageHeight / 2 <= 1000)
 			return true;

@@ -15,9 +15,9 @@ public class AirPlane extends Aircraft {
 
 	@Override
 	public void move() {
-		this.velocityX += this.accelerationX;
-		this.positionX += this.velocityX;
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setVelocityX(this.getVelocityX() + this.getAccelerationX());
+		this.setPositionX(this.getPositionX() + this.getVelocityX());
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 		
 		relocatePositionIfNeed();
 	}

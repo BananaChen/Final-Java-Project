@@ -19,12 +19,12 @@ public abstract class Items extends JPanel {
 	public int labelWidth;
 	public int labelHeight;
 
-	public double positionX = 0;
-	public double positionY = 0;
-	public double velocityX = 0;
-	public double velocityY = 0;
-	public double accelerationX = 0;
-	public double accelerationY = 0;
+	private double positionX = 0;
+	private double positionY = 0;
+	private double velocityX = 0;
+	private double velocityY = 0;
+	private double accelerationX = 0;
+	private double accelerationY = 0;
 
 	public Items() {
 

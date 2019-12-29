@@ -18,7 +18,7 @@ public class Magnetic1 extends Disturbance {
 		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
 			Person person = (Person) item;
 			if (hasContactWithPerson(person)) {
-				person.velocityX += -0.01;
+				person.setVelocityX(person.getVelocityX() + (-0.01));
 			}
 		});
 	}

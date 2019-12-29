@@ -36,11 +36,9 @@ public class Arrow extends Disturbance implements ActionListener {
 			Person person = (Person) item;
 			// if getting shoot
 			if (hasContactWithPerson(person)) {
-				person.positionX += 10;
+				person.setPositionX(person.getPositionX() + 10);
 				// relocated
-				this.positionX = Math.random() * screenWidth - screenWidth;
-				this.positionY = Math.random() * 200 + screenHeight;
-				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+				relocateDisturbance();
 				isStop = true;
 				// set a random time to wait to restart
 				waitTime = (int) (Math.random() * 100 + 1);
@@ -52,15 +50,19 @@ public class Arrow extends Disturbance implements ActionListener {
 			}
 	
 			// if out of bounds, relocated
-			if (this.positionY + 100 < 0 || this.positionX > screenWidth) {
-				this.positionX = Math.random() * screenWidth - screenWidth;
-				this.positionY = Math.random() * 200 + screenHeight;
-				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+			if (this.getPositionY() + 100 < 0 || this.getPositionX() > screenWidth) {
+				relocateDisturbance();
 				isStop = true;
 				// set a random time to wait to restart
 				waitTime = (int) (Math.random() * 100 + 1);
 			}
 		});
+	}
+	
+	public void relocateDisturbance() {
+		this.setPositionX(Math.random() * screenWidth - screenWidth);
+		this.setPositionY(Math.random() * 200 + screenHeight);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 
 	@Override
@@ -68,26 +70,26 @@ public class Arrow extends Disturbance implements ActionListener {
 		// restart or move
 		if (isStop && waitTime > 0) {
 			waitTime--;
-			this.positionX = 0;
-			this.positionY = screenHeight;
+			this.setPositionX(0);
+			this.setPositionY(screenHeight);
 			if (waitTime <= 0) { // restart
 				isStop = false;
-				this.positionX = Math.random() * screenWidth - screenWidth;
-				this.positionY = Math.random() * 200 + screenHeight;
+				this.setPositionX(Math.random() * screenWidth - screenWidth);
+				this.setPositionY(Math.random() * 200 + screenHeight);
 			}
 		} else {
-			this.positionX += 15;
-			this.positionY -= 15;
+			this.setPositionX(this.getPositionX() + 15);
+			this.setPositionY(this.getPositionY() - 15);
 		}
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if ((this.positionX + 100 > person.getPositionX()
-				&& this.positionX + 100 < person.getPositionX() + 100)
-				&& (this.positionY > person.getPositionY()
-						&& this.positionY < person.getPositionY() + 100))
+		if ((this.getPositionX() + 100 > person.getPositionX()
+				&& this.getPositionX() + 100 < person.getPositionX() + 100)
+				&& (this.getPositionY() > person.getPositionY()
+						&& this.getPositionY() < person.getPositionY() + 100))
 			return true;
 		return false;
 	}

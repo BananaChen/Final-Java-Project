@@ -43,9 +43,9 @@ public class FireBall extends Disturbance implements ActionListener {
 			if (hasContactWithPerson(person)) {
 				persons.get(0).setPositionX(persons.get(0).getPositionX() - 5);
 				// relocated
-				this.positionX = resetX;
-				this.positionY = resetY;
-				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+				this.setPositionX(resetX);
+				this.setPositionY(resetY);
+				this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 				isStop = true;
 				// set a random time to wait to restart
 				waitTime = (int) (Math.random() * 100 + 1);
@@ -54,10 +54,10 @@ public class FireBall extends Disturbance implements ActionListener {
 			}
 
 			// if out of bounds, relocated
-			if (this.positionY + 100 > 1000 || this.positionX < -100) {
-				this.positionX = resetX;
-				this.positionY = resetY;
-				this.setLabelLocation((int) this.positionX, (int) this.positionY);
+			if (this.getPositionY() + 100 > 1000 || this.getPositionX() < -100) {
+				this.setPositionX(resetX);
+				this.setPositionY(resetY);
+				this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 
 				isStop = true;
 				// set a random time to wait to restart
@@ -71,25 +71,25 @@ public class FireBall extends Disturbance implements ActionListener {
 		// restart or move
 		if (isStop && waitTime > 0) {
 			waitTime--;
-			this.positionX = 100;
-			this.positionY = -100;
+			this.setPositionX(100);
+			this.setPositionY(-100);
 		} else if (isStop == true && waitTime == 0) {
-			this.positionX = resetX;
-			this.positionY = resetY;
+			this.setPositionX(resetX);
+			this.setPositionY(resetY);
 			isStop = false;
 		} else {
-			this.positionX -= 5;
-			this.positionY += 5;
+			this.setPositionX(this.getPositionX() - 5);
+			this.setPositionY(this.getPositionY() + 5);
 		}
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 
 	@Override
 	public boolean hasContactWithPerson(Person person) {
-		if ((this.positionX + 100 > person.getPositionX()
-				&& this.positionX + 100 < person.getPositionX() + 100)
-				&& (this.positionY > person.getPositionY()
-						&& this.positionY < person.getPositionY() + 100))
+		if ((this.getPositionX() + 100 > person.getPositionX()
+				&& this.getPositionX() + 100 < person.getPositionX() + 100)
+				&& (this.getPositionY() > person.getPositionY()
+						&& this.getPositionY() < person.getPositionY() + 100))
 			return true;
 		return false;
 	}

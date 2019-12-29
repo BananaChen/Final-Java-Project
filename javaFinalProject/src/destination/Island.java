@@ -24,17 +24,17 @@ public class Island extends Destination {
 
 	@Override
 	public boolean successfulLanding(Person person) {
-		if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX+50
-					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
-					&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.85
-					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight)
+		if (person.isDropped && person.getPositionX() + person.imageWidth >= this.getPositionX()+50
+					&& person.getPositionX() + person.imageWidth <= this.getPositionX()+this.imageWidth
+					&& person.getPositionY() + person.imageHeight >= this.getPositionY()+this.imageHeight*0.85
+					&& person.getPositionY() + person.imageHeight <= this.getPositionY()+this.imageHeight)
 			return true;
 		return false;
 	}
 
 	@Override
 	public boolean failedLanding(Person person) {
-		if (person.isDropped && (this.getPositionY()+this.imageHeight) - person.positionY < 0)
+		if (person.isDropped && (this.getPositionY()+this.imageHeight) - person.getPositionY() < 0)
 			return true;
 		return false;
 	}

@@ -18,24 +18,24 @@ public class Bee extends Aircraft {
 	@Override
 	public void move() {
 
-		this.velocityX += this.accelerationX;
-		this.velocityY += this.accelerationY;
+		this.setVelocityX(this.getVelocityX() + this.getAccelerationX());
+		this.setVelocityY(this.getVelocityY() + this.getAccelerationY());
 
 		if (Math.random() * 2 - 0.1 > 0 && (time >= 0 && time <= 100)) {
-			this.positionX += (Math.random() * 5 - 1.5) * Math.cos(this.velocityX) + 2;
+			this.setPositionX(this.getPositionX() + ((Math.random() * 5 - 1.5) * Math.cos(this.getVelocityX()) + 2));
 			time++;
 		} else {
-			this.positionX -= (Math.random() * 3 - 1.5) * Math.cos(this.velocityX) + 0.5;
+			this.setPositionX(this.getPositionX() - ((Math.random() * 3 - 1.5) * Math.cos(this.getVelocityX()) + 0.5));
 			time++;
 		}
 		if (time >= 100)
 			time = -100;
 
-		if (this.positionY > 0)
-			this.positionY += (Math.random() * 5 - 1.5) * Math.sin(this.velocityY);
+		if (this.getPositionY() > 0)
+			this.setPositionY(this.getPositionY() + (Math.random() * 5 - 1.5) * Math.sin(this.getVelocityY()));
 		else
-			this.positionY += Math.random() * 5 + 1;
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+			this.setPositionY(this.getPositionY() + (Math.random() * 5 + 1));
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 		
 		relocatePositionIfNeed();
 	}

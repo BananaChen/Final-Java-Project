@@ -30,12 +30,12 @@ public class Honeycomb extends Destination{
 	
 	@Override
 	public void move() {
-		this.positionX += (moveLeft) ? -2 : 2;
-		if (this.positionX <= 400 || this.positionX + imageWidth >= 1200) {
+		this.setPositionX(this.getPositionX() + ((moveLeft) ? -2 : 2));
+		if (this.getPositionX() <= 400 || this.getPositionX() + imageWidth >= 1200) {
 			moveLeft = !moveLeft;
 			moveRight = !moveRight;
 		}
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 	
 	@Override
@@ -56,17 +56,17 @@ public class Honeycomb extends Destination{
 
 	@Override
 	public boolean successfulLanding(Person person) {
-		if (person.isDropped && person.getPositionX() >= this.positionX+50
-				&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth-50
-				&& person.getPositionY() + person.imageHeight >= this.positionY+this.imageHeight*0.3
-				&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight*0.9)
+		if (person.isDropped && person.getPositionX() >= this.getPositionX()+50
+				&& person.getPositionX() + person.imageWidth <= this.getPositionX()+this.imageWidth-50
+				&& person.getPositionY() + person.imageHeight >= this.getPositionY()+this.imageHeight*0.3
+				&& person.getPositionY() + person.imageHeight <= this.getPositionY()+this.imageHeight*0.9)
 			return true;
 		return false;
 	}
 
 	@Override
 	public boolean failedLanding(Person person) {
-		if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.positionY < 0
+		if (person.isDropped && ((this.getPositionY()+this.imageHeight) - person.getPositionY() < 0
 					|| person.blood == 0))
 			return true;
 		return false;

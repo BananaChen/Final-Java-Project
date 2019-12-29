@@ -43,8 +43,8 @@ public abstract class Person extends Items {
 			for (Items item : items) {
 				if (item instanceof Aircraft) {
 					Aircraft aircraft = (Aircraft) item;
-					this.personInitPx = aircraft.positionX + aircraft.imageWidth / 2;
-					this.personInitPy = aircraft.positionY + aircraft.imageHeight / 2;
+					this.personInitPx = aircraft.getPositionX() + aircraft.imageWidth / 2;
+					this.personInitPy = aircraft.getPositionY() + aircraft.imageHeight / 2;
 					this.setMoveData(this.personInitPx, this.personInitPy, this.personInitVx, this.personInitVy, this.personInitAx, this.personInitAy);
 				}
 			}
@@ -53,12 +53,11 @@ public abstract class Person extends Items {
 
 	@Override
 	public void move() {
-		
-		this.velocityX += this.accelerationX;
-		this.velocityY += this.accelerationY;
-		this.positionX += this.velocityX;
-		this.positionY += this.velocityY;
-		this.setLabelLocation((int) this.positionX, (int) this.positionY);
+		this.setVelocityX(this.getVelocityX() + this.getAccelerationX());
+		this.setVelocityY(this.getVelocityY() + this.getAccelerationY());
+		this.setPositionX(this.getPositionX() + this.getVelocityX());
+		this.setPositionY(this.getPositionY() + this.getVelocityY());
+		this.setLabelLocation((int) this.getPositionX(), (int) this.getPositionY());
 	}
 	
 	@Override

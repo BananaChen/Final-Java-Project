@@ -24,17 +24,17 @@ public class Home extends Destination {
 
 	@Override
 	public boolean successfulLanding(Person person) {
-		if (person.isDropped && person.getPositionX() + person.imageWidth >= this.positionX
-					&& person.getPositionX() + person.imageWidth <= this.positionX+this.imageWidth
-					&& person.getPositionY() + person.imageHeight >= this.positionY
-					&& person.getPositionY() + person.imageHeight <= this.positionY+this.imageHeight)
+		if (person.isDropped && person.getPositionX() + person.imageWidth >= this.getPositionX()
+					&& person.getPositionX() + person.imageWidth <= this.getPositionX()+this.imageWidth
+					&& person.getPositionY() + person.imageHeight >= this.getPositionY()
+					&& person.getPositionY() + person.imageHeight <= this.getPositionY()+this.imageHeight)
 			return true;
 		return false;
 	}
 
 	@Override
 	public boolean failedLanding(Person person) {
-		if (this.positionY - (person.getPositionY()) < 0)
+		if (this.getPositionY() - (person.getPositionY()) < 0)
 			return true;
 		return false;
 	}
