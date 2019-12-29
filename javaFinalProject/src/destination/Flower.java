@@ -20,23 +20,28 @@ public class Flower extends Destination {
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
 			Person person = (Person) item;
-			if (successfulLanding(person)) {
-				person.setVelocityY(-6);
-				this.setLabelVisibility(false);
-				isShooted = true;
-				
-				successHandler(currentScene);
-				setNextStageStatus(currentScene);
-				
-			} else if (failedLanding(person)) {
-				person.setVelocityY(0);
-				person.setAccelerationY(0);
-				
-				failureHandler(currentScene);
-			}
+			checkLandingStatus(person, currentScene);
 		});
 	}
-
+	
+	@Override
+	public void successHandler(Person person, Scene scene) {
+		person.setVelocityY(-6);
+		this.setLabelVisibility(false);
+		isShooted = true;
+		
+		scene.successLabel.setLabelVisibility(true);
+		scene.isPassed = true;
+		scene.timer.stop();
+	}
+	
+	@Override
+	public void failureHandler(Person person, Scene scene) {
+		person.setVelocityY(0);
+		person.setAccelerationY(0);
+		scene.failureLabel.setLabelVisibility(true);
+		scene.timer.stop();
+	}
 
 	@Override
 	public boolean successfulLanding(Person person) {

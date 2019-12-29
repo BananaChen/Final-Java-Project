@@ -42,16 +42,16 @@ public class Honeycomb extends Destination{
 	public void effect(ArrayList<Items> items, Scene currentScene) {
 		items.stream().filter(item -> item instanceof Person).forEach((item) -> {
 			Person person = (Person) item;
-			if (successfulLanding(person)) {
-				((Thug)person).lbSunGlasses.setVisible(true);
-				successHandler(currentScene);
-				setNextStageStatus(currentScene);
-			}
-			else if (failedLanding(person)) {
-				personActionAfterward(person);
-				failureHandler(currentScene);
-			}
+			checkLandingStatus(person, currentScene);
 		});
+	}
+	
+	@Override
+	public void successHandler(Person person, Scene scene) {
+		((Thug)person).lbSunGlasses.setVisible(true);
+		scene.successLabel.setLabelVisibility(true);
+		scene.isPassed = true;
+		scene.timer.stop();
 	}
 
 	@Override

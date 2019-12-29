@@ -40,13 +40,14 @@ public abstract class Destination extends Items {
 	public abstract boolean successfulLanding(Person person);
 	public abstract boolean failedLanding(Person person);
 	
-	public void successHandler(Scene scene) {
+	public void successHandler(Person person, Scene scene) {
 		scene.successLabel.setLabelVisibility(true);
-		scene.isPassed = true;
 		scene.timer.stop();
+		scene.isPassed = true;
 	}
 	
-	public void failureHandler(Scene scene) {
+	public void failureHandler(Person person, Scene scene) {
+		personActionAfterward(person);
 		scene.failureLabel.setLabelVisibility(true);
 		scene.timer.stop();
 	}
@@ -57,5 +58,14 @@ public abstract class Destination extends Items {
 		person.setAccelerationY(0);
 		person.setVelocityX(0);
 		person.setVelocityY(0);
+	}
+	
+	public void checkLandingStatus(Person person, Scene scene) {
+		if (successfulLanding(person)) {
+			successHandler(person, scene);
+			setNextStageStatus(scene);
+		} else if (failedLanding(person)) {
+			failureHandler(person, scene);
+		}
 	}
 }
