@@ -48,12 +48,8 @@ public abstract class Scene implements ActionListener {
 
 	public void setWindow(String bgImagePath) {
 		setBackground();
-		imagePanel.setFocusable(true);
-		imagePanel.addKeyListener(new KeyAdapter() {
-			public void keyPressed(KeyEvent e) {
-				WindowController.remoteController.pressButton(e.getKeyCode());
-			}
-		});
+		setKeyListener();
+		setCommand();
 	}
 	
 	private void setBackground() {
@@ -66,6 +62,15 @@ public abstract class Scene implements ActionListener {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void setKeyListener() {
+		imagePanel.setFocusable(true);
+		imagePanel.addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				WindowController.remoteController.pressButton(e.getKeyCode());
+			}
+		});
 	}
 	
 	public void setCommand() {

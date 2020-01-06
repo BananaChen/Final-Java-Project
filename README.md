@@ -12,18 +12,18 @@ This is a simple parachute game written in Java, which aims to make good use of 
 ## UML Diagram
 
 <p align="center">
-    <img src = 'https://i.imgur.com/nHRlVZw.jpg'>
+    <img src = 'https://i.imgur.com/cEzgHEP.jpg'>
 </p>
 
 ## Design Pattern
 
-### Strategy Pattern
-
-- Strategy Pattern is basically used in all other patterns.
-
 ### Template Pattern
 
-- Too many of it. Basically in almost every abstract class.
+- Let subclasses redefine certain steps of the algorithm without changing the algorithm’s structure.
+
+<p align="center">
+    <img src = 'https://i.imgur.com/YzsfNQ1.jpg'>
+</p>
 
 ### Abstract Factory Pattern
 
@@ -38,7 +38,7 @@ This is a simple parachute game written in Java, which aims to make good use of 
 - To execute commands remotely, allowing them to be reused elsewhere.
 
 <p align="center">
-    <img src = 'https://i.imgur.com/f7ynyUW.jpg'>
+    <img src = 'https://i.imgur.com/CzZ4JSp.jpg'>
 </p>
 
 ### Composite Pattern
@@ -46,5 +46,5 @@ This is a simple parachute game written in Java, which aims to make good use of 
 - The composite item contains all the objects created by abstract factory. One function call from it can do all the jobs.
 
 <p align="center">
-    <img src = 'https://i.imgur.com/IWfyXEu.jpg'>
+    <img src = 'https://i.imgur.com/VHutSqH.jpg'>
 </p>
